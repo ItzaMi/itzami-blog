@@ -1,22 +1,28 @@
 import React from "react"
-import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
+import styled from "styled-components"
+
+import JSONData from '../content/homepage'
+
 import SEO from "../components/seo"
 
+const Container = styled.div`
+`
+
+const Title = styled.h1`
+  font-size: 150px;
+  color: #8D9E71;
+  font-weight: bold;
+  line-height: 90%;
+`
+
 const IndexPage = () => (
-  <Layout>
+  <Container>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
+    {JSONData.title.map((data, index) => {
+      return <Title key={`content_item_${index}`}>{data.line}</Title>
+    })}
+  </Container>
 )
 
 export default IndexPage
