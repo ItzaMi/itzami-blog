@@ -4,42 +4,20 @@ html {
 }
 
 body {
-  margin: 0px;
-}
-
-body.light-mode {
-  background-color: #F4F4F4;
-  color: #454545;
-}
-
-body.light-mode .navLink {
-  color: #454545;
-}
-
-body.light-mode .socialMedia {
-  fill: #454545;
-}
-
-body.dark-mode {
   background-color: #454545;
   color: #F4F4F4;
 }
 
-body.dark-mode .dark-mode-toggle > button {
+body .dark-mode-toggle > button {
   background-color: #F4F4F4;
 }
 
-body.dark-mode .navLink {
+body .navLink {
   color: #F4F4F4;
 }
 
-body.dark-mode .socialMedia {
+body .socialMedia {
   fill: #F4F4F4;
-}
-
-.dark-mode-toggle > button {
-  background-color: #454545;
-  border: 0px;
 }
 
 h1,
