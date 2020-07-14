@@ -12,10 +12,10 @@ const Container = styled.div`
 
 const SocialLinks = () => (
     <Container>
-        <a href="https://twitter.com/HeyItzaMi" target="_blank"><Twitter /></a>
-        <a href="https://github.com/ItzaMi" target="_blank"><GitHub /></a>
-        <a href="https://www.instagram.com/mr.tomski/" target="_blank"><Instagram /></a>
-        <a href="https://dribbble.com/ItzaMi" target="_blank"><Dribbble /></a>
+        <a aria-label="twitter button" href="https://twitter.com/HeyItzaMi" rel="noreferrer" target="_blank"><Twitter /></a>
+        <a aria-label="github button" href="https://github.com/ItzaMi" rel="noreferrer" target="_blank"><GitHub /></a>
+        <a aria-label="instagram button" href="https://www.instagram.com/mr.tomski/" rel="noreferrer" target="_blank"><Instagram /></a>
+        <a aria-label="dribbble button" href="https://dribbble.com/ItzaMi" rel="noreferrer" target="_blank"><Dribbble /></a>
     </Container>
 )
 export default SocialLinks;

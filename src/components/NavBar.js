@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from 'gatsby';
 import styled from "styled-components";
-import useDarkMode from 'use-dark-mode';
 
 import JSONData from '../content/homepage';
 
@@ -27,17 +26,6 @@ const Title = styled(props => <Link {...props} />)`
   margin-left: 25px;
 `
 
-const Button = styled.button`
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`
-
 const Menu = styled.ul`
     margin-right: 35px;
     list-style-type: none;
@@ -45,7 +33,7 @@ const Menu = styled.ul`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 20%;
+    width: 15%;
 `
 
 const StyledLink = styled(props => <Link {...props} />)`
@@ -55,8 +43,6 @@ const StyledLink = styled(props => <Link {...props} />)`
 `
 
 const NavBar = () => {
-    const darkMode = useDarkMode(false);
-
     return (
         <Container>
             <TitleContainer>
@@ -67,9 +53,6 @@ const NavBar = () => {
             <Menu>
                 <StyledLink className="navLink" to="/blog">Blog</StyledLink>
                 <StyledLink className="navLink" to="/about">About</StyledLink>
-                <li class="dark-mode-toggle">
-                    <Button checked={darkMode.value} onClick={darkMode.toggle} ></Button>
-                </li>
             </Menu>
         </Container>
     )
