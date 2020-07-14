@@ -1,10 +1,11 @@
-import React, { useContext } from "react"
-import styled from "styled-components"
-import { ThemeManagerContext } from "gatsby-styled-components-dark-mode"
+import React from "react";
+import styled from "styled-components";
 
-import JSONData from '../content/homepage'
+import JSONData from '../content/homepage';
 
-import SEO from "../components/seo"
+import SEO from "../components/seo";
+import NavBar from '../components/NavBar';
+import SocialLinks from '../components/SocialLinks'
 
 const Container = styled.div`
   display: flex;
@@ -13,11 +14,11 @@ const Container = styled.div`
   height: 100vh;
 `
 
-const Title = styled.h1`
-  font-size: 150px;
-  color: #8D9E71;
-  font-weight: bold;
-  line-height: 90%;
+const BottomContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 35px 40px;
+  align-items: flex-end;
 `
 
 const Introduction = styled.p`
@@ -26,17 +27,18 @@ const Introduction = styled.p`
   max-width: 50%;
 `
 
-const IndexPage = () => (
-  <Container>
+const IndexPage = () => {
 
-    <SEO title="Home" />
-    <div>
-      {JSONData.title.map((data, index) => {
-        return <Title key={`content_item_${index}`}>{data.line}</Title>
-      })}
-    </div>
-    <Introduction>{JSONData.introduction}</Introduction>
-  </Container>
-)
+  return (
+    <Container>
+      <SEO title="Home" />
+      <NavBar />
+      <BottomContainer>
+        <Introduction>{JSONData.introduction}</Introduction>
+        <SocialLinks />
+      </BottomContainer>
+    </Container>
+  )
+}
 
-export default IndexPage
+export default IndexPage;
