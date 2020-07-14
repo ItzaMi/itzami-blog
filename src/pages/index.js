@@ -1,22 +1,44 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import styled from "styled-components";
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import JSONData from '../content/homepage';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+import SEO from "../components/seo";
+import NavBar from '../components/NavBar';
+import SocialLinks from '../components/SocialLinks'
 
-export default IndexPage
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+`
+
+const BottomContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 35px 40px;
+  align-items: flex-end;
+`
+
+const Introduction = styled.p`
+  font-size: 30px;
+  font-weight: bold;
+  max-width: 50%;
+`
+
+const IndexPage = () => {
+
+  return (
+    <Container>
+      <SEO title="Home" />
+      <NavBar />
+      <BottomContainer>
+        <Introduction>{JSONData.introduction}</Introduction>
+        <SocialLinks />
+      </BottomContainer>
+    </Container>
+  )
+}
+
+export default IndexPage;
