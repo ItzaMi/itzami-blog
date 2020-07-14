@@ -5,6 +5,23 @@ html {
 }
 
 body {
+    margin: 0px;
+}
+
+body.light-mode {
+    background-color: #F4F4F4;
+    color: #454545;
+
+    .navLink {
+        color: #454545;
+    }
+
+    .socialMedia {
+        fill: #454545;
+    }
+}
+
+body.dark-mode {
     background-color: #454545;
     color: #F4F4F4;
 
@@ -19,6 +36,11 @@ body {
     .socialMedia {
         fill: #F4F4F4;
     }
+}
+
+.dark-mode-toggle > button {
+    background-color: #454545;
+    border: 0px;
 }
 
 h1,
@@ -36,4 +58,4 @@ p {
     height: 50px;
     text-decoration: none;
     margin-left: 50px;
-}
+} 
