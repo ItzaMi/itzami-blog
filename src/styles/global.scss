@@ -1,46 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap");
 
 html {
-    font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 body {
-    margin: 0px;
+  margin: 0px;
+  font-size: 16px;
 }
 
 body.light-mode {
-    background-color: #F4F4F4;
+  background-color: #f4f4f4;
+  color: #454545;
+
+  .navLink {
     color: #454545;
+  }
 
-    .navLink {
-        color: #454545;
-    }
-
-    .socialMedia {
-        fill: #454545;
-    }
+  .socialMedia {
+    fill: #454545;
+  }
 }
 
 body.dark-mode {
-    background-color: #454545;
-    color: #F4F4F4;
+  background-color: #454545;
+  color: #f4f4f4;
 
-    .dark-mode-toggle > button {
-        background-color: #F4F4F4;
-    }
+  .dark-mode-toggle > button {
+    background-color: #f4f4f4;
+  }
 
-    .navLink {
-        color: #F4F4F4;
-    }
+  .navLink {
+    color: #f4f4f4;
+  }
 
-    .socialMedia {
-        fill: #F4F4F4;
-    }
+  .socialMedia {
+    fill: #f4f4f4;
+  }
 }
 
 .dark-mode-toggle > button {
-    background-color: #454545;
-    border: 0px;
+  background-color: #454545;
+  border: 0px;
 }
 
 h1,
@@ -50,12 +51,12 @@ h4,
 h5,
 h6,
 p {
-    margin: 0px;
+  margin: 0px;
 }
 
 .socialMedia {
-    width: 50px;
-    height: 50px;
-    text-decoration: none;
-    margin-left: 50px;
-} 
+  width: 32px;
+  height: 32px;
+  text-decoration: none;
+  margin-left: 50px;
+}

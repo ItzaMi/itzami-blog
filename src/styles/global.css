@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap");
 html {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 body {
   margin: 0px;
+  font-size: 16px;
 }
 
 body.light-mode {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   color: #454545;
 }
 
@@ -22,19 +23,19 @@ body.light-mode .socialMedia {
 
 body.dark-mode {
   background-color: #454545;
-  color: #F4F4F4;
+  color: #f4f4f4;
 }
 
 body.dark-mode .dark-mode-toggle > button {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
 }
 
 body.dark-mode .navLink {
-  color: #F4F4F4;
+  color: #f4f4f4;
 }
 
 body.dark-mode .socialMedia {
-  fill: #F4F4F4;
+  fill: #f4f4f4;
 }
 
 .dark-mode-toggle > button {
@@ -53,8 +54,8 @@ p {
 }
 
 .socialMedia {
-  width: 50px;
-  height: 50px;
+  width: 32px;
+  height: 32px;
   text-decoration: none;
   margin-left: 50px;
 }

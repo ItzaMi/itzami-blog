@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 
-import JSONData from '../content/homepage';
+import JSONData from "../content/homepage"
 
-import SEO from "../components/seo";
-import NavBar from '../components/NavBar';
-import SocialLinks from '../components/SocialLinks'
+import SEO from "../components/seo"
+import NavBar from "../components/NavBar"
+import SocialLinks from "../components/SocialLinks"
 
 const Container = styled.div`
   display: flex;
@@ -22,13 +22,12 @@ const BottomContainer = styled.div`
 `
 
 const Introduction = styled.p`
-  font-size: 30px;
+  font-size: 1.5rem;
   font-weight: bold;
   max-width: 50%;
 `
 
 const IndexPage = () => {
-
   return (
     <Container>
       <SEO title="Home" />
@@ -41,4 +40,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage;
+export default IndexPage
