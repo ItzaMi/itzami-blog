@@ -75,7 +75,7 @@ const NavBar = () => {
         <StyledLink className="navLink" to="/about">
           About
         </StyledLink>
-        <li class="dark-mode-toggle">
+        <li className="dark-mode-toggle">
           <Button checked={darkMode.value} onClick={darkMode.toggle}></Button>
         </li>
       </Menu>
