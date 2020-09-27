@@ -19,7 +19,7 @@ const TitleContainer = styled.div`
 `
 
 const Title = styled(props => <Link {...props} />)`
-  font-size: 9.4rem;
+  font-size: 5rem;
   color: #8d9e71;
   font-weight: bold;
   line-height: 90%;
