@@ -17,12 +17,14 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin-bottom: 40px;
+  margin: 0px 25px 25px 25px;
+
+  height: 70vh;
 `
 
 const BottomContainer = styled.div`
   display: flex;
-  margin: 0px 35px;
+  margin-right: 35px;
 
   align-items: flex-end;
 
@@ -37,8 +39,14 @@ const Title = styled.h1`
 `
 
 const BlogPostsWrapper = styled.div`
-  width: 100%;
+  width: 60%;
   height: 100%;
+
+  margin: auto;
+
+  div {
+    margin-bottom: 3rem;
+  }
 `
 
 const Blog = ({ data }) => (
@@ -50,7 +58,6 @@ const Blog = ({ data }) => (
         <Title>{JSONData.title}</Title>
       </BottomContainer>
       <BlogPostsWrapper>
-        <h1>Amazing Pandas Eating Things</h1>
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
