@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { graphql } from "gatsby"
 
 import JSONData from "../content/homepage"
 
@@ -27,10 +28,14 @@ const Introduction = styled.p`
   max-width: 50%;
 `
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   return (
     <Container>
-      <SEO title="Home" />
+      <SEO
+        title={data.site.siteMetadata.title}
+        description={data.site.siteMetadata.description}
+        author={data.site.siteMetadata.author}
+      />
       <NavBar />
       <BottomContainer>
         <Introduction>{JSONData.introduction}</Introduction>
@@ -41,3 +46,15 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+      }
+    }
+  }
+`

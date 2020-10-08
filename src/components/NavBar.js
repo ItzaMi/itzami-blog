@@ -19,7 +19,7 @@ const TitleContainer = styled.div`
 `
 
 const Title = styled(props => <Link {...props} />)`
-  font-size: 150px;
+  font-size: 5rem;
   color: #8d9e71;
   font-weight: bold;
   line-height: 90%;
@@ -75,7 +75,7 @@ const NavBar = () => {
         <StyledLink className="navLink" to="/about">
           About
         </StyledLink>
-        <li class="dark-mode-toggle">
+        <li className="dark-mode-toggle">
           <Button checked={darkMode.value} onClick={darkMode.toggle}></Button>
         </li>
       </Menu>
