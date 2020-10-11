@@ -53,7 +53,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `
 
-const BlogPostTitle = styled.h3`
+const BlogPostTitle = styled.h6`
   color: #8d9e71;
 `
 
@@ -66,7 +66,6 @@ const Blog = ({ data }) => (
         <Title>{JSONData.title}</Title>
       </BottomContainer>
       <BlogPostsWrapper>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
             <StyledLink to={node.fields.slug}>

@@ -6,6 +6,7 @@ import JSONData from "../content/homepage"
 
 import SEO from "../components/seo"
 import NavBar from "../components/NavBar"
+import HeroBlogPost from "../components/HeroBlogPost"
 import SocialLinks from "../components/SocialLinks"
 
 const Container = styled.div`
@@ -29,6 +30,8 @@ const Introduction = styled.p`
 `
 
 const IndexPage = ({ data }) => {
+  const blogPost = data.allMarkdownRemark.edges
+
   return (
     <Container>
       <SEO
@@ -37,6 +40,7 @@ const IndexPage = ({ data }) => {
         author={data.site.siteMetadata.author}
       />
       <NavBar />
+      <HeroBlogPost post={blogPost} />
       <BottomContainer>
         <Introduction>{JSONData.introduction}</Introduction>
         <SocialLinks />
@@ -49,6 +53,23 @@ export default IndexPage
 
 export const query = graphql`
   query {
+    allMarkdownRemark(
+      limit: 1
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            date
+          }
+          excerpt
+          fields {
+            slug
+          }
+        }
+      }
+    }
     site {
       siteMetadata {
         title
