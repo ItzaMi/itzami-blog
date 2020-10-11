@@ -49,6 +49,14 @@ const BlogPostsWrapper = styled.div`
   }
 `
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`
+
+const BlogPostTitle = styled.h3`
+  color: #8d9e71;
+`
+
 const Blog = ({ data }) => (
   <Container>
     <SEO title="Blog" />
@@ -61,12 +69,12 @@ const Blog = ({ data }) => (
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
-            <Link to={node.fields.slug}>
-              <h3>
+            <StyledLink to={node.fields.slug}>
+              <BlogPostTitle>
                 {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
-              </h3>
+              </BlogPostTitle>
               <p>{node.excerpt}</p>
-            </Link>
+            </StyledLink>
           </div>
         ))}
       </BlogPostsWrapper>

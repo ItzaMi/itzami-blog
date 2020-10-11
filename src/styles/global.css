@@ -13,6 +13,10 @@ body.light-mode {
   color: #454545;
 }
 
+body.light-mode a {
+  color: #454545;
+}
+
 body.light-mode .navLink {
   color: #454545;
 }
@@ -23,6 +27,10 @@ body.light-mode .socialMedia {
 
 body.dark-mode {
   background-color: #454545;
+  color: #f4f4f4;
+}
+
+body.dark-mode a {
   color: #f4f4f4;
 }
 
@@ -51,6 +59,11 @@ h5,
 h6,
 p {
   margin: 0px;
+}
+
+p,
+ol {
+  line-height: 32px;
 }
 
 .socialMedia {
