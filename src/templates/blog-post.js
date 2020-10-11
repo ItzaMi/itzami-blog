@@ -33,18 +33,6 @@ const BlogContent = styled.div`
     margin-bottom: 1rem;
   }
 
-  h2 {
-    font-size: 3rem;
-  }
-
-  h3 {
-    font-size: 2.5rem;
-  }
-
-  h4 {
-    font-size: 2rem;
-  }
-
   a {
     color: #8d9e71;
     text-decoration: none;
