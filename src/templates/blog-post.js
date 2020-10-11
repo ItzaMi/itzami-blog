@@ -34,7 +34,7 @@ const BlogContent = styled.div`
   }
 
   a {
-    color: #8d9e71;
+    color: #8d9e71 !important;
     text-decoration: none;
     font-weight: bold;
   }
