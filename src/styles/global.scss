@@ -13,6 +13,10 @@ body.light-mode {
   background-color: #f4f4f4;
   color: #454545;
 
+  a {
+    color: #454545;
+  }
+
   .navLink {
     color: #454545;
   }
@@ -25,6 +29,10 @@ body.light-mode {
 body.dark-mode {
   background-color: #454545;
   color: #f4f4f4;
+
+  a {
+    color: #f4f4f4;
+  }
 
   .dark-mode-toggle > button {
     background-color: #f4f4f4;
@@ -52,6 +60,11 @@ h5,
 h6,
 p {
   margin: 0px;
+}
+
+p,
+ol {
+  line-height: 32px;
 }
 
 .socialMedia {
