@@ -28,14 +28,10 @@ const SubTitle = styled.p`
 const HeroBlogPost = ({ post }) => (
   <>
     {post.map(({ node }, index) => {
-      {
-        console.log(node.frontmatter)
-      }
       return (
         <Container to={node.fields.slug} className="shadowBox" key={index}>
           <SubTitle>Latest post</SubTitle>
           <Title>{node.frontmatter.title}</Title>
-          {/* <p>{node.excerpt}</p> */}
         </Container>
       )
     })}
