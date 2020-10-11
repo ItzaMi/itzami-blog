@@ -19,10 +19,33 @@ body.light-mode a {
 
 body.light-mode .navLink {
   color: #454545;
+  -webkit-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+
+body.light-mode .navLink:hover {
+  color: #454545e6;
 }
 
 body.light-mode .socialMedia {
   fill: #454545;
+  -webkit-transition: fill 0.4s ease-in-out;
+  transition: fill 0.4s ease-in-out;
+}
+
+body.light-mode .socialMedia:hover {
+  fill: #454545e6;
+}
+
+body.light-mode .shadowBox {
+  background-color: #454545;
+  color: #f4f4f4;
+  -webkit-transition: background-color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
+}
+
+body.light-mode .shadowBox:hover {
+  background-color: #454545e6;
 }
 
 body.dark-mode {
@@ -40,10 +63,33 @@ body.dark-mode .dark-mode-toggle > button {
 
 body.dark-mode .navLink {
   color: #f4f4f4;
+  -webkit-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+
+body.dark-mode .navLink:hover {
+  color: #f4f4f4e6;
 }
 
 body.dark-mode .socialMedia {
   fill: #f4f4f4;
+  -webkit-transition: fill 0.4s ease-in-out;
+  transition: fill 0.4s ease-in-out;
+}
+
+body.dark-mode .socialMedia:hover {
+  fill: #f4f4f4e6;
+}
+
+body.dark-mode .shadowBox {
+  background-color: #f4f4f4;
+  color: #454545;
+  -webkit-transition: background-color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
+}
+
+body.dark-mode .shadowBox:hover {
+  background-color: #f4f4f4e6;
 }
 
 .dark-mode-toggle > button {
@@ -59,6 +105,26 @@ h5,
 h6,
 p {
   margin: 0px;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+h6 {
+  font-size: 1.2rem;
 }
 
 p,

@@ -19,10 +19,30 @@ body.light-mode {
 
   .navLink {
     color: #454545;
+    transition: color 0.4s ease-in-out;
+  }
+
+  .navLink:hover {
+    color: #454545e6;
   }
 
   .socialMedia {
     fill: #454545;
+    transition: fill 0.4s ease-in-out;
+  }
+
+  .socialMedia:hover {
+    fill: #454545e6;
+  }
+
+  .shadowBox {
+    background-color: #454545;
+    color: #f4f4f4;
+    transition: background-color 0.4s ease-in-out;
+  }
+
+  .shadowBox:hover {
+    background-color: #454545e6;
   }
 }
 
@@ -40,10 +60,30 @@ body.dark-mode {
 
   .navLink {
     color: #f4f4f4;
+    transition: color 0.4s ease-in-out;
+  }
+
+  .navLink:hover {
+    color: #f4f4f4e6;
   }
 
   .socialMedia {
     fill: #f4f4f4;
+    transition: fill 0.4s ease-in-out;
+  }
+
+  .socialMedia:hover {
+    fill: #f4f4f4e6;
+  }
+
+  .shadowBox {
+    background-color: #f4f4f4;
+    color: #454545;
+    transition: background-color 0.4s ease-in-out;
+  }
+
+  .shadowBox:hover {
+    background-color: #f4f4f4e6;
   }
 }
 
@@ -60,6 +100,26 @@ h5,
 h6,
 p {
   margin: 0px;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+h6 {
+  font-size: 1.2rem;
 }
 
 p,
