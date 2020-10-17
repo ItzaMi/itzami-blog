@@ -133,3 +133,9 @@ ol {
   text-decoration: none;
   margin-left: 50px;
 }
+
+@media (max-width: 415px) {
+  .socialMedia {
+    margin-left: 0px;
+  }
+}
