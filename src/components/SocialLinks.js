@@ -7,15 +7,31 @@ import Instagram from "../icons/instagram"
 import GitHub from "../icons/github"
 
 const Container = styled.div`
+  ${({ spacing }) =>
+    spacing &&
+    `
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    .socialMedia {
+      margin-left: 0px;
+      margin-right: 50px;
+    }
+  `}
+
   @media (max-width: 415px) {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+
+    .socialMedia {
+      margin-right: 0px;
+    }
   }
 `
 
-const SocialLinks = () => (
-  <Container>
+const SocialLinks = ({ spacing, ...props }) => (
+  <Container spacing={spacing}>
     <a
       aria-label="twitter button"
       href="https://twitter.com/HeyItzaMi"
