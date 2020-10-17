@@ -6,6 +6,7 @@ import JSONData from "../content/about"
 
 import SEO from "../components/seo"
 import NavBar from "../components/NavBar"
+import SocialLinks from "../components/SocialLinks"
 
 const Container = styled.div`
   display: flex;
@@ -89,6 +90,7 @@ const AboutPage = () => (
         {JSONData.content.map((line, index) => {
           return <p key={index} dangerouslySetInnerHTML={{ __html: line }} />
         })}
+        <SocialLinks spacing />
       </ContentWrapper>
     </Wrapper>
   </Container>
