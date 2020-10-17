@@ -17,9 +17,13 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 0px 25px 25px 25px;
+  margin: 0px 20px 20px 20px;
 
   height: 70vh;
+
+  @media (max-width: 415px) {
+    flex-direction: column;
+  }
 `
 
 const BottomContainer = styled.div`
@@ -30,12 +34,21 @@ const BottomContainer = styled.div`
 
   height: 100%;
   width: 30vw;
+
+  @media (max-width: 415px) {
+    width: 100%;
+    height: auto;
+  }
 `
 
 const Title = styled.h1`
   font-size: 5rem;
   font-weight: bold;
   width: 100%;
+
+  @media (max-width: 415px) {
+    font-size: 2rem;
+  }
 `
 
 const BlogPostsWrapper = styled.div`
@@ -46,6 +59,15 @@ const BlogPostsWrapper = styled.div`
 
   div {
     margin-bottom: 3rem;
+
+    @media (max-width: 415px) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @media (max-width: 415px) {
+    width: 100%;
+    margin-top: 20px;
   }
 `
 
@@ -55,6 +77,31 @@ const StyledLink = styled(Link)`
 
 const BlogPostTitle = styled.h6`
   color: #8d9e71;
+
+  @media (max-width: 415px) {
+    font-size: 1.3rem;
+    margin-bottom: 14px;
+  }
+`
+
+const BlogPostLink = styled.p`
+  color: #8d9e71;
+  display: inline-block;
+  margin-left: 6px;
+
+  @media (max-width: 415px) {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+`
+
+const BlogPostExcerpt = styled.p`
+  display: inline;
+
+  @media (max-width: 415px) {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
 `
 
 const Blog = ({ data }) => (
@@ -69,10 +116,9 @@ const Blog = ({ data }) => (
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
             <StyledLink to={node.fields.slug}>
-              <BlogPostTitle>
-                {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
-              </BlogPostTitle>
-              <p>{node.excerpt}</p>
+              <BlogPostTitle>{node.frontmatter.title}</BlogPostTitle>
+              <BlogPostExcerpt>{node.excerpt}</BlogPostExcerpt>
+              <BlogPostLink>Read Post</BlogPostLink>
             </StyledLink>
           </div>
         ))}
