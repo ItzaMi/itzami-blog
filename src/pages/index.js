@@ -21,12 +21,23 @@ const BottomContainer = styled.div`
   justify-content: space-between;
   margin: 0px 35px 40px;
   align-items: flex-end;
+
+  @media (max-width: 415px) {
+    height: 50vh;
+    flex-direction: column;
+    align-items: start;
+    margin: 0px 25px 20px;
+  }
 `
 
 const Introduction = styled.p`
   font-size: 1.5rem;
   font-weight: bold;
   max-width: 50%;
+
+  @media (max-width: 415px) {
+    max-width: 100%;
+  }
 `
 
 const IndexPage = ({ data }) => {
