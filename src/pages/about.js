@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import JSONData from "../content/about"
 
@@ -20,6 +20,10 @@ const Wrapper = styled.div`
   margin: 0px 25px 25px 25px;
 
   height: 70vh;
+
+  @media (max-width: 415px) {
+    flex-direction: column;
+  }
 `
 
 const BottomContainer = styled.div`
@@ -30,12 +34,21 @@ const BottomContainer = styled.div`
 
   height: 100%;
   width: 30vw;
+
+  @media (max-width: 415px) {
+    width: 100%;
+    height: auto;
+  }
 `
 
 const Title = styled.h1`
   font-size: 5rem;
   font-weight: bold;
   width: 100%;
+
+  @media (max-width: 415px) {
+    font-size: 2rem;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -56,10 +69,12 @@ const ContentWrapper = styled.div`
     text-decoration: none;
     font-weight: bold;
   }
-`
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
+  @media (max-width: 415px) {
+    width: 100%;
+    margin-top: 20px;
+    overflow-y: initial;
+  }
 `
 
 const AboutPage = () => (
