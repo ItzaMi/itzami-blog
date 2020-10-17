@@ -12,17 +12,39 @@ const Container = styled(Link)`
   width: 35%;
 
   text-decoration: none;
+
+  @media (max-width: 415px) {
+    position: initial;
+    transform: none;
+
+    display: block;
+
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 `
 
 const Title = styled.p`
   font-size: 1.3rem;
   font-weight: bold;
+
+  @media (max-width: 415px) {
+    font-size: 0.8rem;
+    line-height: 1rem;
+  }
 `
 
 const SubTitle = styled.p`
   font-size: 1rem;
   font-weight: 300;
   margin-bottom: 1rem;
+
+  @media (max-width: 415px) {
+    font-size: 0.6rem;
+    margin-bottom: 8px;
+    line-height: 1rem;
+  }
 `
 
 const HeroBlogPost = ({ post }) => (

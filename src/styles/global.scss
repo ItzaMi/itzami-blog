@@ -133,3 +133,17 @@ ol {
   text-decoration: none;
   margin-left: 50px;
 }
+
+@media (max-width: 415px) {
+  .socialMedia {
+    margin-left: 0px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+}

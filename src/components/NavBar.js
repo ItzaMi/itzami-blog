@@ -11,6 +11,10 @@ const Container = styled.div`
   width: 100%;
   justify-content: space-between;
   margin-top: 25px;
+
+  @media (max-width: 415px) {
+    margin-top: 20px;
+  }
 `
 
 const TitleContainer = styled.div`
@@ -25,6 +29,11 @@ const Title = styled(props => <Link {...props} />)`
   line-height: 90%;
   text-decoration: none;
   margin-left: 25px;
+
+  @media (max-width: 415px) {
+    font-size: 2rem;
+    margin-left: 20px;
+  }
 `
 
 const Button = styled.button`
@@ -46,12 +55,21 @@ const Menu = styled.ul`
   align-items: center;
   justify-content: space-between;
   width: 20%;
+
+  @media (max-width: 415px) {
+    width: 45%;
+    margin-right: 20px;
+  }
 `
 
 const StyledLink = styled(props => <Link {...props} />)`
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
+
+  @media (max-width: 415px) {
+    font-size: 1rem;
+  }
 `
 
 const NavBar = () => {

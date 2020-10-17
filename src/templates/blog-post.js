@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 
 import SEO from "../components/seo"
 import NavBar from "../components/NavBar"
+import SocialLinks from "../components/SocialLinks"
 
 const Container = styled.div`
   display: flex;
@@ -20,6 +21,15 @@ const BlogContainer = styled.div`
 
   h1 {
     font-size: 3.5rem;
+  }
+
+  @media (max-width: 415px) {
+    width: 90%;
+    margin: 80px 20px 20px;
+
+    h1 {
+      font-size: 1.5rem;
+    }
   }
 `
 
@@ -53,6 +63,7 @@ export default function BlogPost({ data }) {
       <BlogContainer>
         <h1>{post.frontmatter.title}</h1>
         <BlogContent dangerouslySetInnerHTML={{ __html: post.html }} />
+        <SocialLinks spacing />
       </BlogContainer>
     </Container>
   )
