@@ -86,8 +86,7 @@ const BlogPostTitle = styled.h6`
 
 const BlogPostLink = styled.p`
   color: #8d9e71;
-  display: inline-block;
-  margin-left: 6px;
+  display: block;
 
   @media (max-width: 415px) {
     font-size: 1rem;
