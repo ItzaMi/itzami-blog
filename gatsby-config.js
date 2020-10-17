@@ -1,8 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `ItzaMi - Rui Sousa blog`,
-    description: `I'm a self-taught front-end developer with a Master's Degree in Psychology. Here's my place where I share my ideas!`,
+    title: `ItzaMi - A web development blog with a lot more stuff in it`,
+    description: `Hi, I'm Rui and I'm a self-taught front-end developer with a Master's Degree in Psychology. Here's my place where I share my ideas!`,
     author: `Rui Sousa <rros00@gmail.com>`,
+    url: "https://www.itzami.com",
+    image: "src/icons/icon-144x144.png",
+    twitterUsername: "@HeyItzaMi",
   },
   plugins: [
     "gatsby-plugin-use-dark-mode",
