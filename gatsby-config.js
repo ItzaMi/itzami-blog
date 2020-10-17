@@ -1,8 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `ItzaMi - Rui Sousa blog and website`,
-    description: `I'm a self-taught front-end developer with a Master's Degree in Psychology. Here's my place where I share my ideas!`,
-    author: `@HeyItzaMi`,
+    title: `ItzaMi - A web development blog with a lot more stuff in it`,
+    description: `Hi, I'm Rui and I'm a self-taught front-end developer with a Master's Degree in Psychology. Here's my place where I share my ideas!`,
+    author: `Rui Sousa <rros00@gmail.com>`,
+    url: "https://www.itzami.com",
+    image: "src/icons/icon-144x144.png",
+    twitterUsername: "@HeyItzaMi",
   },
   plugins: [
     "gatsby-plugin-use-dark-mode",
@@ -26,7 +29,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/icons/icon-144x144.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-styled-components`,
