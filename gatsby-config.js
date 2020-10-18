@@ -4,7 +4,7 @@ module.exports = {
     description: `Hi, I'm Rui and I'm a self-taught front-end developer with a Master's Degree in Psychology. Here's my place where I share my ideas!`,
     author: `Rui Sousa <rros00@gmail.com>`,
     url: "https://www.itzami.com/",
-    image: "src/icons/icon-144x144.png",
+    image: "src/icons/icon-500x500.png",
     twitterUsername: "@HeyItzaMi",
   },
   plugins: [
@@ -29,7 +29,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/icons/icon-144x144.png`, // This path is relative to the root of the site.
+        icon: `src/icons/icon-500x500.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-styled-components`,
