@@ -38,7 +38,7 @@ function SEO({ description, lang, meta, title, image, url }) {
     <Helmet>
       <meta
         property="og:image"
-        content={`${site.siteMetadata.url}icons/icon-144x144.png`}
+        content={`${site.siteMetadata.url}icons/icon-500x500.png`}
       />
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
