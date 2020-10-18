@@ -8,6 +8,12 @@ module.exports = {
     twitterUsername: "@HeyItzaMi",
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        trackingId: `UA-180773821-1`,
+      },
+    },
     "gatsby-plugin-use-dark-mode",
     `gatsby-plugin-react-helmet`,
     {
