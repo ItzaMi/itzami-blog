@@ -44,6 +44,10 @@ body.light-mode {
   .shadowBox:hover {
     background-color: #454545e6;
   }
+
+  blockquote {
+    border-left: 3px solid #454545e6;
+  }
 }
 
 body.dark-mode {
@@ -84,6 +88,10 @@ body.dark-mode {
 
   .shadowBox:hover {
     background-color: #f4f4f4e6;
+  }
+
+  blockquote {
+    border-left: 3px solid #f4f4f4;
   }
 }
 
