@@ -48,6 +48,25 @@ const BlogContent = styled.div`
     text-decoration: none;
     font-weight: bold;
   }
+
+  img {
+    margin-bottom: 30px !important;
+    position: relative !important;
+  }
+
+  .gatsby-resp-image-link {
+    pointer-events: none;
+  }
+
+  .gatsby-resp-image-background-image {
+    padding-bottom: 0px !important;
+  }
+
+  blockquote {
+    font-weight: bold;
+    margin-left: 0px;
+    padding-left: 20px;
+  }
 `
 
 export default function BlogPost({ data }) {
