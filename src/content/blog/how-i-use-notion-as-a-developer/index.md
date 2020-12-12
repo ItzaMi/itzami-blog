@@ -1,5 +1,7 @@
 ---
 title: "How I use Notion as a developer"
+description: "I use Notion for a lot of stuff (activity tracker, money manager, diary) but it all started when I realized that I had way too many development blog posts saved in my browser's bookmarks."
+author: "Rui Sousa"
 date: "2020-12-08"
 type: post
 ---

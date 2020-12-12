@@ -80,7 +80,10 @@ const ContentWrapper = styled.div`
 
 const AboutPage = () => (
   <Container>
-    <SEO title="Blog" />
+    <SEO
+      title="About"
+      description="Hi, welcome! I'm Rui and I'm a self-taught front-end developer with a Master's degree in Psychology 👋"
+    />
     <NavBar />
     <Wrapper>
       <BottomContainer>
