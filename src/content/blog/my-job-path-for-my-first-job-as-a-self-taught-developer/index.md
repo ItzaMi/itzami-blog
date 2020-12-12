@@ -1,5 +1,7 @@
 ---
 title: "My job path for my first job as a self-taught developer"
+description: "This month marks my first 6 months as a front end developer and I'm glad I'm doing so at Coletiv. As a self-taught developer, I would like to share some reflections and thoughts on the job path!"
+author: "Rui Sousa"
 date: "2020-08-26"
 type: post
 ---

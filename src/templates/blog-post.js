@@ -75,8 +75,8 @@ export default function BlogPost({ data }) {
     <Container>
       <SEO
         title={post.frontmatter.title}
-        description={post.frontmatter.title}
-        author={post.frontmatter.title}
+        description={post.frontmatter.description}
+        author={post.frontmatter.author}
       />
       <NavBar type="small" />
       <BlogContainer>
@@ -94,6 +94,8 @@ export const query = graphql`
       html
       frontmatter {
         title
+        description
+        author
       }
     }
   }
