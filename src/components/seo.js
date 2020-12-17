@@ -16,6 +16,8 @@ const SEO = ({ title, description, image, article }) => {
     twitterUsername,
   } = site.siteMetadata
 
+  const defaultImage = "/icon-500x500.png"
+
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
@@ -62,14 +64,12 @@ export default SEO
 SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  defaultImage: PropTypes.string,
   article: PropTypes.bool,
 }
 
 SEO.defaultProps = {
   title: null,
   description: null,
-  defaultImage: null,
   article: false,
 }
 
@@ -80,7 +80,6 @@ const query = graphql`
         defaultTitle: title
         defaultDescription: description
         siteUrl: url
-        defaultImage: defaultImage
         twitterUsername
       }
     }
