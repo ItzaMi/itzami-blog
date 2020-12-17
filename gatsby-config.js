@@ -4,7 +4,7 @@ module.exports = {
     description: `Hi, I'm Rui and I'm a self-taught front-end developer with a Master's Degree in Psychology. Here's my place where I share my ideas!`,
     author: `Rui Sousa <rros00@gmail.com>`,
     url: "https://www.itzami.com/",
-    image: "static/icon-500x500.png",
+    image: "icons/icon-512x512.png",
     twitterUsername: "@HeyItzaMi",
   },
   plugins: [
