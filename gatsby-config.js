@@ -3,8 +3,8 @@ module.exports = {
     title: `ItzaMi - A web development blog with a lot more stuff in it`,
     description: `Hi, I'm Rui and I'm a self-taught front-end developer with a Master's Degree in Psychology. Here's my place where I share my ideas!`,
     author: `Rui Sousa <rros00@gmail.com>`,
-    url: "https://www.itzami.com",
-    image: "/icons/icon-500x500.png",
+    url: "https://www.itzami.com/",
+    image: "icons/icon-500x500.png",
     twitterUsername: "@HeyItzaMi",
   },
   plugins: [
