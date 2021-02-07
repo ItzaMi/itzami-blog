@@ -26,6 +26,10 @@ const BlogContainer = styled.div`
     font-size: 3.5rem;
   }
 
+  p {
+    margin-bottom: 15px;
+  }
+
   @media (max-width: 415px) {
     width: 90%;
     margin: 80px 20px 20px;
