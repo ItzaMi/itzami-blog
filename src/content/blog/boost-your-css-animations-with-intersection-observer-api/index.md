@@ -10,19 +10,19 @@ CSS animations can be a pain in the 🍑, and what's even worst is to trigger th
 
 ## Presenting: Intersection Observer API
 
-*Before starting, if ou need a refresher on what's an API, [this](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction) is a good place to get info on it*
+*Before starting, if you need a refresher on what's an API, [this](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction) is a good place to get info on it*
 
-You may think that I'm out of my mind for suggesting that you should use an API for animating CSS but hear me out... [GitHub](https://github.blog/2021-01-29-making-githubs-new-homepage-fast-and-performant/) uses it to make their homepage more performant and faster.
+You may think that I'm out of my mind for suggesting that you should use an API for animating CSS but hear me out... [GitHub](https://github.blog/2021-01-29-making-githubs-new-homepage-fast-and-performant/) uses it to make their homepage more performant and faster so you know it must be good!
 
-When we usually want to check an element's position in the window we might end up using stuff like `elem.clientTop`, `elem.offsetTop` or even `elem.getBoundingClientRect()` but the truth is that this properties/methods will trigger the browser to calculate the required style and layout (check the whole list of properties that target this and a further explanation [here](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)) which creates a performance bottleneck.
+When we usually want to check an element's position in the window we might end up using stuff like `elem.clientTop`, `elem.offsetTop` or even `elem.getBoundingClientRect()` but the truth is that these properties/methods will trigger the browser to calculate the required style and layout (check the whole list of properties that target this and a further explanation [here](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)) which creates a performance bottleneck.
 
-A way to circunvent this is by using the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), which, according to the MDN documentation, 'provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.'. So, basically, we'll just monitor if an element will enter/exit another element/the viewport and that's way easier for a browser to process.
+A way to circunvent this is by using the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), which, according to the MDN documentation, 'provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.'. So, basically, we'll just monitor if an element will enter/exit another element/the viewport and that's way easier for the browser to process.
 
 ## So... How do you do it?
 
 The [IntersectionObserver interface](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver) can be created very easily and all you have to do is to pass a callback to it and some options. The **callback** is what decides what will happen to the list of *IntersectionObserverEntry* objects and the **options** allow you to control the circumstances in which the *callback* will be called (please refer to the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) for full details on this).
 
-For example purposes only, we'll not define our **options** (which will make them adopt some default values) and we'll simply work with our **callback**, so our initial setup would be somehting like this:
+For example purposes only, we'll not define our **options** (which will make them adopt some default values) and we'll simply work with our **callback**, so our initial setup would be something like this:
 
 ```javascript
 let expansionObserver = new IntersectionObserver((entries) => {
@@ -36,7 +36,7 @@ let expansionObserver = new IntersectionObserver((entries) => {
 });
 ```
 
-Now that we have our *expansionObserver*, we need to grab the elements that we want to animate. For this we'll use `document.querySelectorAll()` and we'll grab all the elements with the class `.expand`.
+Now that we have our *expansionObserver*, we need to grab the elements that we want to animate. For this we'll use `document.querySelectorAll()` and we'll get all the elements with the class `.expand`.
 
 So, on our HTML it would look like this:
 ```html
@@ -50,12 +50,12 @@ So, on our HTML it would look like this:
 </body>
 ```
 
-And our JavaScript like this:
+And our JavaScript would look like this:
 ```javascript
 const elementsToExpand = document.querySelectorAll(".expand");
 ```
 
-After this, we need to tell the `IntersectionObserver` that we want to `observe` this elements, and since we're using `querySelectorAll()` we need to iterate `elementsToExpand` and we'll use a `forEach()` for it.
+After this, we need to tell the `IntersectionObserver` that we want to `observe` these elements, and since we're using `querySelectorAll()` we need to loop over `elementsToExpand` and we'll use a `forEach()` for it.
 
 ```javascript
 elementsToExpand.forEach((element) => {
@@ -63,7 +63,7 @@ elementsToExpand.forEach((element) => {
 });
 ```
 
-To wrap up our JavaScript part we need to fill the `if/else` statement we wrote on our callback to tell it what's going to happen, that means, we'll style the element with our animation properties.
+To finish our JavaScript part, we need to fill the `if/else` statement we wrote on our callback. Here we'll want to style our `elementsToExpand` with the animation that they should have like so:
 
 ```javascript
 let expansionObserver = new IntersectionObserver((entries) => {
@@ -77,7 +77,7 @@ let expansionObserver = new IntersectionObserver((entries) => {
 });
 ```
 
-So, this is the whole behaviour that you have to recreate and now all we have to do is to define in our CSS this `expansion` animation like so:
+So, this is the whole behaviour that you have to recreate and now all we have to do is to define in our CSS this `expansion` animation:
 ```css
 @keyframes expansion {
   from {
