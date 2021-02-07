@@ -37,6 +37,14 @@ module.exports = {
               maxWidth: 1000,
             },
           },
+          {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              terminal: 'carbon',
+              theme: 'material',
+              lineNumbers: true,
+            }
+          },
         ],
       },
     },
