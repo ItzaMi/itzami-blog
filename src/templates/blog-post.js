@@ -1,10 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 
 import SEO from "../components/seo"
 import NavBar from "../components/NavBar"
 import SocialLinks from "../components/SocialLinks"
+
+deckDeckGoHighlightElement();
 
 const Container = styled.div`
   display: flex;
