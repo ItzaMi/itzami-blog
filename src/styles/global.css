@@ -52,6 +52,11 @@ body.light-mode blockquote {
   border-left: 3px solid #454545e6;
 }
 
+body.light-mode code {
+  background-color: #454545;
+  color: #f4f4f4;
+}
+
 body.dark-mode {
   background-color: #454545;
   color: #f4f4f4;
@@ -100,6 +105,11 @@ body.dark-mode blockquote {
   border-left: 3px solid #f4f4f4;
 }
 
+body.dark-mode code {
+  background-color: #f4f4f4;
+  color: #454545;
+}
+
 .dark-mode-toggle > button {
   background-color: #454545;
   border: 0px;
@@ -138,6 +148,11 @@ h6 {
 p,
 ol {
   line-height: 32px;
+}
+
+code {
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .socialMedia {
