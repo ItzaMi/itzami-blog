@@ -16,7 +16,7 @@ You may think that I'm out of my mind for suggesting that you should use an API 
 
 When we usually want to check an element's position in the window we might end up using stuff like `elem.clientTop`, `elem.offsetTop` or even `elem.getBoundingClientRect()` but the truth is that these properties/methods will trigger the browser to calculate the required style and layout (check the whole list of properties that target this and a further explanation [here](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)) which creates a performance bottleneck.
 
-A way to circunvent this is by using the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), which, according to the MDN documentation, 'provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.'. So, basically, we'll just monitor if an element will enter/exit another element/the viewport and that's way easier for the browser to process.
+A way to circumvent this is by using the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), which, according to the MDN documentation, 'provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.'. So, basically, we'll just monitor if an element will enter/exit another element/the viewport and that's way easier for the browser to process.
 
 ## So... How do you do it?
 
