@@ -7,7 +7,7 @@ import { useStaticQuery, graphql } from "gatsby"
 /** When in doubt, check
  * https://www.gatsbyjs.com/docs/add-seo-component/
  */
-const SEO = ({ title, description, image, article }) => {
+const Seo = ({ title, description, image, article }) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
 
@@ -19,7 +19,7 @@ const SEO = ({ title, description, image, article }) => {
     twitterUsername,
   } = site.siteMetadata
 
-  const seo = {
+  const seoFields = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
@@ -27,21 +27,21 @@ const SEO = ({ title, description, image, article }) => {
   }
 
   return (
-    <Helmet title={seo.title}>
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
+    <Helmet title={seoFields.title}>
+      <meta name="description" content={seoFields.description} />
+      <meta name="image" content={seoFields.image} />
 
-      {seo.url && <meta property="og:url" content={seo.url} />}
+      {seoFields.url && <meta property="og:url" content={seoFields.url} />}
 
       {(article ? true : null) && <meta property="og:type" content="article" />}
 
-      {seo.title && <meta property="og:title" content={seo.title} />}
+      {seoFields.title && <meta property="og:title" content={seoFields.title} />}
 
-      {seo.description && (
-        <meta property="og:description" content={seo.description} />
+      {seoFields.description && (
+        <meta property="og:description" content={seoFields.description} />
       )}
 
-      {seo.image && <meta property="og:image" content={seo.image} />}
+      {seoFields.image && <meta property="og:image" content={seoFields.image} />}
 
       <meta name="twitter:card" content="summary" />
 
@@ -49,27 +49,27 @@ const SEO = ({ title, description, image, article }) => {
         <meta name="twitter:creator" content={twitterUsername} />
       )}
 
-      {seo.title && <meta name="twitter:title" content={seo.title} />}
+      {seoFields.title && <meta name="twitter:title" content={seoFields.title} />}
 
-      {seo.description && (
-        <meta name="twitter:description" content={seo.description} />
+      {seoFields.description && (
+        <meta name="twitter:description" content={seoFields.description} />
       )}
 
-      {seo.image && <meta name="twitter:image" content={seo.image} />}
+      {seoFields.image && <meta name="twitter:image" content={seoFields.image} />}
     </Helmet>
   )
 }
 
-export default SEO
+export default Seo
 
-SEO.propTypes = {
+Seo.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
   article: PropTypes.bool,
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   title: null,
   description: null,
   image: null,
@@ -77,7 +77,7 @@ SEO.defaultProps = {
 }
 
 const query = graphql`
-  query SEO {
+  query Seo {
     site {
       siteMetadata {
         defaultTitle: title

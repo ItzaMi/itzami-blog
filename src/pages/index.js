@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 
 import JSONData from "../content/homepage"
 
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 import NavBar from "../components/NavBar"
 import HeroBlogPost from "../components/HeroBlogPost"
 import SocialLinks from "../components/SocialLinks"
@@ -45,7 +45,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Container>
-      <SEO
+      <Seo
         title={data.site.siteMetadata.title}
         description={data.site.siteMetadata.description}
         author={data.site.siteMetadata.author}

@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 
 import JSONData from "../content/blog"
 
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 import NavBar from "../components/NavBar"
 
 const Container = styled.div`
@@ -105,7 +105,7 @@ const BlogPostExcerpt = styled.p`
 
 const Blog = ({ data }) => (
   <Container>
-    <SEO title="Blog" />
+    <Seo title="Blog" />
     <NavBar />
     <Wrapper>
       <BottomContainer>
