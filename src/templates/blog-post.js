@@ -1,13 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
-import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
 
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 import NavBar from "../components/NavBar"
 import SocialLinks from "../components/SocialLinks"
 
-deckDeckGoHighlightElement();
+deckDeckGoHighlightElement()
 
 const Container = styled.div`
   display: flex;
@@ -80,7 +80,7 @@ export default function BlogPost({ data }) {
   const post = data.markdownRemark
   return (
     <Container>
-      <SEO
+      <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description}
         author={post.frontmatter.author}
@@ -89,7 +89,7 @@ export default function BlogPost({ data }) {
       <BlogContainer>
         <h1>{post.frontmatter.title}</h1>
         <BlogContent dangerouslySetInnerHTML={{ __html: post.html }} />
-        <SocialLinks spacing />
+        <SocialLinks spacing="true" />
       </BlogContainer>
     </Container>
   )

@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 
 import JSONData from "../content/about"
 
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 import NavBar from "../components/NavBar"
 import SocialLinks from "../components/SocialLinks"
 
@@ -80,7 +80,7 @@ const ContentWrapper = styled.div`
 
 const AboutPage = () => (
   <Container>
-    <SEO
+    <Seo
       title="About"
       description="Hi, welcome! I'm Rui and I'm a self-taught front-end developer with a Master's degree in Psychology 👋"
     />
@@ -93,7 +93,7 @@ const AboutPage = () => (
         {JSONData.content.map((line, index) => {
           return <p key={index} dangerouslySetInnerHTML={{ __html: line }} />
         })}
-        <SocialLinks spacing />
+        <SocialLinks spacing="true" />
       </ContentWrapper>
     </Wrapper>
   </Container>
