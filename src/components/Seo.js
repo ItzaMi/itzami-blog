@@ -30,6 +30,7 @@ const Seo = ({ title, description, image, article }) => {
     <Helmet title={seoFields.title}>
       <meta name="description" content={seoFields.description} />
       <meta name="image" content={seoFields.image} />
+      {console.log(seoFields.image)}
 
       {seoFields.url && <meta property="og:url" content={seoFields.url} />}
 
