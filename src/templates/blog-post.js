@@ -84,6 +84,7 @@ export default function BlogPost({ data }) {
         title={post.frontmatter.title}
         description={post.frontmatter.description}
         author={post.frontmatter.author}
+        image={post.frontmatter.image}
       />
       <NavBar type="small" />
       <BlogContainer>
@@ -96,13 +97,20 @@ export default function BlogPost({ data }) {
 }
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         title
         description
         author
+        image {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
