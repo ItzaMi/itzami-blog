@@ -4,7 +4,7 @@ module.exports = {
     description: `Hi, I'm Rui and I'm a self-taught front-end developer with a Master's Degree in Psychology. Here's my place where I share my ideas!`,
     author: `Rui Sousa <rros00@gmail.com>`,
     url: "https://www.itzami.com/",
-    image: "icons/icon-512x512.png",
+    image: "images/itzami-image.png",
     twitterUsername: "@HeyItzaMi",
   },
   plugins: [
@@ -40,10 +40,10 @@ module.exports = {
           {
             resolve: `gatsby-remark-highlight-code`,
             options: {
-              terminal: 'carbon',
-              theme: 'material',
+              terminal: "carbon",
+              theme: "material",
               lineNumbers: true,
-            }
+            },
           },
         ],
       },
