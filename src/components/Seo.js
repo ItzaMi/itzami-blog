@@ -35,27 +35,35 @@ const Seo = ({ title, description, image, article }) => {
 
       {(article ? true : null) && <meta property="og:type" content="article" />}
 
-      {seoFields.title && <meta property="og:title" content={seoFields.title} />}
+      {seoFields.title && (
+        <meta property="og:title" content={seoFields.title} />
+      )}
 
       {seoFields.description && (
         <meta property="og:description" content={seoFields.description} />
       )}
 
-      {seoFields.image && <meta property="og:image" content={seoFields.image} />}
+      {seoFields.image && (
+        <meta property="og:image" content={seoFields.image} />
+      )}
 
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
 
       {twitterUsername && (
         <meta name="twitter:creator" content={twitterUsername} />
       )}
 
-      {seoFields.title && <meta name="twitter:title" content={seoFields.title} />}
+      {seoFields.title && (
+        <meta name="twitter:title" content={seoFields.title} />
+      )}
 
       {seoFields.description && (
         <meta name="twitter:description" content={seoFields.description} />
       )}
 
-      {seoFields.image && <meta name="twitter:image" content={seoFields.image} />}
+      {seoFields.image && (
+        <meta name="twitter:image" content={seoFields.image} />
+      )}
     </Helmet>
   )
 }
