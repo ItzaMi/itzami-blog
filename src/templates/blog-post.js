@@ -84,7 +84,7 @@ export default function BlogPost({ data }) {
         title={post.frontmatter.title}
         description={post.frontmatter.description}
         author={post.frontmatter.author}
-        image={post.frontmatter.image.childImageSharp.fluid}
+        image={post.frontmatter.image.childImageSharp.fluid.src}
       />
       <NavBar type="small" />
       <BlogContainer>
