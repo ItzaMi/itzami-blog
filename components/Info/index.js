@@ -5,10 +5,10 @@ import Twitter from "../Icons/Twitter"
 
 import css from "./info.module.css"
 
-const Info = () => {
+const Info = ({ page }) => {
   return (
     <div className={css.host}>
-      <h1 className={css.title}>Homepage</h1>
+      <h1 className={css.title}>{page}</h1>
       <div className={css.iconContainer}>
         <a
           href="https://github.com/itzami"
