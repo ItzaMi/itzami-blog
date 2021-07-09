@@ -11,6 +11,7 @@
   font-size: 50px;
   line-height: 90%;
   color: bone;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 1500px) {
