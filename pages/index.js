@@ -6,7 +6,7 @@ import Info from "../components/Info"
 
 import css from "../styles/index.module.css"
 
-export default function Home() {
+const Home = () => {
   return (
     <div className={css.host}>
       <Head>
@@ -19,7 +19,7 @@ export default function Home() {
       </Head>
       <Logo />
       <Nav />
-      <Info />
+      <Info page="Homepage" />
       <div className={css.content}>
         <div className={css.descriptionContainer}>
           <p>Hey, I’m Rui 👋</p>
@@ -42,3 +42,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home
