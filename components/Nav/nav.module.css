@@ -1,0 +1,39 @@
+@value colors: '../../styles/colors.css';
+@value bone, indigo from colors;
+
+.host {
+  width: 100%;
+
+  padding-right: 90px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.link {
+  font-size: 40px;
+  font-weight: bold;
+
+  color: indigo;
+  -webkit-text-stroke: 2px bone;
+}
+
+.link:last-of-type {
+  margin-left: 90px;
+}
+
+@media screen and (max-width: 1500px) {
+  .host {
+    padding-right: 60px;
+  }
+
+  .link {
+    font-size: 30px;
+    -webkit-text-stroke: 1px bone;
+  }
+
+  .link:last-of-type {
+    margin-left: 60px;
+  }
+}

@@ -1,0 +1,22 @@
+@value colors: '../../styles/colors.css';
+@value bone from colors;
+
+.host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  font-size: 50px;
+  line-height: 90%;
+  color: bone;
+}
+
+@media screen and (max-width: 1500px) {
+  .name {
+    font-size: 35px;
+    line-height: 90%;
+    color: bone;
+  }
+}
