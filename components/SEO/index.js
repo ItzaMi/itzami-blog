@@ -3,7 +3,6 @@ import Head from "next/head"
 const SEO = ({ title, description, image }) => {
   const modifiedImageUrl = "https:" + image
 
-  console.log(modifiedImageUrl)
   return (
     <Head>
       <meta property="og:type" content="article" />
