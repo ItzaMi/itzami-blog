@@ -69,7 +69,7 @@ const Slug = ({ post }) => {
       <SEO
         title={post.fields.title}
         description={post.fields.description}
-        image={`https: + ${post.fields.thumbnail.fields.file.url}`}
+        image={post.fields.thumbnail.fields.file.url}
       />
       <Logo />
       <Nav />
