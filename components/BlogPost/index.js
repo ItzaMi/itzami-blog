@@ -2,9 +2,13 @@ import ReactMarkdown from "react-markdown"
 
 import CodeBlock from "../CodeBlock"
 
+import css from "./blog-post.module.css"
+
 const BlogPost = ({ post }) => {
   return (
-    <ReactMarkdown components={CodeBlock}>{post.fields.markdown}</ReactMarkdown>
+    <ReactMarkdown components={CodeBlock} className={css.host}>
+      {post.fields.markdown}
+    </ReactMarkdown>
   )
 }
 
