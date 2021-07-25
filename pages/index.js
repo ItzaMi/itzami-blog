@@ -7,8 +7,6 @@ import Nav from "../components/Nav"
 import Info from "../components/Info"
 import SEO from "../components/SEO"
 
-import Thumbnail from "../images/homepageThumbnail.jpg"
-
 import css from "../styles/index.module.css"
 
 export async function getStaticProps() {
@@ -36,7 +34,7 @@ const Home = ({ blogPosts }) => {
       <SEO
         title="ItzaMi - The blog website of Rui Sousa"
         description="I’m a self-taught front-end developer with a Master’s Degree in Psychology and a knack for design. And this is where I share my experience and knowledge with the internet"
-        image={Thumbnail.src}
+        image="/assets/homepageThumbnail.jpg"
       />
       <Logo />
       <Nav />
