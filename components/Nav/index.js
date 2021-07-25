@@ -3,11 +3,11 @@ import { useRouter } from "next/router"
 
 import css from "./nav.module.css"
 
-const Nav = () => {
+const Nav = ({ className }) => {
   const router = useRouter()
 
   return (
-    <div className={css.host}>
+    <div className={`${css.host} ${className}`}>
       <Link href="/blog">
         <a
           className={`${css.link} ${
