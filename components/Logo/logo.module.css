@@ -21,3 +21,9 @@
     color: indigo;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .name {
+    font-size: 28px;
+  }
+}
