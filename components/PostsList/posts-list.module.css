@@ -2,7 +2,7 @@
 @value bone, indigo from colors;
 
 .host {
-  background-color: indigo !important;
+  background-color: bone !important;
   padding: 40px;
 
   display: grid;
@@ -17,22 +17,22 @@
   padding: 20px;
   position: relative;
 
-  background-image: linear-gradient(135deg, indigo 50%, bone 50%);
+  background-image: linear-gradient(135deg, bone 50%, indigo 50%);
   background-size: 300% 100%;
   background-position: left bottom;
 
-  color: bone;
+  color: indigo;
   text-decoration: none;
 
   cursor: pointer;
 
-  border: 2px solid bone;
+  border: 2px solid indigo;
   transition: all 0.5s ease-in-out;
 }
 
 .postContainer:hover {
   background-position: right top;
-  color: indigo;
+  color: bone;
 }
 
 .postTitle {

@@ -63,7 +63,7 @@
 }
 
 .host a {
-  color: bone;
+  color: indigo;
   font-weight: bold;
   text-decoration: none;
   transition: opacity 0.2s ease-in-out;
@@ -84,8 +84,12 @@
 .host code {
   padding: 0 4px;
 
-  background: bone;
-  color: indigo;
+  background: indigo;
+  color: bone;
 
   border-radius: 4px;
+}
+
+.host pre {
+  margin-bottom: 20px;
 }

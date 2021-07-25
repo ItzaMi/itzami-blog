@@ -1,5 +1,5 @@
 @value colors: './colors.css';
-@value bone, indigo from colors;
+@value bone from colors;
 
 .host {
   width: 100vw;
@@ -12,7 +12,7 @@
 }
 
 .host div {
-  background-color: indigo;
+  background-color: bone;
 }
 
 .descriptionContainer {

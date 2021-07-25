@@ -1,5 +1,5 @@
 @value colors: '../../styles/colors.css';
-@value bone from colors;
+@value indigo from colors;
 
 .host {
   display: flex;
@@ -10,7 +10,7 @@
 .name {
   font-size: 50px;
   line-height: 90%;
-  color: bone;
+  color: indigo;
   text-decoration: none;
 }
 
@@ -18,6 +18,6 @@
   .name {
     font-size: 35px;
     line-height: 90%;
-    color: bone;
+    color: indigo;
   }
 }

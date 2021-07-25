@@ -12,7 +12,7 @@
 }
 
 .host div {
-  background-color: indigo;
+  background-color: bone;
 }
 
 .content {
@@ -20,11 +20,11 @@
   grid-template-columns: auto 35%;
   grid-gap: 2px;
 
-  background-color: bone !important;
+  background-color: indigo !important;
 }
 
 .content div {
-  background-color: indigo;
+  background-color: bone;
 }
 
 .descriptionContainer {
