@@ -10,14 +10,16 @@ const PostsList = ({ posts = [] }) => {
 
   return (
     <div className={css.host}>
-      {sortedPostsPerDate.map(post => (
-        <Link key={post.sys.id} href={`/blog/${post.fields.slug}`}>
-          <a className={css.postContainer}>
-            <p className={css.postTitle}>{post.fields.title}</p>
-            <p className={css.postDescription}>{post.fields.description}</p>
-          </a>
-        </Link>
-      ))}
+      <div className={css.wrapper}>
+        {sortedPostsPerDate.map(post => (
+          <Link key={post.sys.id} href={`/blog/${post.fields.slug}`}>
+            <a className={css.postContainer}>
+              <p className={css.postTitle}>{post.fields.title}</p>
+              <p className={css.postDescription}>{post.fields.description}</p>
+            </a>
+          </Link>
+        ))}
+      </div>
     </div>
   )
 }

@@ -3,7 +3,12 @@
 
 .host {
   background-color: bone !important;
-  padding: 40px;
+  /* margin: 40px; */
+}
+
+.wrapper {
+  background-color: bone !important;
+  margin: 40px;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -52,4 +57,16 @@
 .postKeepReading {
   font-size: 12px;
   font-weight: 400;
+}
+
+@media screen and (max-width: 1025px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
