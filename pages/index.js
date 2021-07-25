@@ -58,9 +58,7 @@ const Home = ({ blogPosts }) => {
         <Link href={`/blog/${latestPost.fields.slug}`}>
           <div className={css.postContainer}>
             <p className={css.postCTA}>Read my latest post</p>
-            <p className={css.postTitle}>
-              How to build an accordion with JavaScript
-            </p>
+            <p className={css.postTitle}>{latestPost.fields.title}</p>
           </div>
         </Link>
       </div>
