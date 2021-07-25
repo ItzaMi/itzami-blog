@@ -1,0 +1,51 @@
+@value colors: './colors.css';
+@value bone, indigo from colors;
+
+.host {
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 150px auto;
+  grid-template-rows: 150px auto;
+  grid-gap: 2px;
+}
+
+.host div {
+  background-color: bone;
+}
+
+.content {
+  background-color: bone !important;
+
+  padding: 45px 200px;
+
+  overflow-y: scroll;
+}
+
+.content p {
+  margin-bottom: 20px;
+
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+.content p a {
+  color: indigo;
+  font-weight: 700;
+  text-decoration-color: transparent;
+
+  transition: text-decoration-color 0.5s ease-in-out;
+}
+
+.content p a:hover {
+  text-decoration-color: indigo;
+}
+
+@media screen and (max-width: 1500px) {
+  .host {
+    grid-template-columns: 100px auto;
+    grid-template-rows: 100px auto;
+  }
+}
