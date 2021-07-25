@@ -49,3 +49,9 @@
     grid-template-rows: 100px auto;
   }
 }
+
+@media screen and (max-width: 1025px) {
+  .content {
+    padding: 100px;
+  }
+}
