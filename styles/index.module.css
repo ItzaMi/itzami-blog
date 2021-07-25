@@ -36,6 +36,10 @@
   margin-bottom: 20px;
 }
 
+.descriptionContainer p:last-of-type {
+  margin-bottom: 0px;
+}
+
 .postContainer {
   padding: 60px;
 
@@ -103,5 +107,52 @@
   .content {
     grid-template-columns: 100%;
     grid-template-rows: auto 35%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .host {
+    grid-template-columns: 75px auto;
+    grid-template-rows: 75px auto;
+  }
+
+  .content {
+    grid-template-rows: auto 30%;
+  }
+
+  .descriptionContainer {
+    padding: 30px;
+  }
+
+  .descriptionContainer p {
+    font-size: 21px;
+  }
+
+  .postCTA {
+    margin-bottom: 16px;
+  }
+
+  .postTitle {
+    font-size: 24px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .content {
+    grid-template-rows: auto;
+  }
+
+  .descriptionContainer p {
+    font-size: 18px;
+  }
+
+  .postCTA {
+    font-size: 16px;
+  }
+
+  .postTitle {
+    font-size: 18px;
+    line-height: 30px;
   }
 }
