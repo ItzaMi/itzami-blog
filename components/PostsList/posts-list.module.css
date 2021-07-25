@@ -3,7 +3,6 @@
 
 .host {
   background-color: bone !important;
-  /* margin: 40px; */
 }
 
 .wrapper {
@@ -16,6 +15,13 @@
   grid-gap: 20px;
 
   overflow-y: scroll;
+
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 
 .postContainer {
@@ -68,5 +74,38 @@
 @media screen and (max-width: 769px) {
   .wrapper {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .host {
+    grid-template-columns: 75px auto;
+    grid-template-rows: 75px auto;
+
+    overflow-y: scroll;
+
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+  }
+
+  .host::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
+
+  .wrapper {
+    margin: 30px;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .postContainer {
+    background-size: 400% 100%;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .postContainer {
+    background-size: 500% 100%;
   }
 }
