@@ -24,6 +24,10 @@
   margin-left: 90px;
 }
 
+.active {
+  color: indigo;
+}
+
 @media screen and (max-width: 1500px) {
   .host {
     padding-right: 60px;
