@@ -15,35 +15,6 @@
   background-color: bone;
 }
 
-.descriptionContainer {
-  padding: 90px;
-}
-
-.descriptionContainer p {
-  font-size: 37px;
-  margin-bottom: 20px;
-}
-
-.postContainer {
-  padding: 60px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.postCTA {
-  font-size: 25px;
-  margin-bottom: 20px;
-}
-
-.postTitle {
-  margin: 0px;
-
-  font-size: 50px;
-  line-height: 80px;
-}
-
 @media screen and (max-width: 1500px) {
   .host {
     grid-template-columns: 100px auto;
@@ -70,5 +41,12 @@
   .postTitle {
     font-size: 35px;
     line-height: 65px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .host {
+    grid-template-columns: 75px auto;
+    grid-template-rows: 75px auto;
   }
 }
