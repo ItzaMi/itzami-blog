@@ -55,3 +55,19 @@
     padding: 100px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .host {
+    grid-template-columns: 75px auto;
+    grid-template-rows: 75px auto;
+  }
+
+  .content {
+    padding: 30px;
+  }
+
+  .content p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
