@@ -33,3 +33,34 @@
     padding: 100px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .host {
+    /* grid-template-columns: 75px auto;
+    grid-template-rows: 75px auto; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2px;
+
+    overflow-y: scroll;
+
+    height: 100vh;
+  }
+
+  .logo {
+    width: 75px;
+    height: 75px;
+  }
+
+  .nav {
+    width: calc(100% - 75px - 2px);
+    height: 75px;
+  }
+
+  .content {
+    width: 100%;
+    height: calc(100% - 75px - 2px);
+    padding: 30px;
+  }
+}
