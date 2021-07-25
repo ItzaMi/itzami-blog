@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { createClient } from "contentful"
 
 import Logo from "../../components/Logo"
@@ -64,6 +64,18 @@ export async function getStaticPaths() {
 }
 
 const Slug = ({ post }) => {
+  const [isWindowOnMobileScreen, setIsWindowOnMobileScreen] = useState(false)
+
+  const handleResize = () => {
+    if (window) {
+      setIsWindowOnMobileScreen(window.matchMedia("(max-width: 500px)").matches)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize)
+  }, [])
+
   return (
     <div className={css.host}>
       <SEO
@@ -71,9 +83,9 @@ const Slug = ({ post }) => {
         description={post.fields.description}
         image={post.fields.thumbnail.fields.file.url}
       />
-      <Logo />
-      <Nav />
-      <Info page="Blog" />
+      <Logo className={css.logo} />
+      <Nav className={css.nav} />
+      {!isWindowOnMobileScreen && <Info page="Blog" />}
       <div className={css.content}>
         <BlogPost post={post} />
       </div>
