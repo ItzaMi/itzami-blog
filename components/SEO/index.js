@@ -1,7 +1,7 @@
 import Head from "next/head"
 
 const SEO = ({ title, description, image }) => {
-  const modifiedImageUrl = image
+  const modifiedImageUrl = "https:" + image
 
   return (
     <Head>
