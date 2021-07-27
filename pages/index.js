@@ -1,4 +1,3 @@
-import Head from "next/head"
 import Link from "next/link"
 import { createClient } from "contentful"
 
@@ -29,12 +28,20 @@ const Home = ({ blogPosts }) => {
     a.fields.date > b.fields.date ? a : b
   )
 
+  let hostname
+
+  if (typeof window !== "undefined") {
+    hostname = window.location.hostname
+  }
+
+  const metadataImagePath = hostname + "/images/homepageThumbnail.jpg"
+
   return (
     <div className={css.host}>
       <SEO
         title="ItzaMi - The blog website of Rui Sousa"
         description="I’m a self-taught front-end developer with a Master’s Degree in Psychology and a knack for design. And this is where I share my experience and knowledge with the internet"
-        image="/images/homepageThumbnail.jpg"
+        image={metadataImagePath}
       />
       <Logo />
       <Nav />
