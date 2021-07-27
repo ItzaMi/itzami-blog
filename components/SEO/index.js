@@ -13,7 +13,7 @@ const SEO = ({ title, description, image }) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:site" content="@heyitzami" />
-      <meta name="twitter:image" content={modifiedImageUrl} />
+      <meta name="twitter:image" content={image} />
       <meta name="twitter:creator" content="@heyitzami" />
     </Head>
   )
