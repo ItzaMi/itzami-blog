@@ -4,6 +4,7 @@ import PostsList from "../components/PostsList"
 import Logo from "../components/Logo"
 import Nav from "../components/Nav"
 import Info from "../components/Info"
+import SEO from "../components/SEO"
 
 import css from "../styles/blog.module.css"
 
@@ -29,7 +30,7 @@ const Blog = ({ blogPosts }) => {
     hostname = window.location.hostname
   }
 
-  const metadataImagePath = hostname + "/images/blogThumbnail.jpg"
+  const metadataImagePath = "https://" + hostname + "/images/blogThumbnail.jpg"
 
   return (
     <div className={css.host}>

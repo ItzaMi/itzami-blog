@@ -34,7 +34,8 @@ const Home = ({ blogPosts }) => {
     hostname = window.location.hostname
   }
 
-  const metadataImagePath = hostname + "/images/homepageThumbnail.jpg"
+  const metadataImagePath =
+    "https://" + hostname + "/images/homepageThumbnail.jpg"
 
   return (
     <div className={css.host}>

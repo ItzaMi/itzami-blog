@@ -1,8 +1,7 @@
-import Head from "next/head"
-
 import Logo from "../components/Logo"
 import Nav from "../components/Nav"
 import Info from "../components/Info"
+import SEO from "../components/SEO"
 
 import content from "../content/about.content.json"
 
@@ -15,7 +14,7 @@ export default function Home() {
     hostname = window.location.hostname
   }
 
-  const metadataImagePath = hostname + "/images/aboutThumbnail.jpg"
+  const metadataImagePath = "https://" + hostname + "/images/aboutThumbnail.jpg"
 
   return (
     <div className={css.host}>
