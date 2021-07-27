@@ -1,4 +1,3 @@
-import Head from "next/head"
 import { createClient } from "contentful"
 
 import PostsList from "../components/PostsList"
@@ -24,16 +23,21 @@ export async function getStaticProps() {
 }
 
 const Blog = ({ blogPosts }) => {
+  let hostname
+
+  if (typeof window !== "undefined") {
+    hostname = window.location.hostname
+  }
+
+  const metadataImagePath = hostname + "/images/blogThumbnail.jpg"
+
   return (
     <div className={css.host}>
-      <Head>
-        <title>ItzaMi</title>
-        <meta
-          name="description"
-          content="ItzaMi - The blog website of Rui Sousa"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO
+        title="ItzaMi - Blog"
+        description="I’m a self-taught front-end developer with a Master’s Degree in Psychology and a knack for design. And this is where I share my experience and knowledge with the internet"
+        image={metadataImagePath}
+      />
       <Logo />
       <Nav />
       <Info page="Blog" />
