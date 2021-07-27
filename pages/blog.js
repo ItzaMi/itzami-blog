@@ -24,13 +24,8 @@ export async function getStaticProps() {
 }
 
 const Blog = ({ blogPosts }) => {
-  let hostname
-
-  if (typeof window !== "undefined") {
-    hostname = window.location.hostname
-  }
-
-  const metadataImagePath = "https://" + hostname + "/images/blogThumbnail.jpg"
+  const metadataImagePath =
+    "https://gallant-mirzakhani-9c74cb.netlify.app/images/blogThumbnail.jpg"
 
   return (
     <div className={css.host}>

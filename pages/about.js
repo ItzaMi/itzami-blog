@@ -8,13 +8,8 @@ import content from "../content/about.content.json"
 import css from "../styles/about.module.css"
 
 export default function Home() {
-  let hostname
-
-  if (typeof window !== "undefined") {
-    hostname = window.location.hostname
-  }
-
-  const metadataImagePath = "https://" + hostname + "/images/aboutThumbnail.jpg"
+  const metadataImagePath =
+    "https://gallant-mirzakhani-9c74cb.netlify.app/images/aboutThumbnail.jpg"
 
   return (
     <div className={css.host}>

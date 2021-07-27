@@ -28,14 +28,8 @@ const Home = ({ blogPosts }) => {
     a.fields.date > b.fields.date ? a : b
   )
 
-  let hostname
-
-  if (typeof window !== "undefined") {
-    hostname = window.location.hostname
-  }
-
   const metadataImagePath =
-    "https://" + hostname + "/images/homepageThumbnail.jpg"
+    "https://gallant-mirzakhani-9c74cb.netlify.app/images/homepageThumbnail.jpg"
 
   return (
     <div className={css.host}>
