@@ -65,6 +65,7 @@ export async function getStaticPaths() {
 
 const Slug = ({ post }) => {
   const [isWindowOnMobileScreen, setIsWindowOnMobileScreen] = useState(false)
+  const modifiedImageUrl = "https:" + post.fields.thumbnail.fields.file.url
 
   const handleResize = () => {
     if (window) {
@@ -81,7 +82,7 @@ const Slug = ({ post }) => {
       <SEO
         title={post.fields.title}
         description={post.fields.description}
-        image={post.fields.thumbnail.fields.file.url}
+        image={modifiedImageUrl}
       />
       <Logo className={css.logo} />
       <Nav className={css.nav} />
