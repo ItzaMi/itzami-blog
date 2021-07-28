@@ -53,8 +53,6 @@
 }
 
 .postDescription {
-  margin-bottom: 20px;
-
   font-size: 18px;
   font-weight: 400;
   line-height: 25px;
@@ -107,5 +105,17 @@
 @media screen and (max-width: 370px) {
   .postContainer {
     background-size: 500% 100%;
+  }
+
+  .postTitle {
+    margin-bottom: 16px;
+
+    font-size: 21px;
+  }
+
+  .postDescription {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
   }
 }
