@@ -41,7 +41,8 @@
   font-size: 16px;
 }
 
-.host p {
+.host p,
+.host em {
   margin-bottom: 20px;
 
   font-size: 22px;
@@ -92,4 +93,22 @@
 
 .host pre {
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .host p,
+  .host em,
+  .host code {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .host ul,
+  .host ol {
+    font-size: 18px;
+  }
+
+  .host li {
+    margin-bottom: 14px;
+  }
 }
