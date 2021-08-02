@@ -1,0 +1,79 @@
+@value colors: '../../styles/colors.css';
+@value bone, indigo from colors;
+
+.host {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 90px;
+}
+
+.title {
+  margin: 0;
+
+  font-size: 75px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  color: bone;
+  -webkit-text-stroke: 2px indigo;
+
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+
+  cursor: default;
+
+  -moz-transform: scale(-1, -1);
+  -o-transform: scale(-1, -1);
+  -webkit-transform: scale(-1, -1);
+  transform: scale(-1, -1);
+}
+
+.iconContainer {
+  width: 30px;
+}
+
+.iconContainer svg {
+  fill: indigo;
+  width: 30px;
+  height: 30px;
+
+  margin-bottom: 40px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.iconContainer svg:hover {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1500px) {
+  .host {
+    padding-top: 45px;
+  }
+
+  .title {
+    font-size: 35px;
+    -webkit-text-stroke: 1px indigo;
+  }
+
+  .iconContainer svg {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .host {
+    padding-top: 30px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}

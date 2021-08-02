@@ -1,0 +1,33 @@
+import Logo from "../components/Logo"
+import Nav from "../components/Nav"
+import Info from "../components/Info"
+import SEO from "../components/SEO"
+
+import content from "../content/about.content.json"
+
+import css from "../styles/about.module.css"
+
+export default function Home() {
+  const metadataImagePath =
+    "https://gallant-mirzakhani-9c74cb.netlify.app/images/aboutThumbnail.jpg"
+
+  return (
+    <div className={css.host}>
+      <SEO
+        title="ItzaMi - About "
+        description="I’m a self-taught front-end developer with a Master’s Degree in Psychology and a knack for design. And this is where I share my experience and knowledge with the internet"
+        image={metadataImagePath}
+      />
+      <Logo />
+      <Nav />
+      <Info page="About" />
+      <div className={css.content}>
+        {content.content.map((paragraph, index) => {
+          return (
+            <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+          )
+        })}
+      </div>
+    </div>
+  )
+}
