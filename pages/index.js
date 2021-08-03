@@ -28,8 +28,7 @@ const Home = ({ blogPosts }) => {
     a.fields.date > b.fields.date ? a : b
   )
 
-  const metadataImagePath =
-    "https://gallant-mirzakhani-9c74cb.netlify.app/images/homepageThumbnail.jpg"
+  const metadataImagePath = "https://itzami.com/images/homepageThumbnail.jpg"
 
   return (
     <div className={css.host}>

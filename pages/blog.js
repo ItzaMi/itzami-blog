@@ -24,8 +24,7 @@ export async function getStaticProps() {
 }
 
 const Blog = ({ blogPosts }) => {
-  const metadataImagePath =
-    "https://gallant-mirzakhani-9c74cb.netlify.app/images/blogThumbnail.jpg"
+  const metadataImagePath = "https://itzami.com/images/blogThumbnail.jpg"
 
   return (
     <div className={css.host}>

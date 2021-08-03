@@ -8,8 +8,7 @@ import content from "../content/about.content.json"
 import css from "../styles/about.module.css"
 
 export default function Home() {
-  const metadataImagePath =
-    "https://gallant-mirzakhani-9c74cb.netlify.app/images/aboutThumbnail.jpg"
+  const metadataImagePath = "https://itzami.com/images/aboutThumbnail.jpg"
 
   return (
     <div className={css.host}>
