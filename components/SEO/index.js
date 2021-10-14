@@ -3,6 +3,7 @@ import Head from "next/head"
 const SEO = ({ title, description, image }) => {
   return (
     <Head>
+      <title>{title}</title>
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       {/* <meta property="og:url" content="https://www.dgtlnk.com/blog/https/" /> */}
