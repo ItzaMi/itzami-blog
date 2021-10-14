@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className={css.host}>
       <SEO
-        title="ItzaMi - About "
+        title="ItzaMi - About"
         description="I’m a self-taught front-end developer with a Master’s Degree in Psychology and a knack for design. And this is where I share my experience and knowledge with the internet"
         image={metadataImagePath}
       />
