@@ -1,0 +1,11 @@
+.host {
+  padding: 125px 0px;
+}
+
+.postsWrapper {
+  max-width: 500px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
