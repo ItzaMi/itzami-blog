@@ -1,7 +1,6 @@
 import { FC } from 'react'
 
 import NavBar from '../NavBar'
-import Footer from '../Footer'
 
 import css from './layout.module.css'
 
@@ -14,7 +13,6 @@ const Layout: FC<Props> = ({ children }) => {
     <div className={css.host}>
       <NavBar />
       {children}
-      {/* <Footer /> */}
     </div>
   )
 }
