@@ -1,0 +1,52 @@
+.host {
+  position: fixed;
+  bottom: 30px;
+
+  padding: 10px;
+
+  background-color: hsla(0, 0%, 99%, 1);
+
+  max-width: 800px;
+  width: 100%;
+
+  border-radius: 10px;
+
+  box-shadow: rgba(149, 157, 165, 0.15) 0px 0px 20px;
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navLinksWrapper {
+  height: 100%;
+  display: flex;
+  gap: 4px;
+}
+
+.socialLinksWrapper {
+  height: 100%;
+
+  margin-right: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.socialLink {
+  text-decoration: none;
+
+  color: hsla(212, 8%, 62%, 1);
+  font-size: 12px;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+
+  transition: all 0.2s ease-in;
+}
+
+.socialLink:hover {
+  color: hsla(200, 22%, 13%, 1);
+}
