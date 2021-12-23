@@ -22,7 +22,7 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/index.tsx",
-    "pages/writing.tsx"
+    "pages/blog.tsx"
   ],
   "exclude": ["node_modules"]
 }
