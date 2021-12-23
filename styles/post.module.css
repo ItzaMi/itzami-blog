@@ -1,60 +1,9 @@
-@value colors: './colors.css';
-@value bone from colors;
-
 .host {
-  width: 100vw;
-  height: 100vh;
-
-  display: grid;
-  grid-template-columns: 150px auto;
-  grid-template-rows: 150px auto;
-  grid-gap: 2px;
-}
-
-.host div {
-  background-color: bone;
-}
-
-.content {
-  padding: 45px 200px;
-
-  overflow-y: scroll;
+  margin-top: 80px;
 }
 
 .postTitle {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 
-  font-size: 35px;
-}
-
-@media screen and (max-width: 1500px) {
-  .host {
-    grid-template-columns: 100px auto;
-    grid-template-rows: 100px auto;
-  }
-}
-
-@media screen and (max-width: 1025px) {
-  .content {
-    padding: 100px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .host {
-    grid-template-columns: 75px auto;
-    grid-template-rows: 75px auto;
-
-    overflow-y: scroll;
-
-    height: 100vh;
-  }
-
-  .content {
-    padding: 30px;
-  }
-
-  .postTitle {
-    font-size: 25px;
-  }
+  font-size: 28px;
 }

@@ -1,0 +1,71 @@
+.host {
+  padding: 125px 0px;
+
+  max-width: 800px;
+  width: 100%;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.innerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  max-width: 75%;
+
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+  color: hsla(212, 8%, 62%, 1);
+}
+
+.textLink {
+  color: hsla(200, 22%, 13%, 1);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  transition: all 0.2s ease-in;
+}
+
+.textLink:hover {
+  color: hsla(212, 8%, 62%, 1);
+}
+
+.featuredSection {
+  margin-top: 150px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.featuredTitle {
+  margin: 0px;
+
+  color: hsla(200, 22%, 13%, 1);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.featuredLinksContainer {
+  max-width: 500px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
