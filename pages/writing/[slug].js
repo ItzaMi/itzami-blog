@@ -1,13 +1,10 @@
-import React from "react"
-import { createClient } from "contentful"
+import React from 'react'
+import { createClient } from 'contentful'
 
-import Logo from "../../components/Logo"
-import Nav from "../../components/Nav"
-import Info from "../../components/Info"
-import SEO from "../../components/SEO"
-import BlogPost from "../../components/BlogPost"
+import SEO from '../../components/SEO'
+import BlogPost from '../../components/BlogPost'
 
-import css from "../../styles/post.module.css"
+import css from '../../styles/post.module.css'
 
 export async function getStaticProps(context) {
   const client = createClient({
@@ -18,10 +15,10 @@ export async function getStaticProps(context) {
   // Fetch all results where `fields.slug` is equal to the `slug` param
   const result = await client
     .getEntries({
-      content_type: "blogPost",
-      "fields.slug": context.params.slug,
+      content_type: 'blogPost',
+      'fields.slug': context.params.slug,
     })
-    .then(response => response.items)
+    .then((response) => response.items)
 
   // Since `slug` was set to be a unique field, we can be confident that
   // the only result in the query is the correct post.
@@ -49,8 +46,8 @@ export async function getStaticPaths() {
 
   // Query Contentful for all blog posts in the space
   const posts = await client
-    .getEntries({ content_type: "blogPost" })
-    .then(response => response.items)
+    .getEntries({ content_type: 'blogPost' })
+    .then((response) => response.items)
 
   // Map the result of that query to a list of slugs.
   // This will give Next the list of all blog post pages that need to be
@@ -64,7 +61,7 @@ export async function getStaticPaths() {
 }
 
 const Slug = ({ post }) => {
-  const modifiedImageUrl = "https:" + post.fields.thumbnail.fields.file.url
+  const modifiedImageUrl = 'https:' + post.fields.thumbnail.fields.file.url
 
   return (
     <div className={css.host}>
@@ -73,9 +70,6 @@ const Slug = ({ post }) => {
         description={post.fields.description}
         image={modifiedImageUrl}
       />
-      <Logo className={css.logo} />
-      <Nav className={css.nav} />
-      <Info page="Blog" />
       <div className={css.content}>
         <h1 className={css.postTitle}>{post.fields.title}</h1>
         <BlogPost post={post} />
