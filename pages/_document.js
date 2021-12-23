@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from "next/document"
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 // https://flaviocopes.com/nextjs-google-analytics/
 export default class MyDocument extends Document {
