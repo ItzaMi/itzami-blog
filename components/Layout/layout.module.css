@@ -1,0 +1,18 @@
+.host {
+  margin: auto;
+  padding: 40px 20px 0px;
+
+  max-width: 840px;
+  width: 100%;
+  height: calc(100vh - 40px);
+
+  overflow-y: scroll;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.host::-webkit-scrollbar {
+  display: none;
+}
