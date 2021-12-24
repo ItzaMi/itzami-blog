@@ -1,5 +1,8 @@
 .host {
-  margin-top: 80px;
+  padding: 125px 0px;
+
+  max-width: 840px;
+  width: 100%;
 }
 
 .postTitle {
