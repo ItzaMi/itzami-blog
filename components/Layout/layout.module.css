@@ -14,3 +14,17 @@
 .host::-webkit-scrollbar {
   display: none;
 }
+
+@media (max-width: 880px) {
+  .host {
+    margin: 0px;
+
+    max-width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 500px) {
+  .host {
+    max-width: 100%;
+  }
+}

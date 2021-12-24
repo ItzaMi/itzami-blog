@@ -50,3 +50,23 @@
 .socialLink:hover {
   color: hsla(200, 22%, 13%, 1);
 }
+
+@media (max-width: 880px) {
+  .host {
+    max-width: calc(100% - 80px);
+  }
+}
+
+@media (max-width: 500px) {
+  .host {
+    overflow-x: scroll;
+  }
+
+  .navLinksWrapper {
+    padding-right: 40px;
+  }
+
+  .socialLinksWrapper {
+    padding-right: 20px;
+  }
+}
