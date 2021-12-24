@@ -29,6 +29,10 @@ interface Props {
 const Home: FC<Props> = ({ blogPosts }) => {
   const metadataImagePath = 'https://itzami.com/images/homepageThumbnail.jpg'
 
+  const featuredBlogPosts = blogPosts.filter((post: any) =>
+    post.metadata.tags.find((post: any) => post.sys.id === 'featured')
+  )
+
   return (
     <main className={css.host}>
       <SEO
@@ -58,7 +62,7 @@ const Home: FC<Props> = ({ blogPosts }) => {
       <section className={css.featuredSection}>
         <h2 className={css.featuredTitle}>Featured Posts</h2>
         <div className={css.featuredLinksContainer}>
-          {blogPosts.map((post: any) => (
+          {featuredBlogPosts.map((post: any) => (
             <BlogLink post={post} />
           ))}
         </div>
