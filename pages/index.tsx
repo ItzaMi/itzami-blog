@@ -33,7 +33,8 @@ interface Props {
 }
 
 const Home: FC<Props> = ({ blogPosts }) => {
-  const metadataImagePath = 'https://itzami.com/images/homepageThumbnail.jpg'
+  const metadataImagePath =
+    'https://itzami.com/images/overallSocialPreview.jpeg'
 
   return (
     <main className={css.host}>

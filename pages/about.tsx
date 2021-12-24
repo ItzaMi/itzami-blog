@@ -5,7 +5,8 @@ import SEO from '../components/SEO'
 import css from '../styles/about.module.css'
 
 const About = () => {
-  const metadataImagePath = 'https://itzami.com/images/aboutThumbnail.jpg'
+  const metadataImagePath =
+    'https://itzami.com/images/overallSocialPreview.jpeg'
 
   return (
     <div className={css.host}>

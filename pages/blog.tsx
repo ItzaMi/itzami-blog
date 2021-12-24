@@ -27,7 +27,8 @@ interface Props {
 }
 
 const Blog: FC<Props> = ({ blogPosts }) => {
-  const metadataImagePath = 'https://itzami.com/images/blogThumbnail.jpg'
+  const metadataImagePath =
+    'https://itzami.com/images/overallSocialPreview.jpeg'
 
   return (
     <div className={css.host}>
