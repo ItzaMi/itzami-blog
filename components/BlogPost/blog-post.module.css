@@ -10,6 +10,12 @@
   font-size: 1.4em;
 }
 
+.host h3 {
+  margin: 30px 0px 20px;
+
+  font-size: 1.2em;
+}
+
 .host p {
   margin-bottom: 10px;
 
@@ -17,7 +23,31 @@
   line-height: 28px;
 }
 
+.host img {
+  max-width: 800px;
+}
+
+.host a {
+  color: hsla(200, 22%, 13%, 1);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  transition: all 0.2s ease-in;
+}
+
+.host a:hover {
+  color: hsla(212, 8%, 62%, 1);
+}
+
+.host li {
+  margin-bottom: 10px;
+}
+
 .host code {
-  background-color: hsla(200, 22%, 13%, 1);
-  color: hsla(0, 0%, 99%, 1);
+  padding: 4px 8px;
+
+  border-radius: 4px;
+
+  background-color: hsla(200, 10%, 90%, 0.6);
 }
