@@ -45,6 +45,15 @@ body {
   -webkit-font-smoothing: antialiased;
   color: hsla(200, 22%, 13%, 1);
   font-weight: 400;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 html {
@@ -72,14 +81,7 @@ html {
 } */
 
 body {
-  /* position: relative; */
-
   margin: 20px;
-
-  /* height: calc(100vh - 40px);
-  width: calc(100vw - 40px);
-
-  overflow: scroll; */
 
   background-color: hsla(0, 0%, 99%, 1);
 
