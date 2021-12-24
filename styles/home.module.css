@@ -32,7 +32,7 @@
   color: hsla(212, 8%, 62%, 1);
 }
 
-.textLink {
+.paragraph a {
   color: hsla(200, 22%, 13%, 1);
   font-weight: 500;
   text-decoration: underline;
@@ -41,7 +41,7 @@
   transition: all 0.2s ease-in;
 }
 
-.textLink:hover {
+.paragraph a:hover {
   color: hsla(212, 8%, 62%, 1);
 }
 

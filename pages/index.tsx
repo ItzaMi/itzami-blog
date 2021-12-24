@@ -1,6 +1,8 @@
-import { FC } from 'react'
+import { FC, Key } from 'react'
 import Link from 'next/link'
 import { createClient } from 'contentful'
+
+import content from '../content/home.content.json'
 
 import SEO from '../components/SEO'
 import BlogLink from '../components/BlogLink'
@@ -13,7 +15,11 @@ export async function getStaticProps() {
     accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
   })
 
-  const res = await client.getEntries({ content_type: 'blogPost' })
+  const res = await client.getEntries({
+    content_type: 'blogPost',
+    'metadata.tags.sys.id[in]': 'featured',
+    order: '-sys.createdAt',
+  })
 
   return {
     props: {
@@ -29,10 +35,6 @@ interface Props {
 const Home: FC<Props> = ({ blogPosts }) => {
   const metadataImagePath = 'https://itzami.com/images/homepageThumbnail.jpg'
 
-  const featuredBlogPosts = blogPosts.filter((post: any) =>
-    post.metadata.tags.find((post: any) => post.sys.id === 'featured')
-  )
-
   return (
     <main className={css.host}>
       <SEO
@@ -44,26 +46,25 @@ const Home: FC<Props> = ({ blogPosts }) => {
       <section className={css.section}>
         <div className={css.innerSection}>
           <h1 className={css.title}>Rui Sousa</h1>
-          <p className={css.description}>
-            Looking to leave my brand on the internet.
-            <br />
-            Self-taught front-end developer with a Master’s Degree in
-            Psychology.
-            <br />
-            ReactJS developer at{' '}
-            <Link href="https://coletiv.com/">
-              <a className={css.textLink}>Coletiv</a>
-            </Link>
-            .
-          </p>
+          <div className={css.description}>
+            {content.content.map((paragraph, index) => {
+              return (
+                <p
+                  className={css.paragraph}
+                  key={index}
+                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                />
+              )
+            })}
+          </div>
         </div>
       </section>
 
       <section className={css.featuredSection}>
         <h2 className={css.featuredTitle}>Featured Posts</h2>
         <div className={css.featuredLinksContainer}>
-          {featuredBlogPosts.map((post: any) => (
-            <BlogLink post={post} />
+          {blogPosts.map((post: any, key: Key) => (
+            <BlogLink post={post} key={key} />
           ))}
         </div>
       </section>
