@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, Key } from 'react'
 import { createClient } from 'contentful'
 
 import SEO from '../components/SEO'
@@ -17,6 +17,7 @@ export async function getStaticProps() {
   return {
     props: {
       blogPosts: res.items,
+      order: '-sys.createdAt',
     },
   }
 }
@@ -36,8 +37,8 @@ const Blog: FC<Props> = ({ blogPosts }) => {
         image={metadataImagePath}
       />
       <section className={css.postsWrapper}>
-        {blogPosts.map((post: any) => (
-          <BlogLink post={post} />
+        {blogPosts.map((post: any, key: Key) => (
+          <BlogLink post={post} key={key} />
         ))}
       </section>
     </div>
