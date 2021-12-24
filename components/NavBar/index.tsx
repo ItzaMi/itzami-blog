@@ -36,15 +36,17 @@ const NavBar = () => {
     <nav className={css.host}>
       <div className={css.contentWrapper}>
         <section className={css.navLinksWrapper}>
-          {availableRoutes.map((route) => (
-            <NavBarLink path={route.path} text={route.text} />
+          {availableRoutes.map((route, key) => (
+            <NavBarLink path={route.path} text={route.text} key={key} />
           ))}
         </section>
 
         <section className={css.socialLinksWrapper}>
           {socialMediaLinks.map((link, key) => (
             <Link href={link.link} key={key}>
-              <a className={css.socialLink}>{link.title}</a>
+              <a className={css.socialLink} target="_blank">
+                {link.title}
+              </a>
             </Link>
           ))}
         </section>
