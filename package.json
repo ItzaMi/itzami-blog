@@ -1,6 +1,5 @@
 {
   "name": "itzami-blog",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,17 +7,25 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "eslintConfig": {
+    "extends": "react-app",
+    "rules": {
+      "no-var": "error"
+    }
+  },
   "dependencies": {
-    "contentful": "^8.4.2",
-    "next": "11.0.0",
+    "contentful": "^9.1.5",
+    "next": "12.0.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-markdown": "^6.0.2",
-    "react-syntax-highlighter": "^15.4.3",
-    "rehype-raw": "^5.1.0"
+    "react-markdown": "^7.1.1",
+    "react-syntax-highlighter": "^15.4.5",
+    "rehype-raw": "^6.1.0"
   },
   "devDependencies": {
-    "eslint": "7.29.0",
-    "eslint-config-next": "11.0.0"
+    "@types/react": "^17.0.37",
+    "eslint": "7",
+    "eslint-config-next": "12.0.4",
+    "typescript": "^4.5.2"
   }
 }

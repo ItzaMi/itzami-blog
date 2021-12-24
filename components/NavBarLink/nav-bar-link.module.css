@@ -1,0 +1,23 @@
+.host {
+  padding: 8px 12px;
+
+  background-color: transparent;
+  border-radius: 6px;
+
+  color: hsla(200, 22%, 13%, 1);
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+
+  transition: all 0.2s ease-in;
+}
+
+.host:hover {
+  background-color: hsla(200, 10%, 90%, 0.25);
+}
+
+.host.active {
+  font-weight: 500;
+  background-color: hsla(200, 10%, 90%, 0.2);
+}

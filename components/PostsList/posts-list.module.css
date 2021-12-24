@@ -1,6 +1,3 @@
-@value colors: '../../styles/colors.css';
-@value bone, indigo from colors;
-
 .host {
   background-color: bone !important;
 }

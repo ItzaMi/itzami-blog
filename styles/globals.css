@@ -1,63 +1,38 @@
-/* source-sans-pro-300 - latin */
+/* inter-regular - latin */
 @font-face {
-  font-family: "Source Sans Pro";
-  font-style: normal;
-  font-weight: 300;
-  src: url("../public/fonts/source-sans-pro-v14-latin-300.eot"); /* IE9 Compat Modes */
-  src: local(""),
-    url("../public/fonts/source-sans-pro-v14-latin-300.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("../public/fonts/source-sans-pro-v14-latin-300.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("../public/fonts/source-sans-pro-v14-latin-300.woff") format("woff"),
-    /* Modern Browsers */
-      url("../public/fonts/source-sans-pro-v14-latin-300.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("../public/fonts/source-sans-pro-v14-latin-300.svg#SourceSansPro")
-      format("svg"); /* Legacy iOS */
-}
-/* source-sans-pro-regular - latin */
-@font-face {
-  font-family: "Source Sans Pro";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  src: url("../public/fonts/source-sans-pro-v14-latin-regular.eot"); /* IE9 Compat Modes */
-  src: local(""),
-    url("../public/fonts/source-sans-pro-v14-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("../public/fonts/source-sans-pro-v14-latin-regular.woff2")
-      format("woff2"),
+  src: url('../public/fonts/inter-v7-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('../public/fonts/inter-v7-latin-regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('../public/fonts/inter-v7-latin-regular.woff2')
+      format('woff2'),
     /* Super Modern Browsers */
-      url("../public/fonts/source-sans-pro-v14-latin-regular.woff")
-      format("woff"),
-    /* Modern Browsers */
-      url("../public/fonts/source-sans-pro-v14-latin-regular.ttf")
-      format("truetype"),
+      url('../public/fonts/inter-v7-latin-regular.woff') format('woff'),
+    /* Modern Browsers */ url('../public/fonts/inter-v7-latin-regular.ttf')
+      format('truetype'),
     /* Safari, Android, iOS */
-      url("../public/fonts/source-sans-pro-v14-latin-regular.svg#SourceSansPro")
-      format("svg"); /* Legacy iOS */
+      url('../public/fonts/inter-v7-latin-regular.svg#Inter') format('svg'); /* Legacy iOS */
 }
-/* source-sans-pro-700 - latin */
+/* inter-500 - latin */
 @font-face {
-  font-family: "Source Sans Pro";
+  font-family: 'Inter';
   font-style: normal;
-  font-weight: 700;
-  src: url("../public/fonts/source-sans-pro-v14-latin-700.eot"); /* IE9 Compat Modes */
-  src: local(""),
-    url("../public/fonts/source-sans-pro-v14-latin-700.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("../public/fonts/source-sans-pro-v14-latin-700.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("../public/fonts/source-sans-pro-v14-latin-700.woff") format("woff"),
-    /* Modern Browsers */
-      url("../public/fonts/source-sans-pro-v14-latin-700.ttf")
-      format("truetype"),
+  font-weight: 500;
+  src: url('../public/fonts/inter-v7-latin-500.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('../public/fonts/inter-v7-latin-500.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('../public/fonts/inter-v7-latin-500.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */ url('../public/fonts/inter-v7-latin-500.woff')
+      format('woff'),
+    /* Modern Browsers */ url('../public/fonts/inter-v7-latin-500.ttf')
+      format('truetype'),
     /* Safari, Android, iOS */
-      url("../public/fonts/source-sans-pro-v14-latin-700.svg#SourceSansPro")
-      format("svg"); /* Legacy iOS */
+      url('../public/fonts/inter-v7-latin-500.svg#Inter') format('svg'); /* Legacy iOS */
 }
 
 html,
@@ -65,14 +40,66 @@ body {
   padding: 0;
   margin: 0;
 
-  font-family: "Source Sans Pro";
-  font-weight: 700;
+  font-family: 'Inter';
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color: hsla(200, 22%, 13%, 1);
+  font-weight: 400;
 
-  background-color: #1a2429;
-  color: #1a2429;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  background: linear-gradient(
+    45deg,
+    hsla(153, 22%, 90%, 1) 0%,
+    hsla(165, 31%, 95%, 1) 100%
+  );
+
+  /* background: linear-gradient(-45deg, #e0ebe6, #dbf3ed, #cef5eb, #aaecdc);
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite alternate-reverse; */
+}
+/* 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+body {
+  margin: 20px;
+
+  background-color: hsla(0, 0%, 99%, 1);
+
+  border-radius: 10px;
 }
 
 * {
   box-sizing: border-box;
   margin: 0px;
+}
+
+hr {
+  border: 0;
+  margin: 0;
+  height: 1px;
+}
+
+pre div,
+pre div code {
+  background-color: hsla(0, 0%, 97%, 1) !important;
 }
