@@ -70,8 +70,16 @@
   gap: 7px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
+  .host {
+    padding: 20px 0px 80px;
+  }
+
   .description {
     max-width: 100%;
+  }
+
+  .featuredSection {
+    margin-top: 80px;
   }
 }

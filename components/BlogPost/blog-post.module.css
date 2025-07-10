@@ -51,3 +51,9 @@
 
   background-color: hsla(200, 10%, 90%, 0.6);
 }
+
+@media (max-width: 768px) {
+  .host img {
+    max-width: 100%;
+  }
+}
