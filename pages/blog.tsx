@@ -1,5 +1,5 @@
 import React, { FC, Key } from 'react'
-import { createClient } from 'contentful'
+import { getAllPosts } from '../lib/posts'
 
 import SEO from '../components/SEO'
 import BlogLink from '../components/BlogLink'
@@ -7,23 +7,34 @@ import BlogLink from '../components/BlogLink'
 import css from '../styles/blog.module.css'
 
 export async function getStaticProps() {
-  const client = createClient({
-    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
-    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
-  })
-
-  const res = await client.getEntries({ content_type: 'blogPost' })
+  const posts = getAllPosts()
+  
+  // Convert to match the old Contentful format for BlogLink component
+  const blogPosts = posts.map(post => ({
+    fields: {
+      title: post.title,
+      slug: post.slug,
+      date: post.date,
+      description: post.description,
+      thumbnail: {
+        fields: {
+          file: {
+            url: post.thumbnail.replace('https:', '')
+          }
+        }
+      }
+    }
+  }))
 
   return {
     props: {
-      blogPosts: res.items,
-      order: '-sys.createdAt',
+      blogPosts,
     },
   }
 }
 
 interface Props {
-  blogPosts: any
+  blogPosts: any[]
 }
 
 const Blog: FC<Props> = ({ blogPosts }) => {
@@ -34,7 +45,7 @@ const Blog: FC<Props> = ({ blogPosts }) => {
     <div className={css.host}>
       <SEO
         title="ItzaMi - Blog"
-        description="I’m a self-taught front-end developer with a Master’s Degree in Psychology and a knack for design. And this is where I share my experience and knowledge with the internet"
+        description="I'm a self-taught front-end developer with a Master's Degree in Psychology and a knack for design. And this is where I share my experience and knowledge with the internet"
         image={metadataImagePath}
       />
       <section className={css.postsWrapper}>
