@@ -1,105 +1,48 @@
-/* inter-regular - latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../public/fonts/inter-v7-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
-    url('../public/fonts/inter-v7-latin-regular.eot?#iefix')
-      format('embedded-opentype'),
-    /* IE6-IE8 */ url('../public/fonts/inter-v7-latin-regular.woff2')
-      format('woff2'),
-    /* Super Modern Browsers */
-      url('../public/fonts/inter-v7-latin-regular.woff') format('woff'),
-    /* Modern Browsers */ url('../public/fonts/inter-v7-latin-regular.ttf')
-      format('truetype'),
-    /* Safari, Android, iOS */
-      url('../public/fonts/inter-v7-latin-regular.svg#Inter') format('svg'); /* Legacy iOS */
-}
-/* inter-500 - latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  src: url('../public/fonts/inter-v7-latin-500.eot'); /* IE9 Compat Modes */
-  src: local(''),
-    url('../public/fonts/inter-v7-latin-500.eot?#iefix')
-      format('embedded-opentype'),
-    /* IE6-IE8 */ url('../public/fonts/inter-v7-latin-500.woff2')
-      format('woff2'),
-    /* Super Modern Browsers */ url('../public/fonts/inter-v7-latin-500.woff')
-      format('woff'),
-    /* Modern Browsers */ url('../public/fonts/inter-v7-latin-500.ttf')
-      format('truetype'),
-    /* Safari, Android, iOS */
-      url('../public/fonts/inter-v7-latin-500.svg#Inter') format('svg'); /* Legacy iOS */
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: hsl(200, 22%, 13%);
+  --color-muted: hsl(212, 8%, 62%);
+  --color-surface: hsl(0, 0%, 99%);
+  --color-divider: hsl(200, 22%, 93%);
+  --color-hover: hsla(200, 10%, 90%, 0.2);
+  --color-hover-strong: hsla(200, 10%, 90%, 0.25);
+  --color-code-bg: hsla(200, 10%, 90%, 0.6);
+  --color-code-block-bg: hsl(0, 0%, 97%);
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-
-  font-family: 'Inter';
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  color: hsla(200, 22%, 13%, 1);
-  font-weight: 400;
-
-  /* Hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none;
-}
-
-html {
-  background: linear-gradient(
-    45deg,
-    hsla(153, 22%, 90%, 1) 0%,
-    hsla(165, 31%, 95%, 1) 100%
-  );
-
-  /* background: linear-gradient(-45deg, #e0ebe6, #dbf3ed, #cef5eb, #aaecdc);
-  background-size: 400% 400%;
-  animation: gradient 20s ease infinite alternate-reverse; */
-}
-/* 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
+@layer base {
+  html {
+    background: linear-gradient(
+      45deg,
+      hsl(153, 22%, 90%) 0%,
+      hsl(165, 31%, 95%) 100%
+    );
   }
-  50% {
-    background-position: 100% 50%;
+
+  body {
+    @apply m-5 rounded-[10px] bg-surface text-primary antialiased;
+    text-rendering: optimizeLegibility;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-  100% {
-    background-position: 0% 50%;
+
+  body::-webkit-scrollbar {
+    display: none;
   }
-} */
 
-body {
-  margin: 20px;
+  * {
+    @apply box-border m-0;
+  }
 
-  background-color: hsla(0, 0%, 99%, 1);
+  hr {
+    @apply border-0 m-0 h-px;
+  }
 
-  border-radius: 10px;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0px;
-}
-
-hr {
-  border: 0;
-  margin: 0;
-  height: 1px;
-}
-
-pre div,
-pre div code {
-  background-color: hsla(0, 0%, 97%, 1) !important;
+  pre div,
+  pre div code {
+    background-color: var(--color-code-block-bg) !important;
+  }
 }

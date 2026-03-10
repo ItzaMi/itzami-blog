@@ -3,7 +3,7 @@ title: "Learning Go By Doing | Scraping Supermakets | A Post-Project Review"
 slug: "learning-go-by-doing-scraping-supermakets"
 date: "2024-12-24T17:00+00:00"
 description: "In an attempt to learn Go, I decided to delve into one of the capabilities of a backend language, which is scraping the web. For it, I decided to focus on getting info from supermarket stores. This is a post-project review of what I learned"
-thumbnail: "https://images.ctfassets.net/jmotdpsipbdp/6s8y9nJZagWnmavmhgcE9Y/2d7879000e03bf6e265d5b5f99b28de4/ItzaMi_Frame_28.jpg"
+thumbnail: "/images/posts/ItzaMi_Frame_28.jpg"
 ---
 
 *This is not a tutorial but a post-project review of what I learned. Check the repository [here](https://github.com/ItzaMi/compare-supermarket-prices).*

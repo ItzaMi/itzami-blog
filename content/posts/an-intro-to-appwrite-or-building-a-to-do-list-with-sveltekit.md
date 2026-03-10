@@ -3,7 +3,7 @@ title: "An intro to Appwrite | Building a To-do list with SvelteKit"
 slug: "an-intro-to-appwrite-or-building-a-to-do-list-with-sveltekit"
 date: "2024-01-07T21:43+00:00"
 description: "A to-do list is the foundation of experimenting with any technology, right? In this blog post we'll use Appwrite as our backend to store our list, allowing us to create, delete and update our content. The frontend will be built with Svelte!"
-thumbnail: "https://images.ctfassets.net/jmotdpsipbdp/luRzKqaawyOmTGqwS65ra/099670d06b0a7b4798f19bc63656a505/an-intro-to-appwrite-sveltekit.jpeg"
+thumbnail: "/images/posts/an-intro-to-appwrite-sveltekit.jpeg"
 ---
 
 A to-do list is the playground for experimenting with a new technology, right? It ain't much but it allows you not only to understand the basics but also to get familiar with the docs for any extra 💫 *dazzle* 💫 that you may want to add.
@@ -30,17 +30,17 @@ Once you have the project running, let's now initialize a project on Appwrite. W
 Alright, we should now have a base project to start working on and we're ready to extend it. We'll start on Appwrite's side!
 Head over to your Appwrite console and select your project in there. Head over to `Databases` and you'll see an empty table.
 
-![Appwrite Database console](//images.ctfassets.net/jmotdpsipbdp/5th8t9MHUXXkh2tiMtpV6g/1680d17fd0a8dea885c727aaf2a054d9/appwrite-1.png)
+![Appwrite Database console](/images/posts/appwrite-1.png)
 
 Let's create a new database (name it whatever you want but I'll call mine `Todos`). After that, you'll be sent to a new screen for the `Collections`; if you followed Appwrite's [blog post](https://dev.to/appwrite/30daysofappwrite-appwrite-database-22an), you'll know that `Collections` are groups of `Documents` - for our app this means that `todos` (notice that it's all lowercase, different from the `Todos` database name) is our `collection` and each `document` will be a `todo`.
 
 Create your `collection` and you should see a new screen for the `documents` (currently empty) inside that said `collection`.
 
-![Appwrite console for the documents](//images.ctfassets.net/jmotdpsipbdp/2RYfeTEmohlcP1E2LpWkBg/16523f73b93b45ab39a3291b91ac6d7e/appwrite-2.png)
+![Appwrite console for the documents](/images/posts/appwrite-2.png)
 
 Now, you won't be able to create any document because we need to define the properties (or `attributes`, in the Appwrite's console) that will compose each document. We'll create 3 different attributes: `title`, `description` and `isCompleted`. `title` and `description` will be `strings` and `isCompleted` will be of type `boolean`, and the 3 will be set as `required` - just follow the different prompts that Appwrite provides for creating an attribute but make sure that the types match the tutorial.
 
-![Creating attributes for a document inside Appwrite](//images.ctfassets.net/jmotdpsipbdp/m4vhyrTNzOdxv5iZIr1J1/1a0950ebc9ee133f559df3337ee6fa1f/appwrite-3.png)
+![Creating attributes for a document inside Appwrite](/images/posts/appwrite-3.png)
 
 Now we're ready to start creating documents and we'll do that from our codebase, of course! 💃
 
@@ -84,7 +84,7 @@ Now, if you try to start a project, you'll be invited with a blank page with an 
 
 Head over to your `collection` and choose `Settings`. Scroll to `Permissions` and create a new role; for this tutorial we can start by selecting `All guests` and allowing for them to perform any action.
 
-![Set permissions for role in Appwrite](//images.ctfassets.net/jmotdpsipbdp/25GZJOg89IBvIC7jjhZ0IR/3f98a0da0c3578a642f588a0296a41b8/appwrite-4.png)
+![Set permissions for role in Appwrite](/images/posts/appwrite-4.png)
 
 ⚠️ For an actual app you wouldn't want to have this kind of role performing all kind of destructive actions but it works well enough for this tutorial.
 

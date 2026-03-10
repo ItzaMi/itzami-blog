@@ -3,7 +3,7 @@ title: "Build a Quote Generator with JavaScript: Your first API project"
 slug: "build-a-quote-generator-with-javascript-your-first-api-project"
 date: "2022-03-02T11:00+00:00"
 description: "The purpose of this tutorial is simple: to allow you to work with an API by making a single request and display its info on the screen. That’s it! No tricks! And we’ll probably do it in like 10 lines of JavaScript 🤘 How exciting is that?"
-thumbnail: "https://images.ctfassets.net/jmotdpsipbdp/1zuK7jQOGhYtbgqRuMYUBN/dde2a2eede793143aca0b284ca674c51/build-a-quote-generator-with-javascript-your-first-api-project.jpeg"
+thumbnail: "/images/posts/build-a-quote-generator-with-javascript-your-first-api-project.jpeg"
 ---
 
 If you’ve never worked with an API (Application Programming Interface) before, WELCOME! I assure you that this is going to be an excellent first time! 😄

@@ -1,56 +1,35 @@
-import React, { FC, Key } from 'react'
-import { getAllPosts } from '../lib/posts'
+import { FC } from 'react'
+import { getAllPosts, Post } from '../lib/posts'
 
 import SEO from '../components/SEO'
 import BlogLink from '../components/BlogLink'
 
-import css from '../styles/blog.module.css'
-
 export async function getStaticProps() {
   const posts = getAllPosts()
-  
-  // Convert to match the old Contentful format for BlogLink component
-  const blogPosts = posts.map(post => ({
-    fields: {
-      title: post.title,
-      slug: post.slug,
-      date: post.date,
-      description: post.description,
-      thumbnail: {
-        fields: {
-          file: {
-            url: post.thumbnail.replace('https:', '')
-          }
-        }
-      }
-    }
-  }))
 
   return {
-    props: {
-      blogPosts,
-    },
+    props: { posts },
   }
 }
 
 interface Props {
-  blogPosts: any[]
+  posts: Post[]
 }
 
-const Blog: FC<Props> = ({ blogPosts }) => {
+const Blog: FC<Props> = ({ posts }) => {
   const metadataImagePath =
     'https://itzami.com/images/overallSocialPreview.jpeg'
 
   return (
-    <div className={css.host}>
+    <div className="py-[125px] max-md:py-5 max-md:pb-20">
       <SEO
         title="ItzaMi - Blog"
         description="I'm a self-taught front-end developer with a Master's Degree in Psychology and a knack for design. And this is where I share my experience and knowledge with the internet"
         image={metadataImagePath}
       />
-      <section className={css.postsWrapper}>
-        {blogPosts.map((post: any, key: Key) => (
-          <BlogLink post={post} key={key} />
+      <section className="flex max-w-[500px] flex-col gap-2.5">
+        {posts.map((post) => (
+          <BlogLink post={post} key={post.slug} />
         ))}
       </section>
     </div>

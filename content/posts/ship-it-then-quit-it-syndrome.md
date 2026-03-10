@@ -3,7 +3,7 @@ title: "'Ship it then quit it' syndrome"
 slug: "ship-it-then-quit-it-syndrome"
 date: "2022-01-04T20:00+00:00"
 description: "Anyone that is involved in some sort of developer’s community has heard about ‘shipping their projects’. This isn’t exactly a bad way of thinking since throwing your projects out there allows you to get feedback and improve them. But..."
-thumbnail: "https://images.ctfassets.net/jmotdpsipbdp/4yXMiq41vsrhge1uQ5mtOW/43e5aafb7eac3b928caef58857e6c407/shipItThenQuitItSyndrome.jpeg"
+thumbnail: "/images/posts/shipItThenQuitItSyndrome.jpeg"
 ---
 
 In 2021 I built and tried to launch two projects: [Noting](https://noting.netlify.app/) and [BeautifulCSS](https://beautifulcss.dev/).

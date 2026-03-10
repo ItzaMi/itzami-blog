@@ -3,7 +3,7 @@ title: "How to build a blog with NodeJS"
 slug: "how-to-build-a-blog-with-nodejs"
 date: "2024-10-31T17:00+00:00"
 description: "In this blog post we'll learn how to build a blog using NodeJS for the sake of going back to basis and being able to separate ourselves from the ever growing complexity of the frontend frameworks!"
-thumbnail: "https://images.ctfassets.net/jmotdpsipbdp/78x1NQEnwIuDxLl613EdEm/0f417c45665c2d2662afed51321177e2/ItzaMi_Frame_27.jpg"
+thumbnail: "/images/posts/ItzaMi_Frame_27.jpg"
 ---
 
 *Just want the code? Visit the [repo](https://github.com/ItzaMi/nodejs-blog-starter)*

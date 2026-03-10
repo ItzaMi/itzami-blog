@@ -1,7 +1,5 @@
-import css from './divider.module.css'
-
 const Divider = () => {
-  return <hr className={css.host} />
+  return <hr className="h-px bg-divider" />
 }
 
 export default Divider

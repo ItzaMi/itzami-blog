@@ -3,7 +3,7 @@ title: "How to build an accordion with JavaScript"
 slug: "how-to-build-an-accordion-with-javascript"
 date: "2021-06-03T14:00+01:00"
 description: "Creating an accordion with JavaScript might seem like a true battle but it doesn't have to be. Check out this tutorial to see how you can easily build it!"
-thumbnail: "https://images.ctfassets.net/jmotdpsipbdp/5APn1ITt1NrXPoTY3qc2JA/36b2006bba4184c44aa365cf043681ad/how-to-build-an-accordion-with-javascript.png"
+thumbnail: "/images/posts/how-to-build-an-accordion-with-javascript.png"
 ---
 
 I've seen some people battle with accordions in the past and, well, it wasn't pretty. BUT... It's completely understandable! An accordion has a whole lot going on and on a first sight it seems like all the functionalities will be pretty hard to develop.
@@ -30,7 +30,7 @@ We'll start by create a basic structure of the HTML. And here it's pretty straig
 
 A made a image to illustrate the basic structure and I advise you, specially when you're starting, to sketch out what you're intending to build since it makes it easier to split everything into smaller parts so you can work on them separately.
 
-![Initial Sketch of Structure](//images.contentful.com/jmotdpsipbdp/3u7CHN0pQrUot30VIRRDeC/dc1dc5448a984c0b6a14307cfd8b54a4/initial-sketch-of-structure.png)
+![Initial Sketch of Structure](/images/posts/initial-sketch-of-structure.png)
 
 So, now that we have our structure, we can build it. In my example below, as you can see I have the mentioned `<div>` that has everything inside and that's our _accordion component_ and inside each I have an `accordionTitle`, which represents the content that will always be showing, and a `accordionContent` that will be the content that will appear and disappear. You can change up the HTML elements that you use (maybe you would prefer to use `<ul>` and `<li>`) but that's on you! And that's our HTML 🎉
 

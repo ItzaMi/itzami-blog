@@ -3,7 +3,7 @@ title: "Boost your CSS animations with Intersection Observer API"
 slug: "boost-your-css-animations-with-intersection-observer-api"
 date: "2021-02-06T14:00+01:00"
 description: "CSS animations can be a pain in the 🍑, and what's even worst is to trigger them at the exact moment. For that exact reason, _and if I may be perfectly honest with you_, I opt for not using them most of the time. However..."
-thumbnail: "https://images.ctfassets.net/jmotdpsipbdp/1HEV67G4rGrsZbUbiOWoWo/d02ba2a886e12d72019bfc9d4491f95b/boost-your-animations-with-intersection-observer-api.png"
+thumbnail: "/images/posts/boost-your-animations-with-intersection-observer-api.png"
 ---
 
 CSS animations can be a pain in the 🍑, and what's even worst is to trigger them at the exact moment. For that exact reason, _and if I may be perfectly honest with you_, I opt for not using them most of the time. However...

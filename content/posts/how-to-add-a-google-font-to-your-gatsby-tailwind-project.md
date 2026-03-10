@@ -3,7 +3,7 @@ title: "How to add a Google Font to your Gatsby + Tailwind project"
 slug: "how-to-add-a-google-font-to-your-gatsby-tailwind-project"
 date: "2021-10-12T23:00+01:00"
 description: "While I was building itzami.com, I ended up having a hard time looking for a straight answer on the internet on how to import a Google Font into my GatsbyJS + Tailwind project. This tutorial should fill that gap once and for all!"
-thumbnail: "https://images.ctfassets.net/jmotdpsipbdp/4rgRCKpFazcyVWEdwRuogP/20486b42738d0be0e98bc2560cb6fcd7/how-to-add-a-google-font-to-your-gatsby-tailwind-project.png"
+thumbnail: "/images/posts/how-to-add-a-google-font-to-your-gatsby-tailwind-project.png"
 ---
 
 While I was building the first version of [itzami.com](https://www.itzami.com/ "Link to itzami.com"), I found myself having a hard time finding out on the internet how I could import a [Google Font](https://fonts.google.com/) into my website that was using [GatsbyJS](https://www.gatsbyjs.com/) and [TailwindCSS](https://tailwindcss.com/). (and the tutorials I found all told me to install a dependency). With some trial and error I was finally able to achieve it and with this blog post I hope to make the job a lot easier for everybody that tries to do the same! It's incredibly easy to do it but since I haven't seen anyone mention it so clearly, why not do it myself?
