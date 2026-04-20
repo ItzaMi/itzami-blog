@@ -7,27 +7,25 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "eslintConfig": {
-    "extends": "react-app",
-    "rules": {
-      "no-var": "error"
-    }
-  },
   "dependencies": {
-    "contentful": "^9.1.5",
-    "next": "12.3.4",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-markdown": "^7.1.1",
-    "react-syntax-highlighter": "^15.4.5",
-    "rehype-raw": "^6.1.0"
+    "@tailwindcss/postcss": "^4.2.1",
+    "@tailwindcss/typography": "^0.5.19",
+    "gray-matter": "^4.0.3",
+    "next": "^15.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^9.0.0",
+    "react-syntax-highlighter": "^15.6.1",
+    "rehype-raw": "^7.0.0",
+    "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
-    "@types/node": "^24.0.12",
-    "@types/react": "17.0.62",
-    "@types/react-dom": "17.0.11",
-    "eslint": "7",
-    "eslint-config-next": "12.0.4",
-    "typescript": "^4.5.2"
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^15.2.0",
+    "typescript": "^5.7.0"
   }
 }
