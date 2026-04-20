@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { getAllPosts, Post } from '../lib/posts'
+import { getAllPosts, PostMeta } from '../lib/posts'
 import content from '../content/home.content.json'
 
 import SEO from '../components/SEO'
@@ -15,7 +15,7 @@ export async function getStaticProps() {
 }
 
 interface Props {
-  posts: Post[]
+  posts: PostMeta[]
 }
 
 const Home: FC<Props> = ({ posts }) => {

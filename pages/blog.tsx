@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { getAllPosts, Post } from '../lib/posts'
+import { getAllPosts, PostMeta } from '../lib/posts'
 
 import SEO from '../components/SEO'
 import BlogLink from '../components/BlogLink'
@@ -13,7 +13,7 @@ export async function getStaticProps() {
 }
 
 interface Props {
-  posts: Post[]
+  posts: PostMeta[]
 }
 
 const Blog: FC<Props> = ({ posts }) => {

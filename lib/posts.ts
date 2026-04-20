@@ -4,16 +4,19 @@ import matter from 'gray-matter'
 
 const postsDirectory = path.join(process.cwd(), 'content/posts')
 
-export interface Post {
+export interface PostMeta {
   slug: string
   title: string
   date: string
   description: string
   thumbnail: string
+}
+
+export interface Post extends PostMeta {
   content: string
 }
 
-export function getAllPosts(): Post[] {
+export function getAllPosts(): PostMeta[] {
   const fileNames = fs.readdirSync(postsDirectory)
   const posts = fileNames
     .filter(fileName => fileName.endsWith('.md'))
@@ -21,7 +24,7 @@ export function getAllPosts(): Post[] {
       const slug = fileName.replace(/\.md$/, '')
       const fullPath = path.join(postsDirectory, fileName)
       const fileContents = fs.readFileSync(fullPath, 'utf8')
-      const { data, content } = matter(fileContents)
+      const { data } = matter(fileContents)
 
       return {
         slug,
@@ -29,7 +32,6 @@ export function getAllPosts(): Post[] {
         date: data.date,
         description: data.description,
         thumbnail: data.thumbnail,
-        content,
       }
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1))
