@@ -11,14 +11,21 @@
   --color-hover-strong: hsla(200, 10%, 90%, 0.25);
   --color-code-bg: hsla(200, 10%, 90%, 0.6);
   --color-code-block-bg: hsl(0, 0%, 97%);
+  --color-code-text: hsl(216, 22%, 25%);
+  --color-code-block-border: hsl(200, 22%, 90%);
+  --color-quote-text: hsl(202, 15%, 28%);
+  --color-quote-border: hsl(200, 18%, 78%);
+  --color-marker: hsl(210, 12%, 46%);
 }
 
 @layer base {
   html {
+    color-scheme: light;
     background: linear-gradient(
-      45deg,
-      hsl(153, 22%, 90%) 0%,
-      hsl(165, 31%, 95%) 100%
+      135deg,
+      hsl(210, 11%, 90%) 0%,
+      hsl(204, 9%, 95%) 52%,
+      hsl(28, 8%, 94%) 100%
     );
   }
 
@@ -41,8 +48,132 @@
     @apply border-0 m-0 h-px;
   }
 
-  pre div,
-  pre div code {
+  pre {
+    @apply rounded-md border;
+    border-color: var(--color-code-block-border);
     background-color: var(--color-code-block-bg) !important;
   }
+
+  pre div,
+  pre code {
+    background: transparent !important;
+  }
+
+  .prose {
+    --tw-prose-body: var(--color-primary);
+    --tw-prose-headings: var(--color-primary);
+    --tw-prose-lead: var(--color-muted);
+    --tw-prose-links: var(--color-primary);
+    --tw-prose-bold: var(--color-primary);
+    --tw-prose-counters: var(--color-muted);
+    --tw-prose-bullets: var(--color-muted);
+    --tw-prose-hr: var(--color-divider);
+    --tw-prose-quotes: var(--color-quote-text);
+    --tw-prose-quote-borders: var(--color-quote-border);
+    --tw-prose-captions: var(--color-muted);
+    --tw-prose-code: var(--color-code-text);
+    --tw-prose-pre-code: var(--color-primary);
+    --tw-prose-pre-bg: var(--color-code-block-bg);
+    --tw-prose-th-borders: var(--color-divider);
+    --tw-prose-td-borders: var(--color-divider);
+  }
+
+  .prose strong {
+    color: var(--color-primary);
+  }
+
+  .prose :where(code):not(:where(pre code)) {
+    border: 1px solid var(--color-code-block-border);
+    color: var(--color-code-text);
+  }
+
+  .prose :where(ol > li)::marker,
+  .prose :where(ul > li)::marker {
+    color: var(--color-marker);
+  }
+
+  .prose blockquote {
+    border-left-color: var(--color-quote-border);
+    color: var(--color-quote-text);
+  }
+
+  .prose blockquote p,
+  .prose blockquote em {
+    color: var(--color-quote-text);
+  }
+
 }
+
+@layer components {
+  .prose.prose {
+    --tw-prose-body: var(--color-primary);
+    --tw-prose-headings: var(--color-primary);
+    --tw-prose-lead: var(--color-muted);
+    --tw-prose-links: var(--color-primary);
+    --tw-prose-bold: var(--color-primary);
+    --tw-prose-counters: var(--color-marker);
+    --tw-prose-bullets: var(--color-marker);
+    --tw-prose-hr: var(--color-divider);
+    --tw-prose-quotes: var(--color-quote-text);
+    --tw-prose-quote-borders: var(--color-quote-border);
+    --tw-prose-captions: var(--color-muted);
+    --tw-prose-code: var(--color-code-text);
+    --tw-prose-pre-code: var(--color-primary);
+    --tw-prose-pre-bg: var(--color-code-block-bg);
+    --tw-prose-th-borders: var(--color-divider);
+    --tw-prose-td-borders: var(--color-divider);
+  }
+
+  .prose.prose strong {
+    color: var(--color-primary);
+  }
+
+  .prose.prose :where(:not(pre) > code) {
+    border: 1px solid var(--color-code-block-border);
+    background-color: var(--color-code-bg) !important;
+    color: var(--color-code-text) !important;
+  }
+
+  .prose.prose :where(ol > li)::marker,
+  .prose.prose :where(ul > li)::marker {
+    color: var(--color-marker);
+  }
+
+  .prose.prose blockquote {
+    border-left-color: var(--color-quote-border);
+    color: var(--color-quote-text);
+  }
+
+  .prose.prose blockquote p,
+  .prose.prose blockquote em,
+  .prose.prose blockquote strong {
+    color: var(--color-quote-text);
+  }
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+  html {
+    --color-primary: hsl(210, 15%, 88%);
+    --color-muted: hsl(212, 8%, 60%);
+    --color-surface: hsl(210, 10%, 12%);
+    --color-divider: hsl(210, 10%, 22%);
+    --color-hover: hsla(210, 12%, 72%, 0.08);
+    --color-hover-strong: hsla(210, 12%, 72%, 0.12);
+    --color-code-bg: hsla(210, 12%, 72%, 0.12);
+    --color-code-block-bg: hsl(214, 13%, 15%);
+    --color-code-text: hsl(215, 52%, 73%);
+    --color-code-block-border: hsl(214, 13%, 24%);
+    --color-quote-text: hsl(211, 13%, 72%);
+    --color-quote-border: hsl(211, 13%, 62%);
+    --color-marker: hsl(214, 24%, 57%);
+    color-scheme: dark;
+    background: linear-gradient(
+      135deg,
+      hsl(220, 8%, 8%) 0%,
+      hsl(210, 8%, 10%) 48%,
+      hsl(24, 7%, 11%) 100%
+    );
+  }
+}
+*/
