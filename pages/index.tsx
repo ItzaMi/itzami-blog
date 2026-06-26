@@ -1,29 +1,38 @@
 import { FC } from 'react'
+import Link from 'next/link'
 
 import { getAllPosts, PostMeta } from '../lib/posts'
 import content from '../content/home.content.json'
+import { projects } from '../content/site.content'
+import { getReadingData } from '../lib/books'
 
 import SEO from '../components/SEO'
 import BlogLink from '../components/BlogLink'
 
 export async function getStaticProps() {
   const posts = getAllPosts()
+  const readingData = getReadingData()
 
   return {
-    props: { posts },
+    props: {
+      posts,
+      currentlyReading: readingData.currentlyReading.map((book) => book.title),
+    },
   }
 }
 
 interface Props {
   posts: PostMeta[]
+  currentlyReading: string[]
 }
 
-const Home: FC<Props> = ({ posts }) => {
+const Home: FC<Props> = ({ posts, currentlyReading }) => {
   const metadataImagePath =
     'https://itzami.com/images/overallSocialPreview.jpeg'
+  const latestPosts = posts.slice(0, 3)
 
   return (
-    <main className="w-full max-w-[800px] py-[125px] max-md:py-5 max-md:pb-20">
+    <main className="w-full max-w-[800px] py-[125px] max-md:py-5 max-md:pb-28">
       <SEO
         title="ItzaMi - The blog website of Rui Sousa"
         description="I'm a self-taught front-end developer with a Master's Degree in Psychology and a knack for design. And this is where I share my experience and knowledge with the internet"
@@ -47,12 +56,46 @@ const Home: FC<Props> = ({ posts }) => {
         </div>
       </section>
 
-      <section className="mt-[150px] flex flex-col gap-2.5 max-md:mt-20">
+      <section className="mt-[95px] flex max-w-[560px] flex-col gap-2.5 max-md:mt-20">
         <h2 className="text-sm font-medium tracking-tight text-primary">
-          Featured Posts
+          Projects
         </h2>
-        <div className="flex max-w-[500px] flex-col gap-[7px]">
-          {posts.map((post) => (
+        <div className="flex flex-col gap-2.5 px-2.5 py-5">
+          <p className="text-sm leading-[26px] tracking-tight text-muted">
+            A running list of things I made, shipped, paused, or learned from.
+          </p>
+          <Link
+            href="/projects"
+            className="mt-1 w-fit text-sm font-medium tracking-tight text-primary underline underline-offset-[3px] transition-all duration-200 ease-in hover:text-muted"
+          >
+            View {projects.length} projects
+          </Link>
+        </div>
+      </section>
+
+      <section className="mt-[95px] flex max-w-[560px] flex-col gap-2.5 max-md:mt-20">
+        <h2 className="text-sm font-medium tracking-tight text-primary">
+          Reading
+        </h2>
+        <div className="flex flex-col gap-2.5 px-2.5 py-5">
+          <p className="text-sm leading-[26px] tracking-tight text-muted">
+            Currently: {currentlyReading.join(', ')}.
+          </p>
+          <Link
+            href="/reading"
+            className="mt-1 w-fit text-sm font-medium tracking-tight text-primary underline underline-offset-[3px] transition-all duration-200 ease-in hover:text-muted"
+          >
+            View reading list
+          </Link>
+        </div>
+      </section>
+
+      <section className="mt-[95px] flex flex-col gap-2.5 max-md:mt-20">
+        <h2 className="text-sm font-medium tracking-tight text-primary">
+          Latest writing
+        </h2>
+        <div className="flex max-w-[580px] flex-col gap-[7px]">
+          {latestPosts.map((post) => (
             <BlogLink post={post} key={post.slug} />
           ))}
         </div>
