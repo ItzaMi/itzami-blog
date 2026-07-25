@@ -23,6 +23,11 @@ function getReadYear(dateRead: string) {
   return dateRead.split('/')[0] || 'Undated'
 }
 
+function getReadDateLabel(dateRead: string) {
+  const [, ...dateParts] = dateRead.split('/')
+  return dateParts.join('/') || '—'
+}
+
 const Reading = ({ readingData }: Props) => {
   const metadataImagePath =
     'https://itzami.com/images/overallSocialPreview.jpeg'
@@ -105,11 +110,15 @@ const Reading = ({ readingData }: Props) => {
                   {readByYear[year].map((book) => (
                     <li
                       className="group grid grid-cols-[58px_1fr] items-baseline gap-3 rounded-md px-2.5 py-1.5 text-sm leading-[24px] tracking-tight transition-all duration-200 ease-in hover:bg-hover max-sm:grid-cols-1 max-sm:gap-0 max-sm:py-2.5"
-                      key={book.goodreadsId || `${book.title}-${book.author}`}
+                      key={
+                        book.readEventId ||
+                        book.goodreadsId ||
+                        `${book.title}-${book.author}`
+                      }
                     >
                       {book.dateRead ? (
                         <span className="font-mono text-[11px] text-muted max-sm:mb-0.5">
-                          {book.dateRead.slice(5)}
+                          {getReadDateLabel(book.dateRead)}
                         </span>
                       ) : null}
                       <span>
@@ -118,6 +127,11 @@ const Reading = ({ readingData }: Props) => {
                           {' '}
                           by {book.author}
                         </span>
+                        {book.isReread ? (
+                          <span className="ml-2 font-mono text-[10px] uppercase tracking-wide text-muted">
+                            reread
+                          </span>
+                        ) : null}
                       </span>
                     </li>
                   ))}

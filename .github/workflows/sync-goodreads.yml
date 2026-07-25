@@ -1,0 +1,68 @@
+name: Sync Goodreads reading history
+
+on:
+  schedule:
+    - cron: '23 6 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Recheck every book currently present in the RSS feed
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-goodreads-reading
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Sync changed Goodreads books and rereads
+        id: goodreads-sync
+        continue-on-error: true
+        env:
+          GOODREADS_RSS_URL: ${{ secrets.GOODREADS_RSS_URL }}
+          GOODREADS_COOKIE: ${{ secrets.GOODREADS_COOKIE }}
+          FORCE_SYNC: ${{ inputs.force }}
+        run: |
+          if [ "$FORCE_SYNC" = "true" ]; then
+            npm run reading:sync -- --force
+          else
+            npm run reading:sync
+          fi
+
+      - name: Commit reading changes
+        run: |
+          git config user.name "goodreads-sync[bot]"
+          git config user.email "goodreads-sync[bot]@users.noreply.github.com"
+          git add content/reading/books.csv content/reading/imports
+
+          if git diff --cached --quiet; then
+            echo "No reading changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Sync Goodreads reading history"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
+
+      - name: Report a failed Goodreads sync
+        if: steps.goodreads-sync.outcome == 'failure'
+        run: |
+          echo "The sync state was saved, but one or more Goodreads books need retry."
+          echo "Refresh GOODREADS_COOKIE if the log shows a sign-in redirect."
+          exit 1

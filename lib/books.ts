@@ -5,6 +5,10 @@ const booksPath = path.join(
   process.cwd(),
   'content/reading/books.csv',
 )
+const readEventsPath = path.join(
+  process.cwd(),
+  'content/reading/imports/goodreads-read-events.json',
+)
 
 export interface Book {
   goodreadsId: string
@@ -14,6 +18,24 @@ export interface Book {
   status: string
   dateRead: string
   dateAdded: string
+  readEventId?: string
+  readSessionIndex?: number
+  isReread?: boolean
+}
+
+interface ReadDate {
+  year: number
+  month?: number
+  day?: number
+}
+
+interface ReadEvent {
+  bookId: string
+  title: string
+  author: string
+  sessionIndex: number
+  dateStarted: ReadDate | null
+  dateFinished: ReadDate | null
 }
 
 export interface ReadingData {
@@ -81,7 +103,8 @@ function toDateValue(date: string) {
     return 0
   }
 
-  return new Date(date.replaceAll('/', '-')).getTime()
+  const [year, month = '0', day = '0'] = date.split('/')
+  return Number(year) * 10_000 + Number(month) * 100 + Number(day)
 }
 
 function cleanText(value: string) {
@@ -104,6 +127,27 @@ function toBook(row: string[], columnIndex: Record<string, number>): Book {
   }
 }
 
+function readDateToString(date: ReadDate | null) {
+  if (!date?.year) {
+    return ''
+  }
+
+  return [
+    String(date.year),
+    ...(date.month ? [String(date.month).padStart(2, '0')] : []),
+    ...(date.day ? [String(date.day).padStart(2, '0')] : []),
+  ].join('/')
+}
+
+function getReadEvents(): ReadEvent[] {
+  if (!fs.existsSync(readEventsPath)) {
+    return []
+  }
+
+  const document = JSON.parse(fs.readFileSync(readEventsPath, 'utf8'))
+  return Array.isArray(document.events) ? document.events : []
+}
+
 export function getReadingData(): ReadingData {
   const fileContents = fs.readFileSync(booksPath, 'utf8')
   const rows = parseCsv(fileContents)
@@ -113,17 +157,48 @@ export function getReadingData(): ReadingData {
     .slice(1)
     .filter((row) => row.length > 1)
     .map((row) => toBook(row, columnIndex))
+  const booksById = new Map(books.map((book) => [book.goodreadsId, book]))
+  const readEvents = getReadEvents()
+  const eventCountsByBook = readEvents.reduce<Record<string, number>>(
+    (counts, event) => ({
+      ...counts,
+      [event.bookId]: (counts[event.bookId] || 0) + 1,
+    }),
+    {},
+  )
+  const booksWithEvents = new Set(readEvents.map((event) => event.bookId))
 
   const currentlyReading = books
     .filter((book) => book.status === 'currently-reading')
     .sort(sortAlphabetically)
 
-  const recentlyRead = books
-    .filter((book) => book.status === 'read' && book.dateRead)
+  const eventReads = readEvents.map((event) => {
+    const book = booksById.get(event.bookId)
+    const dateRead = readDateToString(event.dateFinished || event.dateStarted)
+
+    return {
+      goodreadsId: event.bookId,
+      title: book?.title || event.title,
+      author: book?.author || event.author,
+      rating: book?.rating || 0,
+      status: 'read',
+      dateRead,
+      dateAdded: book?.dateAdded || '',
+      readEventId: `${event.bookId}:${event.sessionIndex}:${dateRead}`,
+      readSessionIndex: event.sessionIndex,
+      isReread:
+        eventCountsByBook[event.bookId] > 1 && event.sessionIndex > 1,
+    }
+  })
+  const fallbackReads = books.filter(
+    (book) => book.status === 'read' && !booksWithEvents.has(book.goodreadsId),
+  )
+  const recentlyRead = [...eventReads, ...fallbackReads]
+    .filter((book) => book.dateRead)
     .sort((a, b) => toDateValue(b.dateRead) - toDateValue(a.dateRead))
 
-  const readWithoutDates = books
-    .filter((book) => book.status === 'read' && !book.dateRead)
+  const readWithoutDates = fallbackReads
+    .filter((book) => !book.dateRead)
     .sort(sortAlphabetically)
 
   const toRead = books
@@ -141,7 +216,7 @@ export function getReadingData(): ReadingData {
     didNotFinish,
     counts: {
       total: books.length,
-      read: books.filter((book) => book.status === 'read').length,
+      read: eventReads.length + fallbackReads.length,
       currentlyReading: currentlyReading.length,
       toRead: books.filter((book) => book.status === 'to-read').length,
       didNotFinish: books.filter((book) => book.status === 'did-not-finish')

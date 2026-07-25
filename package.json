@@ -5,6 +5,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "reading:goodreads": "node scripts/goodreads-read-dates.mjs",
+    "reading:backfill": "node scripts/goodreads-read-dates.mjs --csv content/reading/goodreads_library_export.csv",
+    "reading:sync": "node scripts/sync-goodreads-reading.mjs",
+    "reading:test": "node --test scripts/goodreads-sync.test.mjs",
     "lint": "next lint"
   },
   "dependencies": {

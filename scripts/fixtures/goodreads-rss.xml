@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Rui's bookshelf</title>
+    <item>
+      <title><![CDATA[Exit Strategy (The Murderbot Diaries, #4)]]></title>
+      <book_id>35519109</book_id>
+      <author_name><![CDATA[Martha Wells]]></author_name>
+      <isbn><![CDATA[1250229863]]></isbn>
+      <isbn13><![CDATA[9781250229861]]></isbn13>
+      <user_rating>4</user_rating>
+      <user_shelves><![CDATA[read, science-fiction]]></user_shelves>
+      <user_read_at><![CDATA[Tue, 16 Jun 2026 00:00:00 -0700]]></user_read_at>
+      <user_date_added><![CDATA[Mon, 24 Jan 2023 00:00:00 -0700]]></user_date_added>
+      <user_review><![CDATA[Still Murderbot.]]></user_review>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 -0700</pubDate>
+    </item>
+  </channel>
+</rss>
