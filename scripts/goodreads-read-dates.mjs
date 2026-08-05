@@ -17,6 +17,7 @@ function parseArgs(argv) {
     shelf: 'read',
     out: DEFAULT_OUT_PATH,
     limit: Infinity,
+    rereadsOnly: false,
   }
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -50,6 +51,8 @@ function parseArgs(argv) {
     } else if (arg === '--limit') {
       args.limit = Number(next)
       index += 1
+    } else if (arg === '--rereads-only') {
+      args.rereadsOnly = true
     } else if (arg === '--help' || arg === '-h') {
       args.help = true
     } else {
@@ -78,6 +81,7 @@ Options:
   --cookie-file <path> Read Cookie header value from a local file
   --out <path>         Output JSON path, defaults to ${DEFAULT_OUT_PATH}
   --limit <number>     Stop after N books while testing
+  --rereads-only       With --csv, fetch only books whose exported Read Count is greater than 1
 `.trim()
 }
 
@@ -165,17 +169,21 @@ function uniqueBooks(books) {
   })
 }
 
-function booksFromCsv(csvPath) {
+function booksFromCsv(csvPath, { rereadsOnly = false } = {}) {
   const rows = parseCsv(fs.readFileSync(csvPath, 'utf8'))
 
   return uniqueBooks(
-    rowsToObjects(rows).map((book) => ({
-      goodreadsId: book['Book Id'],
-      title: book.Title,
-      author: book.Author,
-      exportedDateRead: book['Date Read'],
-      exportedReadCount: book['Read Count'],
-    })),
+    rowsToObjects(rows)
+      .filter(
+        (book) => !rereadsOnly || Number(book['Read Count'] || 0) > 1,
+      )
+      .map((book) => ({
+        goodreadsId: book['Book Id'],
+        title: book.Title,
+        author: book.Author,
+        exportedDateRead: book['Date Read'],
+        exportedReadCount: book['Read Count'],
+      })),
   )
 }
 
@@ -456,7 +464,7 @@ async function main() {
   }
 
   if (args.csv) {
-    books = booksFromCsv(args.csv)
+    books = booksFromCsv(args.csv, { rereadsOnly: args.rereadsOnly })
   }
 
   if (args.user) {
@@ -543,6 +551,7 @@ if (isMain) {
 }
 
 export {
+  booksFromCsv,
   booksFromShelf,
   fetchGoodreads,
   parseReadEvents,

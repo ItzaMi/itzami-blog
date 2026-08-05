@@ -291,19 +291,62 @@ function toCsv(rows) {
 }
 
 function mergeBook(existing, item) {
+  const nextStatus = item.status || existing?.status || ''
+  const nextRating =
+    item.rating && (item.rating !== '0' || !existing?.rating)
+      ? item.rating
+      : existing?.rating || '0'
+  const nextDateRead =
+    nextStatus === 'read'
+      ? item.dateRead || existing?.date_read || ''
+      : existing?.date_read || ''
+
   return {
     goodreads_id: item.bookId,
     title: item.title || existing?.title || '',
     author: item.author || existing?.author || '',
     isbn: item.isbn || existing?.isbn || '',
     isbn13: item.isbn13 || existing?.isbn13 || '',
-    rating: item.rating || existing?.rating || '0',
-    status: item.status || existing?.status || '',
-    date_read: item.dateRead || existing?.date_read || '',
-    date_added: item.dateAdded || existing?.date_added || '',
+    rating: nextRating,
+    status: nextStatus,
+    date_read: nextDateRead,
+    date_added: existing?.date_added || item.dateAdded || '',
     favorite: existing?.favorite || 'false',
     review: existing?.review || item.review || '',
   }
+}
+
+function shouldSyncReadEvents(item, existing) {
+  return (
+    Boolean(item.dateRead) ||
+    ['read', 'currently-reading'].includes(item.status) ||
+    ['read', 'currently-reading'].includes(existing?.status)
+  )
+}
+
+function latestFinishedDate(events) {
+  return events.reduce((latest, event) => {
+    if (!event.dateFinished) {
+      return latest
+    }
+
+    return !latest ||
+      readDateSortValue(event.dateFinished) > readDateSortValue(latest)
+      ? event.dateFinished
+      : latest
+  }, null)
+}
+
+function partialDateToCsv(date) {
+  if (!date?.year) {
+    return ''
+  }
+
+  return [
+    String(date.year),
+    ...(date.month ? [String(date.month).padStart(2, '0')] : []),
+    ...(date.day ? [String(date.day).padStart(2, '0')] : []),
+  ].join('/')
 }
 
 function mergeBooksCsv(input, items) {
@@ -442,13 +485,20 @@ async function syncGoodreads(args) {
   }
 
   const cookie = process.env.GOODREADS_COOKIE || ''
+  const booksInput = fs.readFileSync(BOOKS_PATH, 'utf8')
+  const existingBooks = rowsToObjects(parseCsv(booksInput))
+  const booksById = new Map(
+    existingBooks.map((book) => [book.goodreads_id, book]),
+  )
   let events = eventDocument.events || []
   let eventsChanged = false
   const successfulItems = []
   const failures = []
 
   for (const [index, item] of changedItems.entries()) {
-    if (item.status !== 'read') {
+    const existing = booksById.get(item.bookId)
+
+    if (!shouldSyncReadEvents(item, existing)) {
       successfulItems.push(item)
       pending.delete(item.bookId)
       state.fingerprints[item.bookId] = item.fingerprint
@@ -468,6 +518,12 @@ async function syncGoodreads(args) {
 
       if (nextEvents.length === 0) {
         throw new Error('No reading sessions found on the review edit page.')
+      }
+
+      const latestDate = latestFinishedDate(nextEvents)
+      item.dateRead = partialDateToCsv(latestDate) || item.dateRead
+      if (!item.status && !existing?.status && item.dateRead) {
+        item.status = 'read'
       }
 
       events = replaceBookEvents(events, item.bookId, nextEvents)
@@ -492,7 +548,6 @@ async function syncGoodreads(args) {
     }
   }
 
-  const booksInput = fs.readFileSync(BOOKS_PATH, 'utf8')
   const booksOutput = mergeBooksCsv(booksInput, successfulItems)
   const booksChanged = booksOutput !== booksInput
 
@@ -570,5 +625,6 @@ export {
   parseRss,
   replaceBookEvents,
   rssDateToCsv,
+  shouldSyncReadEvents,
   syncGoodreads,
 }

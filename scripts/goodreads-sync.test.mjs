@@ -3,11 +3,15 @@ import fs from 'node:fs'
 import path from 'node:path'
 import test from 'node:test'
 
-import { parseReadEvents } from './goodreads-read-dates.mjs'
+import {
+  booksFromCsv,
+  parseReadEvents,
+} from './goodreads-read-dates.mjs'
 import {
   mergeBooksCsv,
   parseRss,
   replaceBookEvents,
+  shouldSyncReadEvents,
 } from './sync-goodreads-reading.mjs'
 
 const fixturePath = (...parts) =>
@@ -66,6 +70,50 @@ test('updates Goodreads fields without overwriting local review edits', () => {
   const merged = mergeBooksCsv(csv, [item])
 
   assert.match(merged, /,4,read,2026\/06\/16,2023\/01\/24,true,Local review/)
+})
+
+test('does not replace stable metadata with empty Goodreads RSS values', () => {
+  const csv = [
+    'goodreads_id,title,author,isbn,isbn13,rating,status,date_read,date_added,favorite,review',
+    '35519109,Exit Strategy,Martha Wells,,,4,read,2026/06/16,2023/01/24,false,Local review',
+    '',
+  ].join('\n')
+  const [item] = parseRss(
+    fs
+      .readFileSync(fixturePath('goodreads-rss.xml'), 'utf8')
+      .replace('<user_rating>4</user_rating>', '<user_rating>0</user_rating>')
+      .replace(
+        '<user_date_added>Thu, 24 Jan 2023 10:00:00 +0000</user_date_added>',
+        '<user_date_added>Tue, 16 Jun 2026 10:00:00 +0000</user_date_added>',
+      ),
+  )
+  const merged = mergeBooksCsv(csv, [item])
+
+  assert.match(
+    merged,
+    /,4,read,2026\/06\/16,2023\/01\/24,false,Local review/,
+  )
+})
+
+test('uses existing reading state when RSS omits the exclusive shelf', () => {
+  const item = { status: '', dateRead: '' }
+
+  assert.equal(shouldSyncReadEvents(item, { status: 'read' }), true)
+  assert.equal(
+    shouldSyncReadEvents(item, { status: 'currently-reading' }),
+    true,
+  )
+  assert.equal(shouldSyncReadEvents(item, { status: 'to-read' }), false)
+})
+
+test('selects only known rereads for the historical backfill', () => {
+  const books = booksFromCsv(
+    path.join(process.cwd(), 'content/reading/goodreads_library_export.csv'),
+    { rereadsOnly: true },
+  )
+
+  assert.equal(books.length, 8)
+  assert.ok(books.every((book) => Number(book.exportedReadCount) > 1))
 })
 
 test('replaces every stored session for a changed book atomically', () => {

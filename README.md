@@ -45,8 +45,9 @@ shown in the year they happened instead of being collapsed into one CSV row.
 2. Run `npm run reading:backfill`.
 3. Review `content/reading/imports/goodreads-read-events.json`.
 
-The backfill reads every book from the existing Goodreads export and preserves
-partial dates such as a finish year with no month or day.
+The backfill reads the existing Goodreads export and preserves partial dates
+such as a finish year with no month or day. Pass `-- --rereads-only` to fetch
+only books whose exported read count is greater than one.
 
 ### Continuous sync
 
@@ -59,11 +60,13 @@ Add these repository Actions secrets:
 - `GOODREADS_RSS_URL`: the full Goodreads RSS URL, including its private key.
 - `GOODREADS_COOKIE`: the signed-in Goodreads `Cookie` request header.
 
-The `Sync Goodreads reading history` workflow runs daily. RSS is used to find
-changed books; the authenticated edit page is fetched only for changed read
-books. Sessions for that book are replaced atomically, while local `favorite`
-and `review` edits in `books.csv` are preserved.
+The `Sync Goodreads reading history` workflow runs daily. RSS is used only to
+find changed books; reading sessions come from the authenticated edit page.
+Sessions for that book are replaced atomically, while stable metadata and local
+`favorite` and `review` edits in `books.csv` are preserved.
 
 If the cookie expires, failed book IDs stay in
 `content/reading/imports/goodreads-sync-state.json` and retry after the secret
-is refreshed. The workflow can also be run manually from the Actions tab.
+is refreshed. The workflow can also be run manually from the Actions tab. Use
+the `backfill` input once to import known historical rereads from the checked-in
+export, and `force` to recheck every book currently present in the RSS feed.
