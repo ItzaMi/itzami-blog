@@ -7,7 +7,7 @@ import {
   booksFromCsv,
   parseReadEvents,
   reviewPageDiagnostic,
-  validateCookie,
+  normalizeCookie,
 } from './goodreads-read-dates.mjs'
 import {
   mergeBooksCsv,
@@ -63,14 +63,18 @@ test('reports safe review-page diagnostics without page contents', () => {
 
 test('rejects malformed Goodreads Cookie headers safely', () => {
   assert.throws(
-    () => validateCookie('Cookie: _session_id2=abc'),
+    () => normalizeCookie('Cookie: _session_id2=abc'),
     /without the "Cookie:" label/,
   )
   assert.throws(
-    () => validateCookie('other=value'),
+    () => normalizeCookie('other=value'),
     /does not contain the Goodreads _session_id2/,
   )
-  assert.doesNotThrow(() => validateCookie('_session_id2=abc; other=value'))
+  assert.equal(normalizeCookie('abc'), '_session_id2=abc')
+  assert.equal(
+    normalizeCookie('_session_id2=abc; other=value'),
+    '_session_id2=abc; other=value',
+  )
 })
 
 test('parses the Goodreads RSS fields used by the incremental worker', () => {

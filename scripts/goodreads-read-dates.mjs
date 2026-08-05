@@ -97,14 +97,24 @@ function readCookie(args) {
   return process.env.GOODREADS_COOKIE || ''
 }
 
-function validateCookie(cookie) {
-  if (/^\s*cookie\s*:/i.test(cookie)) {
+function normalizeCookie(cookie) {
+  const value = cookie.trim()
+
+  if (/^cookie\s*:/i.test(value)) {
     throw new Error(
       'GOODREADS_COOKIE must contain only the Cookie header value, without the "Cookie:" label.',
     )
   }
 
-  if (!/(?:^|;\s*)_session_id2=/.test(cookie)) {
+  if (/(?:^|;\s*)_session_id2=/.test(value)) {
+    return value
+  }
+
+  if (value && !/[;=\s]/.test(value)) {
+    return `_session_id2=${value}`
+  }
+
+  if (!value || !/(?:^|;\s*)_session_id2=/.test(value)) {
     throw new Error(
       'GOODREADS_COOKIE does not contain the Goodreads _session_id2 session cookie.',
     )
@@ -394,11 +404,11 @@ function parseShelfBooks(html) {
 }
 
 async function fetchGoodreads(url, cookie) {
-  validateCookie(cookie)
+  const normalizedCookie = normalizeCookie(cookie)
 
   const response = await fetch(url, {
     headers: {
-      Cookie: cookie,
+      Cookie: normalizedCookie,
       'User-Agent': USER_AGENT,
       Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     },
@@ -612,5 +622,5 @@ export {
   parseShelfBooks,
   readDateSortValue,
   reviewPageDiagnostic,
-  validateCookie,
+  normalizeCookie,
 }
