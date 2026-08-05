@@ -12,7 +12,9 @@ import {
 import {
   mergeBooksCsv,
   parseRss,
+  reconcileCurrentShelf,
   replaceBookEvents,
+  shelfRssUrl,
   shouldSyncReadEvents,
 } from './sync-goodreads-reading.mjs'
 
@@ -87,6 +89,58 @@ test('parses the Goodreads RSS fields used by the incremental worker', () => {
   assert.equal(book.dateAdded, '2023/01/24')
   assert.equal(book.author, 'Martha Wells')
   assert.ok(book.fingerprint)
+})
+
+test('derives the dedicated currently-reading RSS URL', () => {
+  assert.equal(
+    shelfRssUrl(
+      'https://www.goodreads.com/review/list_rss/123?key=secret&shelf=read',
+      'currently-reading',
+    ),
+    'https://www.goodreads.com/review/list_rss/123?key=secret&shelf=currently-reading',
+  )
+})
+
+test('uses the dedicated shelf as the authoritative current list', () => {
+  const currentItems = parseRss(
+    fs.readFileSync(
+      fixturePath('goodreads-currently-reading-rss.xml'),
+      'utf8',
+    ),
+  )
+  const existing = [
+    {
+      goodreads_id: '53205854',
+      title: 'Fugitive Telemetry',
+      author: 'Martha Wells',
+      status: 'currently-reading',
+      date_added: '2023/01/24',
+    },
+    {
+      goodreads_id: '52025940',
+      title: 'The Anglo-Saxons',
+      author: 'Marc Morris',
+      status: 'currently-reading',
+      date_added: '2025/08/11',
+    },
+  ]
+  const events = [
+    {
+      bookId: '53205854',
+      dateFinished: { year: 2026, month: 6, day: 25 },
+    },
+  ]
+  const reconciled = reconcileCurrentShelf(existing, currentItems, events)
+  const statuses = Object.fromEntries(
+    reconciled.map((item) => [item.bookId, item.status]),
+  )
+
+  assert.deepEqual(statuses, {
+    '944073': 'currently-reading',
+    '65211701': 'currently-reading',
+    '53205854': 'read',
+    '52025940': 'to-read',
+  })
 })
 
 test('updates Goodreads fields without overwriting local review edits', () => {

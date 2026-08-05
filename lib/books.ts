@@ -172,24 +172,26 @@ export function getReadingData(): ReadingData {
     .filter((book) => book.status === 'currently-reading')
     .sort(sortAlphabetically)
 
-  const eventReads = readEvents.map((event) => {
-    const book = booksById.get(event.bookId)
-    const dateRead = readDateToString(event.dateFinished || event.dateStarted)
+  const eventReads = readEvents
+    .filter((event) => event.dateFinished)
+    .map((event) => {
+      const book = booksById.get(event.bookId)
+      const dateRead = readDateToString(event.dateFinished)
 
-    return {
-      goodreadsId: event.bookId,
-      title: book?.title || event.title,
-      author: book?.author || event.author,
-      rating: book?.rating || 0,
-      status: 'read',
-      dateRead,
-      dateAdded: book?.dateAdded || '',
-      readEventId: `${event.bookId}:${event.sessionIndex}:${dateRead}`,
-      readSessionIndex: event.sessionIndex,
-      isReread:
-        eventCountsByBook[event.bookId] > 1 && event.sessionIndex > 1,
-    }
-  })
+      return {
+        goodreadsId: event.bookId,
+        title: book?.title || event.title,
+        author: book?.author || event.author,
+        rating: book?.rating || 0,
+        status: 'read',
+        dateRead,
+        dateAdded: book?.dateAdded || '',
+        readEventId: `${event.bookId}:${event.sessionIndex}:${dateRead}`,
+        readSessionIndex: event.sessionIndex,
+        isReread:
+          eventCountsByBook[event.bookId] > 1 && event.sessionIndex > 1,
+      }
+    })
   const fallbackReads = books.filter(
     (book) => book.status === 'read' && !booksWithEvents.has(book.goodreadsId),
   )

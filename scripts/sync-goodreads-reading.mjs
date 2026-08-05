@@ -50,6 +50,9 @@ function parseArgs(argv) {
     if (arg === '--rss-file') {
       args.rssFile = next
       index += 1
+    } else if (arg === '--current-rss-file') {
+      args.currentRssFile = next
+      index += 1
     } else if (arg === '--html-dir') {
       args.htmlDir = next
       index += 1
@@ -78,6 +81,7 @@ Usage:
 
 Options:
   --rss-file <path>   Read a saved Goodreads RSS feed instead of fetching it
+  --current-rss-file <path> Read a saved currently-reading RSS fixture
   --html-dir <path>   Read <book-id>.html fixtures instead of fetching edit pages
   --book-id <id>      Sync only one feed item, repeatable
   --force             Reprocess matching feed items even when unchanged
@@ -425,6 +429,78 @@ async function fetchRss(args) {
   return response.text()
 }
 
+function shelfRssUrl(rssUrl, shelf) {
+  const url = new URL(rssUrl)
+  url.searchParams.set('shelf', shelf)
+  return url.toString()
+}
+
+async function fetchCurrentShelfRss(args) {
+  if (args.rssFile) {
+    return fs.readFileSync(
+      args.currentRssFile || args.rssFile,
+      'utf8',
+    )
+  }
+
+  const rssUrl = process.env.GOODREADS_RSS_URL
+  const response = await fetch(shelfRssUrl(rssUrl, 'currently-reading'))
+  if (!response.ok) {
+    throw new Error(`Goodreads currently-reading RSS returned ${response.status}`)
+  }
+
+  return response.text()
+}
+
+function reconcileCurrentShelf(existingBooks, currentShelfItems, events) {
+  const currentIds = new Set(currentShelfItems.map((item) => item.bookId))
+  const finishedDates = new Map()
+
+  for (const event of events) {
+    if (!event.dateFinished) {
+      continue
+    }
+
+    const current = finishedDates.get(event.bookId)
+    if (
+      !current ||
+      readDateSortValue(event.dateFinished) > readDateSortValue(current)
+    ) {
+      finishedDates.set(event.bookId, event.dateFinished)
+    }
+  }
+
+  const staleCurrentItems = existingBooks
+    .filter(
+      (book) =>
+        book.status === 'currently-reading' &&
+        !currentIds.has(book.goodreads_id),
+    )
+    .map((book) => {
+      const finishedDate = finishedDates.get(book.goodreads_id)
+      return {
+        bookId: book.goodreads_id,
+        title: book.title,
+        author: book.author,
+        isbn: book.isbn,
+        isbn13: book.isbn13,
+        rating: book.rating,
+        review: book.review,
+        status: finishedDate ? 'read' : 'to-read',
+        dateRead: partialDateToCsv(finishedDate),
+        dateAdded: book.date_added,
+      }
+    })
+
+  return [
+    ...currentShelfItems.map((item) => ({
+      ...item,
+      status: 'currently-reading',
+    })),
+    ...staleCurrentItems,
+  ]
+}
+
 async function fetchReviewHtml(args, item, cookie) {
   if (args.htmlDir) {
     return fs.readFileSync(path.join(args.htmlDir, `${item.bookId}.html`), 'utf8')
@@ -442,8 +518,12 @@ async function fetchReviewHtml(args, item, cookie) {
 
 async function syncGoodreads(args) {
   const now = new Date()
-  const rss = await fetchRss(args)
+  const [rss, currentShelfRss] = await Promise.all([
+    fetchRss(args),
+    fetchCurrentShelfRss(args),
+  ])
   const feedItems = parseRss(rss)
+  const currentShelfItems = parseRss(currentShelfRss)
   const selectedItems =
     args.bookIds.length > 0
       ? feedItems.filter((item) => args.bookIds.includes(item.bookId))
@@ -465,6 +545,19 @@ async function syncGoodreads(args) {
     source: 'goodreads-review-edit',
     events: [],
   })
+  const booksInput = fs.readFileSync(BOOKS_PATH, 'utf8')
+  const existingBooks = rowsToObjects(parseCsv(booksInput))
+  const booksById = new Map(
+    existingBooks.map((book) => [book.goodreads_id, book]),
+  )
+  let events = eventDocument.events || []
+  const shelfItems = reconcileCurrentShelf(
+    existingBooks,
+    currentShelfItems,
+    events,
+  )
+  const shelfBooksOutput = mergeBooksCsv(booksInput, shelfItems)
+  const shelfChanged = shelfBooksOutput !== booksInput
   const pending = new Set(state.pendingBookIds || [])
   const changedItems = selectedItems.filter(
     (item) =>
@@ -473,7 +566,7 @@ async function syncGoodreads(args) {
       state.fingerprints[item.bookId] !== item.fingerprint,
   )
 
-  if (changedItems.length === 0) {
+  if (changedItems.length === 0 && !shelfChanged) {
     if (heartbeatDue(state.lastHeartbeatAt, now) && !args.dryRun) {
       state.lastHeartbeatAt = now.toISOString()
       fs.mkdirSync(path.dirname(STATE_PATH), { recursive: true })
@@ -487,12 +580,6 @@ async function syncGoodreads(args) {
   }
 
   const cookie = process.env.GOODREADS_COOKIE || ''
-  const booksInput = fs.readFileSync(BOOKS_PATH, 'utf8')
-  const existingBooks = rowsToObjects(parseCsv(booksInput))
-  const booksById = new Map(
-    existingBooks.map((book) => [book.goodreads_id, book]),
-  )
-  let events = eventDocument.events || []
   let eventsChanged = false
   const successfulItems = []
   const failures = []
@@ -552,7 +639,10 @@ async function syncGoodreads(args) {
     }
   }
 
-  const booksOutput = mergeBooksCsv(booksInput, successfulItems)
+  const booksOutput = mergeBooksCsv(booksInput, [
+    ...successfulItems,
+    ...shelfItems,
+  ])
   const booksChanged = booksOutput !== booksInput
 
   state.pendingBookIds = Array.from(pending).sort()
@@ -629,8 +719,10 @@ export {
   getStatus,
   mergeBooksCsv,
   parseRss,
+  reconcileCurrentShelf,
   replaceBookEvents,
   rssDateToCsv,
+  shelfRssUrl,
   shouldSyncReadEvents,
   syncGoodreads,
 }
