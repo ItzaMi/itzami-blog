@@ -1,0 +1,1007 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T13:27:57.483Z",
+  "source": "goodreads-review-edit",
+  "events": [
+    {
+      "bookId": "72193",
+      "title": "Harry Potter and the Philosopher’s Stone (Harry Potter, #1)",
+      "author": "J.K. Rowling",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/72193",
+      "dateStarted": {
+        "year": 2001
+      },
+      "dateFinished": {
+        "year": 2001
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "785092",
+      "title": "Secrets of the Millionaire Mind: Mastering the Inner Game of Wealth",
+      "author": "T. Harv Eker",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/785092",
+      "dateStarted": {
+        "year": 2021,
+        "month": 7,
+        "day": 4
+      },
+      "dateFinished": {
+        "year": 2021,
+        "month": 7,
+        "day": 18
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "42244267",
+      "title": "All Systems Red (The Murderbot Diaries, #1)",
+      "author": "Martha Wells",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/42244267",
+      "dateStarted": {
+        "year": 2022,
+        "month": 11,
+        "day": 20
+      },
+      "dateFinished": {
+        "year": 2022,
+        "month": 11,
+        "day": 23
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "38880861",
+      "title": "Among the Beasts & Briars",
+      "author": "Ashley Poston",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/38880861",
+      "dateStarted": {
+        "year": 2022,
+        "month": 11,
+        "day": 26
+      },
+      "dateFinished": {
+        "year": 2022,
+        "month": 12,
+        "day": 2
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "42244267",
+      "title": "All Systems Red (The Murderbot Diaries, #1)",
+      "author": "Martha Wells",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/42244267",
+      "dateStarted": {
+        "year": 2023,
+        "month": 8,
+        "day": 28
+      },
+      "dateFinished": {
+        "year": 2023,
+        "month": 9,
+        "day": 2
+      },
+      "sessionIndex": 2
+    },
+    {
+      "bookId": "72193",
+      "title": "Harry Potter and the Philosopher’s Stone (Harry Potter, #1)",
+      "author": "J.K. Rowling",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/72193",
+      "dateStarted": {
+        "year": 2023,
+        "month": 9,
+        "day": 14
+      },
+      "dateFinished": {
+        "year": 2023,
+        "month": 9,
+        "day": 23
+      },
+      "sessionIndex": 2
+    },
+    {
+      "bookId": "36223860",
+      "title": "Artificial Condition (The Murderbot Diaries, #2)",
+      "author": "Martha Wells",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/36223860",
+      "dateStarted": {
+        "year": 2023,
+        "month": 10,
+        "day": 25
+      },
+      "dateFinished": {
+        "year": 2023,
+        "month": 10,
+        "day": 28
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "35519101",
+      "title": "Rogue Protocol (The Murderbot Diaries, #3)",
+      "author": "Martha Wells",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/35519101",
+      "dateStarted": {
+        "year": 2023,
+        "month": 10,
+        "day": 29
+      },
+      "dateFinished": {
+        "year": 2023,
+        "month": 10,
+        "day": 30
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "35519109",
+      "title": "Exit Strategy (The Murderbot Diaries, #4)",
+      "author": "Martha Wells",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/35519109",
+      "dateStarted": {
+        "year": 2023,
+        "month": 11,
+        "day": 1
+      },
+      "dateFinished": {
+        "year": 2023,
+        "month": 11,
+        "day": 3
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "52381770",
+      "title": "Network Effect (The Murderbot Diaries, #5)",
+      "author": "Martha Wells",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/52381770",
+      "dateStarted": {
+        "year": 2023,
+        "month": 11,
+        "day": 7
+      },
+      "dateFinished": {
+        "year": 2023,
+        "month": 11,
+        "day": 19
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "15839976",
+      "title": "Red Rising (Red Rising Saga, #1)",
+      "author": "Pierce Brown",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/15839976",
+      "dateStarted": {
+        "year": 2024,
+        "month": 9,
+        "day": 18
+      },
+      "dateFinished": {
+        "year": 2024,
+        "month": 9,
+        "day": 22
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "18039011",
+      "title": "Maigret e o crime no Far-West",
+      "author": "Georges Simenon",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/18039011",
+      "dateStarted": {
+        "year": 2025,
+        "month": 4,
+        "day": 26
+      },
+      "dateFinished": {
+        "year": 2025,
+        "month": 4,
+        "day": 28
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "18039011",
+      "title": "Maigret e o crime no Far-West",
+      "author": "Georges Simenon",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/18039011",
+      "dateStarted": {
+        "year": 2025,
+        "month": 5,
+        "day": 1
+      },
+      "dateFinished": {
+        "year": 2025,
+        "month": 5,
+        "day": 1
+      },
+      "sessionIndex": 2
+    },
+    {
+      "bookId": "77711",
+      "title": "A Fire Upon the Deep (Zones of Thought, #1)",
+      "author": "Vernor Vinge",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/77711",
+      "dateStarted": {
+        "year": 2025,
+        "month": 10,
+        "day": 6
+      },
+      "dateFinished": {
+        "year": 2025,
+        "month": 11,
+        "day": 8
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "37944800",
+      "title": "On Writing: A Memoir of the Craft",
+      "author": "Stephen King",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/37944800",
+      "dateStarted": {
+        "year": 2025,
+        "month": 10,
+        "day": 23
+      },
+      "dateFinished": {
+        "year": 2025,
+        "month": 11,
+        "day": 13
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "40651883",
+      "title": "Snow Crash",
+      "author": "Neal Stephenson",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/40651883",
+      "dateStarted": {
+        "year": 2025,
+        "month": 11,
+        "day": 13
+      },
+      "dateFinished": {
+        "year": 2025,
+        "month": 11,
+        "day": 18
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "42046112",
+      "title": "Recursion",
+      "author": "Blake Crouch",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/42046112",
+      "dateStarted": {
+        "year": 2025,
+        "month": 11,
+        "day": 19
+      },
+      "dateFinished": {
+        "year": 2025,
+        "month": 11,
+        "day": 28
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "23848137",
+      "title": "Made to Kill (Ray Electromatic Mysteries, #1)",
+      "author": "Adam Christopher",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/23848137",
+      "dateStarted": {
+        "year": 2025,
+        "month": 12,
+        "day": 1
+      },
+      "dateFinished": {
+        "year": 2025,
+        "month": 12,
+        "day": 10
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "32717347",
+      "title": "Fire Mage (Firecaller, #1)",
+      "author": "Trudi Jaye",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/32717347",
+      "dateStarted": {
+        "year": 2025,
+        "month": 11,
+        "day": 29
+      },
+      "dateFinished": {
+        "year": 2025,
+        "month": 12,
+        "day": 22
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "212090220",
+      "title": "Advent (The Exlian Syndrome Series, #1)",
+      "author": "Seth Ring",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/212090220",
+      "dateStarted": {
+        "year": 2025,
+        "month": 12,
+        "day": 10
+      },
+      "dateFinished": {
+        "year": 2025,
+        "month": 12,
+        "day": 31
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "217388302",
+      "title": "Hemlock & Silver",
+      "author": "T. Kingfisher",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/217388302",
+      "dateStarted": {
+        "year": 2025,
+        "month": 12,
+        "day": 23
+      },
+      "dateFinished": {
+        "year": 2025,
+        "month": 12,
+        "day": 31
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "10592",
+      "title": "Carrie",
+      "author": "Stephen King",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/10592",
+      "dateStarted": {
+        "year": 2025,
+        "month": 12,
+        "day": 31
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 1,
+        "day": 2
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "15096164",
+      "title": "Pines (Wayward Pines, #1)",
+      "author": "Blake Crouch",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/15096164",
+      "dateStarted": {
+        "year": 2026,
+        "month": 1,
+        "day": 2
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 1,
+        "day": 9
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "220053080",
+      "title": "Dark Dawn (The Exlian Syndrome, #2)",
+      "author": "Seth Ring",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/220053080",
+      "dateStarted": {
+        "year": 2026,
+        "month": 1,
+        "day": 4
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 1,
+        "day": 10
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "62030429",
+      "title": "Mickey 7 (Mickey7 #1)",
+      "author": "Edward Ashton",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/62030429",
+      "dateStarted": {
+        "year": 2026,
+        "month": 1,
+        "day": 10
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 1,
+        "day": 17
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "130631265",
+      "title": "SALEM'S LOT (Stephen King Library - Red Leather)",
+      "author": "Stephen King",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/130631265",
+      "dateStarted": {
+        "year": 2026,
+        "month": 1,
+        "day": 10
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 1,
+        "day": 27
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "60784562",
+      "title": "Antimatter Blues (Mickey7, #2)",
+      "author": "Edward Ashton",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/60784562",
+      "dateStarted": {
+        "year": 2026,
+        "month": 1,
+        "day": 18
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 1,
+        "day": 27
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "228134347",
+      "title": "Apex (The Exlian Syndrome Series, #3)",
+      "author": "Seth Ring",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/228134347",
+      "dateStarted": {
+        "year": 2026,
+        "month": 1,
+        "day": 27
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 2,
+        "day": 10
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "23437156",
+      "title": "Six of Crows (Six of Crows, #1)",
+      "author": "Leigh Bardugo",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/23437156",
+      "dateStarted": {
+        "year": 2026,
+        "month": 1,
+        "day": 27
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 2,
+        "day": 14
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "57213544",
+      "title": "The Life of Chuck",
+      "author": "Stephen King",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/57213544",
+      "dateStarted": {
+        "year": 2026,
+        "month": 2,
+        "day": 15
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 2,
+        "day": 19
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "47212",
+      "title": "Storm Front (The Dresden Files, #1)",
+      "author": "Jim Butcher",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/47212",
+      "dateStarted": {
+        "year": 2026,
+        "month": 2,
+        "day": 16
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 3,
+        "day": 1
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "231258916",
+      "title": "Evolution (The Exlian Syndrome Series, #4)",
+      "author": "Seth Ring",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/231258916",
+      "dateStarted": {
+        "year": 2026,
+        "month": 2,
+        "day": 10
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 3,
+        "day": 8
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "63106877",
+      "title": "The Maiden",
+      "author": "Kate Foster",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/63106877",
+      "dateStarted": {
+        "year": 2026,
+        "month": 3,
+        "day": 1
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 3,
+        "day": 8
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "56534999",
+      "title": "Slow Horses (Slough House, #1)",
+      "author": "Mick Herron",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/56534999",
+      "dateStarted": {
+        "year": 2026,
+        "month": 3,
+        "day": 8
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 3,
+        "day": 17
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "195790861",
+      "title": "Service Model",
+      "author": "Adrian Tchaikovsky",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/195790861",
+      "dateStarted": {
+        "year": 2026,
+        "month": 3,
+        "day": 8
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 3,
+        "day": 29
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "20417",
+      "title": "Have Space Suit—Will Travel",
+      "author": "Robert A. Heinlein",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/20417",
+      "dateStarted": {
+        "year": 2026,
+        "month": 4,
+        "day": 3
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 4,
+        "day": 15
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "40275288",
+      "title": "The Priory of the Orange Tree (The Roots of Chaos, #1)",
+      "author": "Samantha Shannon",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/40275288",
+      "dateStarted": {
+        "year": 2026,
+        "month": 3,
+        "day": 21
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 4,
+        "day": 19
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "30118314",
+      "title": "Star Nomad (Fallen Empire, #1)",
+      "author": "Lindsay Buroker",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/30118314",
+      "dateStarted": {
+        "year": 2026,
+        "month": 4,
+        "day": 20
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 5,
+        "day": 1
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "102868",
+      "title": "A Study in Scarlet (Sherlock Holmes, #1)",
+      "author": "Arthur Conan Doyle",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/102868",
+      "dateStarted": {
+        "year": 2026,
+        "month": 5,
+        "day": 1
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 5,
+        "day": 2
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "93628201",
+      "title": "The Country of the Saints",
+      "author": "Arthur Conan Doyle",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/93628201",
+      "dateStarted": {
+        "year": 2026,
+        "month": 5,
+        "day": 2
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 5,
+        "day": 3
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "42244267",
+      "title": "All Systems Red (The Murderbot Diaries, #1)",
+      "author": "Martha Wells",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/42244267",
+      "dateStarted": {
+        "year": 2026,
+        "month": 5,
+        "day": 3
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 5,
+        "day": 5
+      },
+      "sessionIndex": 3
+    },
+    {
+      "bookId": "608474",
+      "title": "The Sign of Four (Sherlock Holmes, #2)",
+      "author": "Arthur Conan Doyle",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/608474",
+      "dateStarted": {
+        "year": 2026,
+        "month": 5,
+        "day": 3
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 5,
+        "day": 9
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "36223860",
+      "title": "Artificial Condition (The Murderbot Diaries, #2)",
+      "author": "Martha Wells",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/36223860",
+      "dateStarted": {
+        "year": 2026,
+        "month": 5,
+        "day": 6
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 5,
+        "day": 11
+      },
+      "sessionIndex": 2
+    },
+    {
+      "bookId": "35519101",
+      "title": "Rogue Protocol (The Murderbot Diaries, #3)",
+      "author": "Martha Wells",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/35519101",
+      "dateStarted": {
+        "year": 2026,
+        "month": 5,
+        "day": 11
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 5,
+        "day": 18
+      },
+      "sessionIndex": 2
+    },
+    {
+      "bookId": "36642458",
+      "title": "Skyward (Skyward, #1)",
+      "author": "Brandon Sanderson",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/36642458",
+      "dateStarted": {
+        "year": 2026,
+        "month": 5,
+        "day": 9
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 5,
+        "day": 19
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "11588",
+      "title": "The Shining (The Shining, #1)",
+      "author": "Stephen King",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/11588",
+      "dateStarted": {
+        "year": 2026,
+        "month": 5,
+        "day": 19
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 6,
+        "day": 3
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "163998075",
+      "title": "Smuggler's Valor (Reese Daniels Smuggler, #1)",
+      "author": "T.D. Wilson",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/163998075",
+      "dateStarted": {
+        "year": 2026,
+        "month": 6,
+        "day": 4
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 6,
+        "day": 4
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "23515727",
+      "title": "No Country for Old Men",
+      "author": "Cormac McCarthy",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/23515727",
+      "dateStarted": {
+        "year": 2026,
+        "month": 6,
+        "day": 4
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 6,
+        "day": 16
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "35519109",
+      "title": "Exit Strategy (The Murderbot Diaries, #4)",
+      "author": "Martha Wells",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/35519109",
+      "dateStarted": {
+        "year": 2026,
+        "month": 5,
+        "day": 18
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 6,
+        "day": 16
+      },
+      "sessionIndex": 2
+    },
+    {
+      "bookId": "52381770",
+      "title": "Network Effect (The Murderbot Diaries, #5)",
+      "author": "Martha Wells",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/52381770",
+      "dateStarted": {
+        "year": 2026,
+        "month": 6,
+        "day": 16
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 6,
+        "day": 18
+      },
+      "sessionIndex": 2
+    },
+    {
+      "bookId": "31423245",
+      "title": "How to Be a Stoic: Using Ancient Philosophy to Live a Modern Life",
+      "author": "Massimo Pigliucci",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/31423245",
+      "dateStarted": {
+        "year": 2026,
+        "month": 6,
+        "day": 16
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 6,
+        "day": 25
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "53205854",
+      "title": "Fugitive Telemetry (The Murderbot Diaries, #6)",
+      "author": "Martha Wells",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/53205854",
+      "dateStarted": {
+        "year": 2026,
+        "month": 6,
+        "day": 18
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 6,
+        "day": 25
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "6667916",
+      "title": "Metro 2034 (Metro, #2)",
+      "author": "Dmitry Glukhovsky",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/6667916",
+      "dateStarted": {
+        "year": 2026,
+        "month": 6,
+        "day": 26
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 7,
+        "day": 19
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "56791389",
+      "title": "Dungeon Crawler Carl (Dungeon Crawler Carl, #1)",
+      "author": "Matt Dinniman",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/56791389",
+      "dateStarted": {
+        "year": 2026,
+        "month": 6,
+        "day": 26
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 7,
+        "day": 22
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "16690",
+      "title": "The Moon Is a Harsh Mistress",
+      "author": "Robert A. Heinlein",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/16690",
+      "dateStarted": {
+        "year": 2026,
+        "month": 7,
+        "day": 22
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 8,
+        "day": 1
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "65211701",
+      "title": "System Collapse (The Murderbot Diaries, #7)",
+      "author": "Martha Wells",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/65211701",
+      "dateStarted": {
+        "year": 2026,
+        "month": 8,
+        "day": 3
+      },
+      "dateFinished": null,
+      "sessionIndex": 1
+    }
+  ]
+}
