@@ -16,14 +16,20 @@ export async function getStaticProps() {
   return {
     props: {
       posts,
-      currentlyReading: readingData.currentlyReading.map((book) => book.title),
+      currentlyReading: readingData.currentlyReading.map((book) => ({
+        title: book.title,
+        author: book.author,
+      })),
     },
   }
 }
 
 interface Props {
   posts: PostMeta[]
-  currentlyReading: string[]
+  currentlyReading: Array<{
+    title: string
+    author: string
+  }>
 }
 
 const Home: FC<Props> = ({ posts, currentlyReading }) => {
@@ -78,9 +84,28 @@ const Home: FC<Props> = ({ posts, currentlyReading }) => {
           Reading
         </h2>
         <div className="flex flex-col gap-2.5 px-2.5 py-5">
-          <p className="text-sm leading-[26px] tracking-tight text-muted">
-            Currently: {currentlyReading.join(', ')}.
-          </p>
+          <div className="grid gap-1">
+            <p className="text-sm leading-[26px] tracking-tight text-muted">
+              Currently reading
+            </p>
+            {currentlyReading.length > 0 ? (
+              <ul className="grid gap-1">
+                {currentlyReading.map((book) => (
+                  <li
+                    className="text-sm leading-[26px] tracking-tight text-primary"
+                    key={`${book.title}-${book.author}`}
+                  >
+                    {book.title}
+                    <span className="text-muted"> by {book.author}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-sm leading-[26px] tracking-tight text-muted">
+                Nothing at the moment.
+              </p>
+            )}
+          </div>
           <Link
             href="/reading"
             className="mt-1 w-fit text-sm font-medium tracking-tight text-primary underline underline-offset-[3px] transition-all duration-200 ease-in hover:text-muted"
