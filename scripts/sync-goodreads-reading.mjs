@@ -4,6 +4,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import {
+  closeGoodreadsBrowser,
   fetchGoodreads,
   parseReadEvents,
   readDateSortValue,
@@ -616,10 +617,12 @@ const isMain =
   path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)
 
 if (isMain) {
-  main().catch((error) => {
-    console.error(error.message)
-    process.exitCode = 1
-  })
+  main()
+    .catch((error) => {
+      console.error(error.message)
+      process.exitCode = 1
+    })
+    .finally(closeGoodreadsBrowser)
 }
 
 export {

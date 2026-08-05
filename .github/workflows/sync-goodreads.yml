@@ -36,6 +36,12 @@ jobs:
 
       - run: npm ci
 
+      - name: Ensure Chromium is available
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            npx playwright install --with-deps chromium
+          fi
+
       - name: Backfill historical Goodreads rereads
         if: ${{ inputs.backfill == true }}
         env:

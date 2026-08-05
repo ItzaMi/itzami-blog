@@ -121,6 +121,21 @@ function normalizeCookie(cookie) {
   }
 }
 
+function parseCookieHeader(cookie) {
+  return normalizeCookie(cookie)
+    .split(';')
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .map((part) => {
+      const separator = part.indexOf('=')
+      return {
+        name: part.slice(0, separator),
+        value: part.slice(separator + 1),
+        url: GOODREADS_BASE_URL,
+      }
+    })
+}
+
 function parseCsv(input) {
   const rows = []
   let row = []
@@ -403,35 +418,77 @@ function parseShelfBooks(html) {
   return books
 }
 
-async function fetchGoodreads(url, cookie) {
-  const normalizedCookie = normalizeCookie(cookie)
+function chromeExecutablePath() {
+  const candidates = [
+    process.env.GOODREADS_CHROME_PATH,
+    '/usr/bin/google-chrome',
+    '/usr/bin/google-chrome-stable',
+    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  ].filter(Boolean)
 
-  const response = await fetch(url, {
-    headers: {
-      Cookie: normalizedCookie,
-      'User-Agent': USER_AGENT,
-      Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    },
-    redirect: 'follow',
+  return candidates.find((candidate) => fs.existsSync(candidate))
+}
+
+let browserClientPromise
+
+async function createBrowserClient(cookie) {
+  const { chromium } = await import('playwright-core')
+  const executablePath = chromeExecutablePath()
+  const browser = await chromium.launch({
+    headless: true,
+    ...(executablePath ? { executablePath } : {}),
+    args: ['--disable-dev-shm-usage'],
   })
+  const context = await browser.newContext({ userAgent: USER_AGENT })
+  await context.addCookies(parseCookieHeader(cookie))
+  const page = await context.newPage()
 
-  const html = await response.text()
+  return {
+    async fetch(url) {
+      const response = await page.goto(url, {
+        waitUntil: 'domcontentloaded',
+        timeout: 45_000,
+      })
+      await page.waitForTimeout(500)
+      const html = await page.content()
+      const finalUrl = page.url()
 
-  if (!response.ok) {
-    throw new Error(`Goodreads returned ${response.status} for ${url}`)
+      if (!response?.ok()) {
+        throw new Error(
+          `Goodreads returned ${response?.status() || 'no response'} for ${url}`,
+        )
+      }
+
+      if (
+        /\/user\/sign_in(?:[/?#]|$)/i.test(finalUrl) ||
+        /<title[^>]*>[^<]*sign (?:in|up)[^<]*<\/title>/i.test(html) ||
+        /name=["']user\[(?:email|password)\]["']/i.test(html)
+      ) {
+        throw new Error(
+          `Goodreads returned a signed-out page for ${url}. Refresh GOODREADS_COOKIE.`,
+        )
+      }
+
+      return html
+    },
+    close: () => browser.close(),
+  }
+}
+
+async function fetchGoodreads(url, cookie) {
+  browserClientPromise ||= createBrowserClient(cookie)
+  const client = await browserClientPromise
+  return client.fetch(url)
+}
+
+async function closeGoodreadsBrowser() {
+  if (!browserClientPromise) {
+    return
   }
 
-  if (
-    /\/user\/sign_in(?:[/?#]|$)/i.test(response.url) ||
-    /<title[^>]*>[^<]*sign (?:in|up)[^<]*<\/title>/i.test(html) ||
-    /name=["']user\[(?:email|password)\]["']/i.test(html)
-  ) {
-    throw new Error(
-      `Goodreads returned a signed-out page for ${url}. Refresh GOODREADS_COOKIE.`,
-    )
-  }
-
-  return html
+  const client = await browserClientPromise
+  browserClientPromise = undefined
+  await client.close()
 }
 
 async function booksFromShelf(user, shelf, cookie) {
@@ -608,15 +665,18 @@ const isMain =
   path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)
 
 if (isMain) {
-  main().catch((error) => {
-    console.error(error.message)
-    process.exitCode = 1
-  })
+  main()
+    .catch((error) => {
+      console.error(error.message)
+      process.exitCode = 1
+    })
+    .finally(closeGoodreadsBrowser)
 }
 
 export {
   booksFromCsv,
   booksFromShelf,
+  closeGoodreadsBrowser,
   fetchGoodreads,
   parseReadEvents,
   parseShelfBooks,

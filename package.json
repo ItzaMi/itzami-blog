@@ -30,6 +30,7 @@
     "@types/react-syntax-highlighter": "^15.5.13",
     "eslint": "^9.0.0",
     "eslint-config-next": "^15.2.0",
+    "playwright-core": "^1.62.1",
     "typescript": "^5.7.0"
   }
 }
