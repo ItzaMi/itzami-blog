@@ -102,8 +102,230 @@
     "242252419": "48aa63e9220c755b50c90f549e9a8cd15c6ae8942ba810b68eb4a90390a22af4",
     "243483834": "374837430551ffe7f65767ec07a7cb70c78dd8e9a3ec171850f4ded52d340cae"
   },
-  "pendingBookIds": [],
-  "lastHeartbeatAt": "2026-08-05T10:53:57.875Z",
-  "lastAttemptAt": "2026-08-05T10:53:57.875Z",
-  "lastErrors": []
+  "pendingBookIds": [
+    "102868",
+    "10592",
+    "11588",
+    "130631265",
+    "15096164",
+    "15839976",
+    "163998075",
+    "16690",
+    "195790861",
+    "20417",
+    "212090220",
+    "217388302",
+    "220053080",
+    "228134347",
+    "231258916",
+    "23437156",
+    "23515727",
+    "23848137",
+    "30118314",
+    "31423245",
+    "32717347",
+    "35519101",
+    "35519109",
+    "36223860",
+    "36642458",
+    "37944800",
+    "40275288",
+    "40651883",
+    "42046112",
+    "42244267",
+    "47212",
+    "52381770",
+    "53205854",
+    "56534999",
+    "56791389",
+    "57213544",
+    "60784562",
+    "608474",
+    "62030429",
+    "63106877",
+    "65211701",
+    "6667916",
+    "77711",
+    "93628201"
+  ],
+  "lastHeartbeatAt": "2026-08-05T11:06:00.891Z",
+  "lastAttemptAt": "2026-08-05T11:06:00.891Z",
+  "lastErrors": [
+    {
+      "bookId": "65211701",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "16690",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "56791389",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "6667916",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "31423245",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "53205854",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "52381770",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "35519109",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "23515727",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "163998075",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "11588",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "36642458",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "35519101",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "36223860",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "608474",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "42244267",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "93628201",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "102868",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "30118314",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "40275288",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "20417",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "195790861",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "56534999",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "231258916",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "63106877",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "47212",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "57213544",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "23437156",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "228134347",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "15839976",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "130631265",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "60784562",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "62030429",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "220053080",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "15096164",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "10592",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "212090220",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "217388302",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "32717347",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "23848137",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "42046112",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "40651883",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "37944800",
+      "error": "No reading sessions found on the review edit page."
+    },
+    {
+      "bookId": "77711",
+      "error": "No reading sessions found on the review edit page."
+    }
+  ]
 }

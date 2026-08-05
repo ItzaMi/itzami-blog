@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-08-05T11:05:58.729Z",
+  "source": "goodreads-review-edit",
+  "booksChecked": 8,
+  "events": [],
+  "errors": [
+    {
+      "bookId": "35519109",
+      "title": "Exit Strategy (The Murderbot Diaries, #4)",
+      "error": "No reading sessions found on review/edit page."
+    },
+    {
+      "bookId": "35519101",
+      "title": "Rogue Protocol (The Murderbot Diaries, #3)",
+      "error": "No reading sessions found on review/edit page."
+    },
+    {
+      "bookId": "36223860",
+      "title": "Artificial Condition (The Murderbot Diaries, #2)",
+      "error": "No reading sessions found on review/edit page."
+    },
+    {
+      "bookId": "42244267",
+      "title": "All Systems Red (The Murderbot Diaries, #1)",
+      "error": "No reading sessions found on review/edit page."
+    },
+    {
+      "bookId": "18039011",
+      "title": "Maigret e o crime no Far-West",
+      "error": "No reading sessions found on review/edit page."
+    },
+    {
+      "bookId": "72193",
+      "title": "Harry Potter and the Philosopher’s Stone (Harry Potter, #1)",
+      "error": "No reading sessions found on review/edit page."
+    },
+    {
+      "bookId": "38880861",
+      "title": "Among the Beasts & Briars",
+      "error": "No reading sessions found on review/edit page."
+    },
+    {
+      "bookId": "785092",
+      "title": "Secrets of the Millionaire Mind: Mastering the Inner Game of Wealth",
+      "error": "No reading sessions found on review/edit page."
+    }
+  ]
+}
