@@ -7,6 +7,7 @@ import {
   fetchGoodreads,
   parseReadEvents,
   readDateSortValue,
+  reviewPageDiagnostic,
 } from './goodreads-read-dates.mjs'
 
 const ROOT = process.cwd()
@@ -517,7 +518,9 @@ async function syncGoodreads(args) {
       })
 
       if (nextEvents.length === 0) {
-        throw new Error('No reading sessions found on the review edit page.')
+        throw new Error(
+          `No reading sessions found on the review edit page (${reviewPageDiagnostic(html)}).`,
+        )
       }
 
       const latestDate = latestFinishedDate(nextEvents)

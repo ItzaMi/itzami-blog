@@ -6,6 +6,7 @@ import test from 'node:test'
 import {
   booksFromCsv,
   parseReadEvents,
+  reviewPageDiagnostic,
 } from './goodreads-read-dates.mjs'
 import {
   mergeBooksCsv,
@@ -44,6 +45,19 @@ test('keeps Goodreads rereads and partial finish dates', () => {
     events.map((event) => event.sessionIndex),
     [1, 2],
   )
+})
+
+test('reports safe review-page diagnostics without page contents', () => {
+  const diagnostic = reviewPageDiagnostic(`
+    <html>
+      <head><title>Edit Review - Exit Strategy</title></head>
+      <body><input name="review[date_read]" value="secret value" /></body>
+    </html>
+  `)
+
+  assert.match(diagnostic, /Edit Review - Exit Strategy/)
+  assert.match(diagnostic, /review\[date_read\]/)
+  assert.doesNotMatch(diagnostic, /secret value/)
 })
 
 test('parses the Goodreads RSS fields used by the incremental worker', () => {

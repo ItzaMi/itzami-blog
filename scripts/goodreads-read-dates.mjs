@@ -200,6 +200,20 @@ function stripTags(value) {
     .trim()
 }
 
+function reviewPageDiagnostic(html) {
+  const title = stripTags(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '')
+  const controls = Array.from(
+    html.matchAll(
+      /<(?:input|select)\b[^>]*(?:name|class|id)=["']([^"']*(?:read|date|session)[^"']*)["'][^>]*>/gi,
+    ),
+    (match) => match[1],
+  )
+
+  return `title=${JSON.stringify(title || 'unknown')}; date controls=${JSON.stringify(
+    Array.from(new Set(controls)).slice(0, 20),
+  )}; bytes=${Buffer.byteLength(html)}`
+}
+
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
@@ -381,7 +395,11 @@ async function fetchGoodreads(url, cookie) {
     throw new Error(`Goodreads returned ${response.status} for ${url}`)
   }
 
-  if (/<title>\s*Sign in\s*<\/title>/i.test(html)) {
+  if (
+    /\/user\/sign_in(?:[/?#]|$)/i.test(response.url) ||
+    /<title[^>]*>[^<]*sign in[^<]*<\/title>/i.test(html) ||
+    /name=["']user\[(?:email|password)\]["']/i.test(html)
+  ) {
     throw new Error(
       `Goodreads redirected to sign in for ${url}. Refresh GOODREADS_COOKIE.`,
     )
@@ -521,7 +539,7 @@ async function main() {
         output.errors.push({
           bookId: book.goodreadsId,
           title: book.title || '',
-          error: 'No reading sessions found on review/edit page.',
+          error: `No reading sessions found on review/edit page (${reviewPageDiagnostic(html)}).`,
         })
       }
     } catch (error) {
@@ -563,4 +581,5 @@ export {
   parseReadEvents,
   parseShelfBooks,
   readDateSortValue,
+  reviewPageDiagnostic,
 }
