@@ -267,6 +267,17 @@ function toPartialDate(parts) {
 }
 
 function splitReadingSessionRows(html) {
+  const tableRows = Array.from(
+    html.matchAll(
+      /<tr\b[^>]*class=["'][^"']*\breadingSessionRow\b[^"']*["'][^>]*>[\s\S]*?<\/tr>/gi,
+    ),
+    (match) => match[0],
+  )
+
+  if (tableRows.length > 0) {
+    return tableRows
+  }
+
   const rows = []
   const marker = 'readingSessionRow'
   let searchIndex = 0
@@ -277,18 +288,13 @@ function splitReadingSessionRows(html) {
       break
     }
 
-    const rowStart = html.lastIndexOf('<tr', markerIndex)
     const divStart = html.lastIndexOf('<div', markerIndex)
-    const start = Math.max(rowStart, divStart)
+    const start = divStart
     const nextMarkerIndex = html.indexOf(marker, markerIndex + marker.length)
-    const rowEnd = html.indexOf('</tr>', markerIndex)
     const divEnd = html.indexOf('</div>', markerIndex)
-    const nearbyEnd = [rowEnd, divEnd]
-      .filter((end) => end !== -1)
-      .sort((a, b) => a - b)[0]
     const end =
-      nearbyEnd && (nextMarkerIndex === -1 || nearbyEnd < nextMarkerIndex)
-        ? nearbyEnd
+      divEnd !== -1 && (nextMarkerIndex === -1 || divEnd < nextMarkerIndex)
+        ? divEnd
         : nextMarkerIndex === -1
           ? html.length
           : nextMarkerIndex
