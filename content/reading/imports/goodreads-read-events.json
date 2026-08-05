@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T13:27:57.483Z",
+  "generatedAt": "2026-08-05T13:58:25.710Z",
   "source": "goodreads-review-edit",
   "events": [
     {
@@ -999,6 +999,20 @@
         "year": 2026,
         "month": 8,
         "day": 3
+      },
+      "dateFinished": null,
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "944073",
+      "title": "The Blade Itself (The First Law, #1)",
+      "author": "Joe Abercrombie",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/944073",
+      "dateStarted": {
+        "year": 2026,
+        "month": 8,
+        "day": 5
       },
       "dateFinished": null,
       "sessionIndex": 1
