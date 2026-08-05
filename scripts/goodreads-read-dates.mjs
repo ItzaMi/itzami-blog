@@ -97,6 +97,20 @@ function readCookie(args) {
   return process.env.GOODREADS_COOKIE || ''
 }
 
+function validateCookie(cookie) {
+  if (/^\s*cookie\s*:/i.test(cookie)) {
+    throw new Error(
+      'GOODREADS_COOKIE must contain only the Cookie header value, without the "Cookie:" label.',
+    )
+  }
+
+  if (!/(?:^|;\s*)_session_id2=/.test(cookie)) {
+    throw new Error(
+      'GOODREADS_COOKIE does not contain the Goodreads _session_id2 session cookie.',
+    )
+  }
+}
+
 function parseCsv(input) {
   const rows = []
   let row = []
@@ -380,6 +394,8 @@ function parseShelfBooks(html) {
 }
 
 async function fetchGoodreads(url, cookie) {
+  validateCookie(cookie)
+
   const response = await fetch(url, {
     headers: {
       Cookie: cookie,
@@ -397,11 +413,11 @@ async function fetchGoodreads(url, cookie) {
 
   if (
     /\/user\/sign_in(?:[/?#]|$)/i.test(response.url) ||
-    /<title[^>]*>[^<]*sign in[^<]*<\/title>/i.test(html) ||
+    /<title[^>]*>[^<]*sign (?:in|up)[^<]*<\/title>/i.test(html) ||
     /name=["']user\[(?:email|password)\]["']/i.test(html)
   ) {
     throw new Error(
-      `Goodreads redirected to sign in for ${url}. Refresh GOODREADS_COOKIE.`,
+      `Goodreads returned a signed-out page for ${url}. Refresh GOODREADS_COOKIE.`,
     )
   }
 
@@ -548,7 +564,21 @@ async function main() {
         title: book.title || '',
         error: error.message,
       })
+
+      if (/signed-out|GOODREADS_COOKIE/i.test(error.message)) {
+        break
+      }
     }
+  }
+
+  const authenticationError = output.errors.find((entry) =>
+    /signed-out|GOODREADS_COOKIE/i.test(entry.error),
+  )
+
+  if (authenticationError) {
+    console.error(authenticationError.error)
+    process.exitCode = 1
+    return
   }
 
   fs.mkdirSync(path.dirname(args.out), { recursive: true })
@@ -582,4 +612,5 @@ export {
   parseShelfBooks,
   readDateSortValue,
   reviewPageDiagnostic,
+  validateCookie,
 }

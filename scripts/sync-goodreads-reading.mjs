@@ -538,7 +538,7 @@ async function syncGoodreads(args) {
       pending.add(item.bookId)
       failures.push({ bookId: item.bookId, error: error.message })
 
-      if (/sign in|GOODREADS_COOKIE/i.test(error.message)) {
+      if (/signed-out|GOODREADS_COOKIE/i.test(error.message)) {
         for (const remainingItem of changedItems.slice(index + 1)) {
           pending.add(remainingItem.bookId)
         }
