@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-15T07:00:52.368Z",
+  "generatedAt": "2026-08-16T07:03:09.883Z",
   "source": "goodreads-review-edit",
   "events": [
     {
@@ -990,20 +990,6 @@
       "sessionIndex": 1
     },
     {
-      "bookId": "65211701",
-      "title": "System Collapse (The Murderbot Diaries, #7)",
-      "author": "Martha Wells",
-      "source": "goodreads-review-edit",
-      "sourceUrl": "https://www.goodreads.com/review/edit/65211701",
-      "dateStarted": {
-        "year": 2026,
-        "month": 8,
-        "day": 3
-      },
-      "dateFinished": null,
-      "sessionIndex": 1
-    },
-    {
       "bookId": "944073",
       "title": "The Blade Itself (The First Law, #1)",
       "author": "Joe Abercrombie",
@@ -1015,6 +1001,24 @@
         "day": 5
       },
       "dateFinished": null,
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "65211701",
+      "title": "System Collapse (The Murderbot Diaries, #7)",
+      "author": "Martha Wells",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/65211701",
+      "dateStarted": {
+        "year": 2026,
+        "month": 8,
+        "day": 3
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 8,
+        "day": 15
+      },
       "sessionIndex": 1
     }
   ]
