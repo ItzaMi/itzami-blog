@@ -239,7 +239,7 @@ goodreads_id,title,author,isbn,isbn13,rating,status,date_read,date_added,favorit
 9647295,"The Way of Kings (The Stormlight Archive, #1)",Brandon Sanderson,0765365278,9780765365279,5,read,2024/06/14,2024/05/13,false,"I want to kick myself for not picking Sanderson before!<br/>At this moment, The Way of Kings easily gets into my top 5 of all time.<br/>—<br/>Yeah, the book is loooong, and there’s a lot of history and development and not much happens throughout the pages, but I absolutely loved it! Sanderson seems to have a gift for worldbuilding and I’m 100% here for it.<br/>—<br/>On a not so good note, I advise against getting the paperback isbnxxx279. The illustrations are poorly printed and you can’t read the text in them; also the print is very susceptible of staining and smudging from your fingers just grabbing the pages"
 24445388,A Amiga Genial,Elena Ferrante,9896414793,9789896414795,0,to-read,,2024/05/20,false,
 7128901,Man's Search for Meaning,Viktor E. Frankl,0807067997,9780807067994,4,read,2024/05/18,2023/01/19,false,"Frankl’s life is a tragic one and the book makes you look at the adversities in life with a different meaning.<br/>That’s just the first half of the book, though, since on the second half Frankl explores his doctrine and how it’s beneficial. I personally think that logoteraphy itself tries to cover a lot of areas with its practice while being too abstract"
-30659,Meditations,Marcus Aurelius,0140449337,9780140449334,0,to-read,,2024/05/13,false,
+30659,Meditations,Marcus Aurelius,0140449337,9780140449334,0,currently-reading,,2024/05/13,false,
 124019528,The Eye of Darkness,George Mann,0593597931,9780593597934,0,to-read,,2024/05/13,false,
 9579882,Star Wars: Choices of One,Timothy Zahn,0345511255,9780345511256,0,to-read,,2024/05/13,false,
 35414,Star Wars: Allegiance,Timothy Zahn,0345477383,9780345477385,0,to-read,,2024/05/13,false,
@@ -567,7 +567,7 @@ goodreads_id,title,author,isbn,isbn13,rating,status,date_read,date_added,favorit
 509784,The End of Eternity,Isaac Asimov,0449016196,,0,to-read,,2026/08/01,false,
 52694527,"The Shadow of the Gods (The Bloodsworn Saga, #1)",John Gwynne,0356514188,,0,to-read,,2026/08/01,false,
 29588376,"The Lies of Locke Lamora (Gentleman Bastard, #1)",Scott Lynch,,,0,to-read,,2026/08/01,false,
-944073,"The Blade Itself (The First Law, #1)",Joe Abercrombie,0575079797,,0,currently-reading,,2026/08/01,false,
+944073,"The Blade Itself (The First Law, #1)",Joe Abercrombie,0575079797,,0,to-read,,2026/08/01,false,
 22590,Ubik,Philip K. Dick,8498000831,,0,to-read,,2026/08/01,false,
 52283963,The Mom Test: How to talk to customers & learn if your business is a good idea when everyone is lying to you,Rob Fitzpatrick,,,0,to-read,,2026/07/29,false,
 6667916,"Metro 2034 (Metro, #2)",Dmitry Glukhovsky,3453533011,,0,read,2026/07/19,2026/07/19,false,
@@ -577,3 +577,4 @@ goodreads_id,title,author,isbn,isbn13,rating,status,date_read,date_added,favorit
 6091075,"So Long, and Thanks for All the Fish (The Hitchhiker's Guide to the Galaxy, #4)",Douglas Adams,0307497909,,0,to-read,,2026/06/28,false,
 8694,"Life, the Universe and Everything (The Hitchhiker's Guide to the Galaxy, #3)",Douglas Adams,0345418905,,0,to-read,,2026/06/28,false,
 8695,"The Restaurant at the End of the Universe (The Hitchhiker's Guide to the Galaxy, #2)",Douglas Adams,,,0,to-read,,2026/06/28,false,
+243729281,"Harry Potter and the Sorcerer's Stone (Harry Potter, #1)",J.K. Rowling,,,5,currently-reading,,2026/08/20,false,

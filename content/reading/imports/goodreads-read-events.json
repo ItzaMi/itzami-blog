@@ -1,8 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-20T07:10:18.962Z",
+  "generatedAt": "2026-08-21T07:11:00.003Z",
   "source": "goodreads-review-edit",
   "events": [
+    {
+      "bookId": "243729281",
+      "title": "Harry Potter and the Sorcerer's Stone (Harry Potter, #1)",
+      "author": "J.K. Rowling",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/243729281",
+      "dateStarted": {
+        "year": 2001
+      },
+      "dateFinished": {
+        "year": 2001
+      },
+      "sessionIndex": 1
+    },
     {
       "bookId": "72193",
       "title": "Harry Potter and the Philosopher’s Stone (Harry Potter, #1)",
@@ -86,6 +100,24 @@
         "year": 2023,
         "month": 9,
         "day": 2
+      },
+      "sessionIndex": 2
+    },
+    {
+      "bookId": "243729281",
+      "title": "Harry Potter and the Sorcerer's Stone (Harry Potter, #1)",
+      "author": "J.K. Rowling",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/243729281",
+      "dateStarted": {
+        "year": 2023,
+        "month": 9,
+        "day": 14
+      },
+      "dateFinished": {
+        "year": 2023,
+        "month": 9,
+        "day": 23
       },
       "sessionIndex": 2
     },
@@ -990,20 +1022,6 @@
       "sessionIndex": 1
     },
     {
-      "bookId": "944073",
-      "title": "The Blade Itself (The First Law, #1)",
-      "author": "Joe Abercrombie",
-      "source": "goodreads-review-edit",
-      "sourceUrl": "https://www.goodreads.com/review/edit/944073",
-      "dateStarted": {
-        "year": 2026,
-        "month": 8,
-        "day": 5
-      },
-      "dateFinished": null,
-      "sessionIndex": 1
-    },
-    {
       "bookId": "65211701",
       "title": "System Collapse (The Murderbot Diaries, #7)",
       "author": "Martha Wells",
@@ -1018,6 +1036,52 @@
         "year": 2026,
         "month": 8,
         "day": 15
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "243729281",
+      "title": "Harry Potter and the Sorcerer's Stone (Harry Potter, #1)",
+      "author": "J.K. Rowling",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/243729281",
+      "dateStarted": {
+        "year": 2026,
+        "month": 8,
+        "day": 20
+      },
+      "dateFinished": null,
+      "sessionIndex": 3
+    },
+    {
+      "bookId": "30659",
+      "title": "Meditations",
+      "author": "Marcus Aurelius",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/30659",
+      "dateStarted": {
+        "year": 2026,
+        "month": 8,
+        "day": 20
+      },
+      "dateFinished": null,
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "944073",
+      "title": "The Blade Itself (The First Law, #1)",
+      "author": "Joe Abercrombie",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/944073",
+      "dateStarted": {
+        "year": 2026,
+        "month": 8,
+        "day": 5
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 8,
+        "day": 20
       },
       "sessionIndex": 1
     }
