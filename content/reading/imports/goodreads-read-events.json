@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-23T07:05:25.747Z",
+  "generatedAt": "2026-08-24T07:31:56.013Z",
   "source": "goodreads-review-edit",
   "events": [
     {
@@ -1083,6 +1083,34 @@
         "month": 8,
         "day": 20
       },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "34032432",
+      "title": "O Condiscípulo de Maigret",
+      "author": "Georges Simenon",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/34032432",
+      "dateStarted": {
+        "year": 2026,
+        "month": 8,
+        "day": 23
+      },
+      "dateFinished": null,
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "75294804",
+      "title": "Murder On The Brazos (A Fen Maguire Mystery #1)",
+      "author": "Bruce Hammack",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/75294804",
+      "dateStarted": {
+        "year": 2026,
+        "month": 8,
+        "day": 23
+      },
+      "dateFinished": null,
       "sessionIndex": 1
     }
   ]
