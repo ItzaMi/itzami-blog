@@ -10,7 +10,6 @@ const NavBar = () => {
   const availableRoutes = [
     { path: '/', text: 'Home' },
     { path: '/projects', text: 'Projects' },
-    { path: '/agents', text: 'Agents' },
     { path: '/reading', text: 'Reading' },
     { path: '/blog', text: 'Blog' },
     { path: '/about', text: 'About' },
