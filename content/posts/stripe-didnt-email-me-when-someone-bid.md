@@ -2,11 +2,50 @@
 title: "Stripe didn't email me when someone bid"
 slug: "stripe-didnt-email-me-when-someone-bid"
 date: "2026-08-27T22:42+01:00"
-description: "I placed a test bid on my tiny Stripe-powered auction, received no notification, and learned where payment events end and application logic begins."
+description: "While building a ten-logo postcard auction for a family trip to Italy, I learned that Stripe could confirm the payment without telling me when a bid became real."
 thumbnail: "/images/posts/travel-with-me-email-notifications.png"
 ---
 
-I placed a test bid on [travelwithme.rest](https://travelwithme.rest), saw the logo appear on the card and waited for the email telling me that somebody had bid.
+This project started, as many serious business ventures do, with me joking about getting strangers on the internet to pay for my next iPhone.
+
+I had seen somebody auction ten sticker spaces on the lid of a MacBook. The auction would pay for the MacBook, and the winning brands would travel around on it afterwards. It was funny, simple and very easy to understand from one image.
+
+We briefly considered doing the same thing with a phone. Then a phone case. Then some other object I could carry around.
+
+The problem was that none of those objects really mattered.
+
+What I actually had was a family trip through Italy from 4 to 10 September and a reason to take a lot of photographs. So the idea became [Travel With Me](https://travelwithme.rest): one physical postcard with ten logo places, carried and photographed throughout the trip.
+
+Brands bid for a place. The ten winners get printed on the real card. I take the card through Italy and share the photographs on X.
+
+It is definitely not an advertising empire, but it is a real object, a real trip and a much better excuse to build a tiny auction than inventing another sample shop!
+
+![Travel With Me, the ten-place postcard auction](/images/posts/travel-with-me-email-notifications.png)
+
+## The auction made the payment flow slightly unusual
+
+Every place begins at €5, but placing a bid isn't the same as buying a €5 product.
+
+If I charged every bidder immediately, I would have to take one payment, refund it when somebody bid €6, charge the next person, refund them at €7, and repeat that until the auction ended. That would be a terrible experience for everybody involved.
+
+Instead, Stripe places a temporary authorization for the full bid on the bidder's card. The money is only captured if that bid is still winning when the auction closes. When somebody is outbid, the previous authorization is cancelled.
+
+That gave each part of the stack a specific job:
+
+- Stripe handles Checkout and the card authorization
+- Supabase stores the places, bids, logos and current winners
+- The application decides whether a new authorized bid is high enough
+- Resend sends me the useful notification afterwards
+
+The public card only changes after the authorization is confirmed and the bid becomes active in the database. An abandoned Checkout should never make a logo appear, and an outbid authorization should never remain the winner just because its webhook arrived first.
+
+## Then I tested the first bid
+
+I placed a test bid on the site, completed Stripe Checkout and returned to the card.
+
+The logo appeared. The place showed a current holder. Stripe had the PaymentIntent. Supabase had the active bid. Everything important had technically worked.
+
+So I waited for the email telling me that somebody had bid.
 
 Nothing arrived.
 
@@ -16,31 +55,35 @@ The answer, which felt obvious only after I knew it, was no. Stripe records the 
 
 So I added it.
 
-![Travel With Me, the tiny auction that needed its own email notifications](/images/posts/travel-with-me-email-notifications.png)
+Not a receipt for the bidder, and not a generic Stripe payment email. What I wanted was an internal notification telling me that a bid had passed all the checks and was now genuinely holding one of the ten places.
 
 ## A successful checkout wasn't the moment I wanted
 
-The auction doesn't charge every bidder immediately. When somebody bids, Stripe places a temporary authorization on their card. I only capture the winning bid when the auction closes. If they are outbid, I cancel their authorization instead.
-
-That meant `checkout.session.completed` wasn't quite enough for the notification.
+Because the auction uses authorizations instead of immediate charges, `checkout.session.completed` wasn't quite enough for the notification.
 
 It tells me that the bidder completed Checkout, but I wanted the email only after Stripe confirmed that the amount was authorized **and** my database accepted it as the current bid for that place.
 
 Stripe sends a [`payment_intent.amount_capturable_updated`](https://docs.stripe.com/payments/place-a-hold-on-a-payment-method) event when a manually captured PaymentIntent becomes ready to capture. That became the useful boundary.
 
-The flow now looks like this:
+The full flow now looks like this:
 
 ```text
-Bidder completes Stripe Checkout
-                |
-                v
+Choose a place and upload a logo
+                 |
+                 v
+Complete Stripe Checkout
+                 |
+                 v
 Stripe confirms the amount is capturable
-                |
-                v
-The webhook verifies and activates the bid
-                |
-                v
-Resend emails me the bid details
+                 |
+                 v
+The webhook verifies the Stripe signature
+                 |
+                 v
+Supabase accepts the bid as the current winner
+                 |
+                 v
+The logo appears and Resend emails me
 ```
 
 There is an important ordering detail in there: the email is sent **after** the database accepts the bid.
