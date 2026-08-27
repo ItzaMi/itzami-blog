@@ -8,6 +8,10 @@ interface Props {
 }
 
 const SEO: FC<Props> = ({ title, description, image }) => {
+  const socialImage = image.startsWith('http')
+    ? image
+    : `https://itzami.com${image.startsWith('/') ? image : `/${image}`}`
+
   return (
     <Head>
       <title>{title}</title>
@@ -15,13 +19,13 @@ const SEO: FC<Props> = ({ title, description, image }) => {
       <meta property="og:description" content={description} />
       {/* <meta property="og:url" content="https://www.dgtlnk.com/blog/https/" /> */}
       <meta property="og:site_name" content="ItzaMi" />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={socialImage} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:site" content="@heyitzami" />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={socialImage} />
       <meta name="twitter:creator" content="@heyitzami" />
     </Head>
   )
