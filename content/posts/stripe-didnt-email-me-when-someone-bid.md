@@ -8,7 +8,13 @@ thumbnail: "/images/posts/travel-with-me-email-notifications.png"
 
 This project started, as many serious business ventures do, with me joking about getting strangers on the internet to pay for my next iPhone.
 
-I had seen somebody auction ten sticker spaces on the lid of a MacBook. The auction would pay for the MacBook, and the winning brands would travel around on it afterwards. It was funny, simple and very easy to understand from one image.
+The joke came from [Vincent's original BrandMyMac post](https://x.com/vynsedev/status/2092544016315306400). He was auctioning ten sticker spaces on the lid of a MacBook he didn't own yet. The auction would pay for the MacBook, and the winning brands would travel around on it afterwards. It was funny, simple and very easy to understand from one image.
+
+<a href="https://x.com/vynsedev/status/2092544016315306400" aria-label="Open Vincent's original BrandMyMac post on X">
+  <img src="/images/posts/brand-my-mac-original-post.jpg" alt="Vincent's original X post announcing the BrandMyMac auction" style="width:100%;max-width:520px;height:auto" />
+</a>
+
+_[Vincent's original post](https://x.com/vynsedev/status/2092544016315306400), which sent me down this rabbit hole._
 
 We briefly considered doing the same thing with a phone. Then a phone case. Then some other object I could carry around.
 
@@ -20,7 +26,11 @@ Brands bid for a place. The ten winners get printed on the real card. I take the
 
 It is definitely not an advertising empire, but it is a real object, a real trip and a much better excuse to build a tiny auction than inventing another sample shop!
 
-![Travel With Me, the ten-place postcard auction](/images/posts/travel-with-me-email-notifications.png)
+Once the site was ready, [I launched it by quoting Vincent's post](https://x.com/heyitzami/status/2093033098975883598). That connection matters because Travel With Me wasn't an idea I had been quietly planning for months. It was a direct response to seeing a fun format and asking what version could make sense in my own life.
+
+[![The Travel With Me launch image showing the physical postcard in Italy](/images/posts/travel-with-me-launch.jpg)](https://x.com/heyitzami/status/2093033098975883598)
+
+_[My launch post](https://x.com/heyitzami/status/2093033098975883598): ten internet brands, one physical postcard and one week in Italy._
 
 ## The auction made the payment flow slightly unusual
 
