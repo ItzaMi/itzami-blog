@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T11:45:58.651Z",
+  "generatedAt": "2026-09-02T11:26:37.981Z",
   "source": "goodreads-review-edit",
   "events": [
     {
@@ -1083,6 +1083,20 @@
         "month": 8,
         "day": 20
       },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "18114334",
+      "title": "The Late Monsieur Gallet (Maigret, #2)",
+      "author": "Georges Simenon",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/18114334",
+      "dateStarted": {
+        "year": 2026,
+        "month": 9,
+        "day": 1
+      },
+      "dateFinished": null,
       "sessionIndex": 1
     },
     {
