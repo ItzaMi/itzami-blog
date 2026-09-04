@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-03T11:23:08.740Z",
+  "generatedAt": "2026-09-04T11:31:11.389Z",
   "source": "goodreads-review-edit",
   "events": [
     {
@@ -1086,20 +1086,6 @@
       "sessionIndex": 1
     },
     {
-      "bookId": "18114334",
-      "title": "The Late Monsieur Gallet (Maigret, #2)",
-      "author": "Georges Simenon",
-      "source": "goodreads-review-edit",
-      "sourceUrl": "https://www.goodreads.com/review/edit/18114334",
-      "dateStarted": {
-        "year": 2026,
-        "month": 9,
-        "day": 1
-      },
-      "dateFinished": null,
-      "sessionIndex": 1
-    },
-    {
       "bookId": "34032432",
       "title": "O Condiscípulo de Maigret",
       "author": "Georges Simenon",
@@ -1146,6 +1132,24 @@
         "year": 2026,
         "month": 9,
         "day": 1
+      },
+      "sessionIndex": 1
+    },
+    {
+      "bookId": "18114334",
+      "title": "The Late Monsieur Gallet (Maigret, #2)",
+      "author": "Georges Simenon",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/18114334",
+      "dateStarted": {
+        "year": 2026,
+        "month": 9,
+        "day": 1
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 9,
+        "day": 3
       },
       "sessionIndex": 1
     }
