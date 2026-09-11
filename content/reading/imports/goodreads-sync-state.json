@@ -78,7 +78,7 @@
     "52283963": "c65b5f4b320038b580f65b483f46833cb0c0061908e9bfa45f1ef5c1d23a7b43",
     "52381770": "acaede39b9770b84a15cbb0572aab7a301a143818d82f9964f85f5e6290b8ad0",
     "52694527": "f2900eff4c745c09b007be3c20bc206ac3f02e00391961afe13edded00631324",
-    "53205854": "52bbff7e8751ed4dab8717e5298ab15f56070495a5a7a682da6380bd257d6cae",
+    "53205854": "c7ac87c71c9f32fbe6fe4b15baef1f1272c951f35965da280be9f53d0d240dda",
     "56269205": "58a28b062d01e8e8c47ffeafd1c4ae252744cf6ebc53b53ba01ab9b4dbe3c39d",
     "56534999": "79a48527f726cb48cb06bf75551f65032af41b2d7f0649f812a8e5ea8ede08c9",
     "56791389": "9eb48d64f0b2ef20a0fb8147b691e292ebcdf72a1888b267e7f782af3012220e",
@@ -108,15 +108,8 @@
     "243483834": "133744b74053b4315fcdf077a1d6c13ec4f99ee79f516314835733bc8e5b7107",
     "243729281": "9b3ad9b4506eea97194aa806c066c70d07bf16262414ed674db81931f97c8352"
   },
-  "pendingBookIds": [
-    "53205854"
-  ],
-  "lastHeartbeatAt": "2026-09-10T11:28:42.378Z",
-  "lastAttemptAt": "2026-09-10T11:28:42.378Z",
-  "lastErrors": [
-    {
-      "bookId": "53205854",
-      "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.goodreads.com/review/edit/53205854\", waiting until \"domcontentloaded\"\n"
-    }
-  ]
+  "pendingBookIds": [],
+  "lastHeartbeatAt": "2026-09-11T11:30:27.822Z",
+  "lastAttemptAt": "2026-09-11T11:30:27.822Z",
+  "lastErrors": []
 }
