@@ -109,8 +109,25 @@
     "243483834": "133744b74053b4315fcdf077a1d6c13ec4f99ee79f516314835733bc8e5b7107",
     "243729281": "22ebc1da5a3a8c70280c7f2b0f9d21bb94c2a2a1c112aebfd301061ce97d7926"
   },
-  "pendingBookIds": [],
-  "lastHeartbeatAt": "2026-09-17T11:50:34.536Z",
-  "lastAttemptAt": "2026-09-17T11:50:34.536Z",
-  "lastErrors": []
+  "pendingBookIds": [
+    "220053080",
+    "243729281",
+    "36642458"
+  ],
+  "lastHeartbeatAt": "2026-09-18T11:25:08.258Z",
+  "lastAttemptAt": "2026-09-18T11:25:08.258Z",
+  "lastErrors": [
+    {
+      "bookId": "243729281",
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Harry Potter and the Sorcerer's Stone | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=160720)."
+    },
+    {
+      "bookId": "36642458",
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Skyward | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=161506)."
+    },
+    {
+      "bookId": "220053080",
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Dark Dawn | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=159993)."
+    }
+  ]
 }
