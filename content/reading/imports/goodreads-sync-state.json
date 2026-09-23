@@ -103,41 +103,46 @@
     "228134347": "6b436d92a1e5fa4232c23ab53c105d662705700010966458fcdfa8c0fe0f3e4b",
     "228974111": "75fd285fba4ec642654e7bf400e8101b424e8f347cdb4300f56556287022b103",
     "231258916": "d14a4f31177dd69f2d9febd08c64ceb245c453254abfb099b70575eaba7ec5e1",
-    "233800039": "35ddd38366e8560c65e11278215b946d9513a343f7c7bbf0348773aaa9cd3f93",
+    "233800039": "ae6ce07113bd58235b7d776384b9cc705b163c0fbe8cdca4fdb94867972551e1",
     "239633794": "6bfcb0293b01b15097546d6074879bddc5b014405a9f34fa6d969433e54b57dd",
     "242252419": "ced747c60642beb8e11c2b0d7bba7ffe9d5e198ed8bc353d6fc0d779ce56f40b",
-    "243483834": "133744b74053b4315fcdf077a1d6c13ec4f99ee79f516314835733bc8e5b7107",
+    "243483834": "5e0c84ef834eaf71f05ef89cc5e7a0f91d31e28b74760e51588bbac3d18f0d56",
     "243729281": "22ebc1da5a3a8c70280c7f2b0f9d21bb94c2a2a1c112aebfd301061ce97d7926"
   },
   "pendingBookIds": [
+    "212090220",
     "220053080",
     "228134347",
     "231258916",
     "243729281",
     "36642458"
   ],
-  "lastHeartbeatAt": "2026-09-22T11:47:48.407Z",
-  "lastAttemptAt": "2026-09-22T11:47:48.407Z",
+  "lastHeartbeatAt": "2026-09-23T11:47:33.925Z",
+  "lastAttemptAt": "2026-09-23T11:47:33.925Z",
   "lastErrors": [
     {
       "bookId": "243729281",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Harry Potter and the Sorcerer's Stone | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=176848)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Harry Potter and the Sorcerer's Stone | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=180219)."
     },
     {
       "bookId": "36642458",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Skyward | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=161527)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Skyward | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=160725)."
     },
     {
       "bookId": "231258916",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Evolution | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=153585)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Evolution | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=159048)."
     },
     {
       "bookId": "228134347",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Apex | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=156843)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Apex | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=156846)."
     },
     {
       "bookId": "220053080",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Dark Dawn | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=160076)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Dark Dawn | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=159889)."
+    },
+    {
+      "bookId": "212090220",
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Advent | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=158296)."
     }
   ]
 }
