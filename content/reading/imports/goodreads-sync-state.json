@@ -74,7 +74,7 @@
     "42046112": "f8ea1fdd814105bb06ba1e13ab609138ae21a45f3445c4c75913557d99a4829a",
     "42244267": "7575ea2406fa5b6d17e3e3c7723dc7429de1c927aeec4ba230f0f02294e9c38f",
     "44646576": "227679ca29e927a61706430eb168b70c7333802aeb52fd2c734b7782375ca333",
-    "45166937": "5067e135503399d2faeb0ae34d9f47926ce0e09d5beec019b031dccca47b3555",
+    "45166937": "64fb2332819a1d4f06cfa5ee5c2c648a01e438a30ba699e58c8bb18190f4960f",
     "52283963": "c65b5f4b320038b580f65b483f46833cb0c0061908e9bfa45f1ef5c1d23a7b43",
     "52381770": "acaede39b9770b84a15cbb0572aab7a301a143818d82f9964f85f5e6290b8ad0",
     "52694527": "f2900eff4c745c09b007be3c20bc206ac3f02e00391961afe13edded00631324",
@@ -120,44 +120,44 @@
     "32717347",
     "36642458"
   ],
-  "lastHeartbeatAt": "2026-09-29T13:02:29.853Z",
-  "lastAttemptAt": "2026-09-29T13:02:29.853Z",
+  "lastHeartbeatAt": "2026-09-30T12:44:28.825Z",
+  "lastAttemptAt": "2026-09-30T12:44:28.825Z",
   "lastErrors": [
     {
       "bookId": "212393364",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Carl's Doomsday Scenario | Goodreads\"; date controls=[]; bytes=111160)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Carl's Doomsday Scenario | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=162221)."
     },
     {
       "bookId": "243729281",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Harry Potter and the Sorcerer's Stone | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=182783)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Harry Potter and the Sorcerer's Stone | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=182824)."
     },
     {
       "bookId": "36642458",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Skyward | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=161590)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Skyward | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=158857)."
     },
     {
       "bookId": "231258916",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Evolution | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=160910)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Evolution | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=160981)."
     },
     {
       "bookId": "228134347",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Apex | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=156923)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Apex | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=158570)."
     },
     {
       "bookId": "220053080",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Dark Dawn | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=161928)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Dark Dawn | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=161839)."
     },
     {
       "bookId": "15096164",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Pines | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=163637)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Pines | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=164098)."
     },
     {
       "bookId": "212090220",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Advent | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=160223)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Advent | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=155700)."
     },
     {
       "bookId": "32717347",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Fire Mage | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=158955)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Fire Mage | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=159794)."
     }
   ]
 }
