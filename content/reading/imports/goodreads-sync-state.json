@@ -6,6 +6,7 @@
     "10592": "b3aee4f3ef9bce88a438c07b2ab5cb70fba08de5e41b499424dc9257575c99c9",
     "10628": "3b8c14d2b9a3dae6e6db60533102f0fae52880e7ec1d5d052ef5456e6c8b2108",
     "10629": "e824a5ee1f14c28bea6fbc99d8deb72b09a5f6b047f05966301fffd489d80d3b",
+    "11013": "04024e8f1c28d93ef99b535c5ca61be9a159c891fd9d103bdce37e1588d81333",
     "11588": "d4f1bba2e57fe05bec247b1d72a5fe3ee06e169d84163b2d42a7f1741cdcf04c",
     "16690": "30a93a474cdca80bf904d1264c53f51f0de6df04659b2b6d8edf698115ba8ea7",
     "17214": "dea6b0ddd9ba249492a1e29cf84fec4cbdd3d468b28dbaa15e09be860d8dd5bc",
@@ -30,6 +31,7 @@
     "207313": "0a80fe38eaf9d9a7e6d56d6ace0356d5692af7af430da1ccffc0cd109592c712",
     "218427": "98062f5470e1e2869d899497ea0073d5c9f9d2141cd71ca881b9a04e589a2f2a",
     "226460": "a0791d328c8390e0f4170d5691417a5cad287f2583fc8bdcbf1d07b5a454c589",
+    "242530": "4f0dc8e55c8d5859b5ec7424d222a88364ccea74e0449b8e2ccfbcc1893e390d",
     "248596": "c5a7cc994a79d45efa7cb9fbbe217d46e59b19ca36102cbc146a20b6b96047aa",
     "333867": "39759dba15cfabfe1b22ac61fbe35606765da6186e5f096a1a049a937b8af9c6",
     "383137": "c73989ecdce0118a5507dc50f2039d96aa518fc55f3087ba62260360f0676796",
@@ -101,7 +103,7 @@
     "220053080": "12e1e7c70d438c9c67802dcc518e7c610ece177cd45c0031eda7e3556ef98f5f",
     "222953258": "2f6db33b56e03d53093df7742750460afa651939e7c44de2b30189dcaae8b4ba",
     "228134347": "6b436d92a1e5fa4232c23ab53c105d662705700010966458fcdfa8c0fe0f3e4b",
-    "228974111": "4e507ee56db7c55c6df22956bf410e6a513fed5c1a6b9b4a43f28873f61f3ca9",
+    "228974111": "bd324507a531c36e9e3da94cf6e01e90b27771de4d2357c382f37c70e9e49b19",
     "231258916": "d14a4f31177dd69f2d9febd08c64ceb245c453254abfb099b70575eaba7ec5e1",
     "233800039": "ae6ce07113bd58235b7d776384b9cc705b163c0fbe8cdca4fdb94867972551e1",
     "239633794": "7eaa87ba44c3ecf801c36d09a06335012433aac1aedc2c5b034290e49b34896b",
@@ -116,48 +118,53 @@
     "220053080",
     "228134347",
     "231258916",
+    "23515727",
     "243729281",
     "32717347",
     "36642458"
   ],
-  "lastHeartbeatAt": "2026-10-02T12:47:18.504Z",
-  "lastAttemptAt": "2026-10-02T12:47:18.504Z",
+  "lastHeartbeatAt": "2026-10-03T11:47:35.722Z",
+  "lastAttemptAt": "2026-10-03T11:47:35.722Z",
   "lastErrors": [
     {
       "bookId": "212393364",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Carl's Doomsday Scenario | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=162429)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Carl's Doomsday Scenario | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=152834)."
     },
     {
       "bookId": "243729281",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Harry Potter and the Sorcerer's Stone | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=182957)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Harry Potter and the Sorcerer's Stone | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=183014)."
+    },
+    {
+      "bookId": "23515727",
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: No Country for Old Men | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=153792)."
     },
     {
       "bookId": "36642458",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Skyward | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=163445)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Skyward | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=163224)."
     },
     {
       "bookId": "231258916",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Evolution | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=161058)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Evolution | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=161080)."
     },
     {
       "bookId": "228134347",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Apex | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=158856)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Apex | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=158835)."
     },
     {
       "bookId": "220053080",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Dark Dawn | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=161977)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Dark Dawn | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=161774)."
     },
     {
       "bookId": "15096164",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Pines | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=164236)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Pines | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=156725)."
     },
     {
       "bookId": "212090220",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Advent | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=160218)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Advent | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=160271)."
     },
     {
       "bookId": "32717347",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Fire Mage | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=159828)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Fire Mage | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=159760)."
     }
   ]
 }
