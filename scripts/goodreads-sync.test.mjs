@@ -50,6 +50,18 @@ test('keeps Goodreads rereads and partial finish dates', () => {
   )
 })
 
+test('parses redesigned Goodreads sessions in chronological order with partial dates', () => {
+  const html = fs.readFileSync(fixturePath('goodreads-review-edit', 'modern.html'), 'utf8')
+  const events = parseReadEvents(html, { goodreadsId: '243729281' })
+  assert.equal(events.length, 3)
+  assert.deepEqual(events.map(({ dateStarted, dateFinished, sessionIndex }) =>
+    ({ dateStarted, dateFinished, sessionIndex })), [
+    { dateStarted: { year: 2001 }, dateFinished: { year: 2001 }, sessionIndex: 1 },
+    { dateStarted: { year: 2023, month: 9, day: 14 }, dateFinished: { year: 2023, month: 9, day: 23 }, sessionIndex: 2 },
+    { dateStarted: { year: 2026, month: 8, day: 20 }, dateFinished: { year: 2026, month: 9, day: 13 }, sessionIndex: 3 },
+  ])
+})
+
 test('reports safe review-page diagnostics without page contents', () => {
   const diagnostic = reviewPageDiagnostic(`
     <html>

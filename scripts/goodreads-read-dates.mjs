@@ -320,6 +320,14 @@ function toPartialDate(parts) {
 }
 
 function splitReadingSessionRows(html) {
+  const modernRows = Array.from(
+    html.matchAll(/<li\b[^>]*\bdata-session-item=["'][^"']*["'][^>]*>[\s\S]*?<\/li>/gi),
+    (match) => match[0],
+  )
+  if (modernRows.length > 0) {
+    return modernRows
+  }
+
   const tableRows = Array.from(
     html.matchAll(
       /<tr\b[^>]*class=["'][^"']*\breadingSessionRow\b[^"']*["'][^>]*>[\s\S]*?<\/tr>/gi,
@@ -360,6 +368,19 @@ function splitReadingSessionRows(html) {
 }
 
 function readDateFromRow(row, prefix) {
+  const label = prefix === 'start' ? 'date-started-label-' : 'date-finished-label-'
+  const fieldset = Array.from(row.matchAll(/<fieldset\b[^>]*>[\s\S]*?<\/fieldset>/gi))
+    .find(([html]) => new RegExp(`aria-labelledby=["']${label}`).test(html))?.[0]
+  if (fieldset) {
+    const parts = {}
+    for (const [, label, options] of fieldset.matchAll(
+      /<select\b[^>]*aria-label=["'](Year|Month|Day)["'][^>]*>([\s\S]*?)<\/select>/gi,
+    )) {
+      const selected = options.match(/<option\b[^>]*\bselected(?:=["'][^"']*["'])?[^>]*>([\s\S]*?)<\/option>/i)
+      parts[label.toLowerCase()] = selected ? stripTags(selected[1]) : ''
+    }
+    return toPartialDate(parts)
+  }
   return toPartialDate({
     day: selectedTextForClass(row, `${prefix}Day`),
     month: selectedTextForClass(row, `${prefix}Month`),
@@ -449,7 +470,23 @@ async function createBrowserClient(cookie) {
         waitUntil: 'domcontentloaded',
         timeout: 45_000,
       })
-      await page.waitForTimeout(500)
+      if (/\/review\/edit\//.test(url) && response?.ok()) {
+        // Wait for either review layout, or the sign-in form handled below.
+        await page.locator(
+          '[data-session-item] select[aria-label="Year"], .readingSessionRow select, input[name="user[email]"]',
+        ).first().waitFor({ state: 'attached', timeout: 15_000 }).catch((error) => {
+          if (error.name !== 'TimeoutError') throw error
+        })
+      }
+      // React updates select values as DOM properties. Serialize the actual
+      // selection so parsing page.content() does not read stale defaults.
+      await page.locator('select').evaluateAll((selects) => {
+        for (const select of selects) {
+          for (const option of select.options) {
+            option.toggleAttribute('selected', option.selected)
+          }
+        }
+      })
       const html = await page.content()
       const finalUrl = page.url()
 
