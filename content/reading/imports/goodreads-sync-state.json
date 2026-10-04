@@ -49,7 +49,7 @@
     "6732019": "dddc1dd139821c200acf4324819fdba9d403354ebdac0d13a0f928d004224437",
     "10644930": "fdb88af28ab7d67ec7ac075d5f96f078950e40c0764a99c05f2b56580ea22ac9",
     "12926063": "e922a1929bb80b4fb429aa6615491f79293f6ca104160ea7a68658f9eaaef1a3",
-    "15096164": "0ebedaa2fd3058837a019374899e31eefb77a9c0341baa935eb2fdde483d68a9",
+    "15096164": "122dcf2ad985fc3d52b21b73f17e28a36f97a82d1d6a9bf91ca553570bce6497",
     "15839976": "ddee79557847ce8c8e6ebb391ae3de779e6b770e24acb3a7734c4603d3a91db1",
     "18050143": "84a275c4b854218db6b0de421c9ae145eb9ffc5eaacedec6e1b8a1a03e87109b",
     "18114334": "5ec9c20fd0da402da5c4dac8b596a4f85198f05814ba0593d15993324641451a",
@@ -59,14 +59,14 @@
     "29588376": "482032702cbfb2413651930a1eec3111161350cc51e5e53b394e5873f4929b77",
     "30118314": "8638d391c34a9ed563afb4edd9cd0c2cdd7f8a66e464779a79bcd541f1cbbf91",
     "31423245": "915b7467cc69598f2393817fe84218cdb26e3f37f98058117a64f3963ae1869a",
-    "32717347": "e97366c91d4de9a90402eb0c6dcf91deeee2c3bd2c038e0c09a27272384d515c",
+    "32717347": "515dcb6b3811685fd6120e535d3bc49ff77cbb9dba19c7aa0217205b5704139c",
     "32805475": "74531d0b2d587362a0054fc727500291353493c3c205b878a9ce0c3fa9f919e1",
     "34032432": "768e843dd6db394cb77a65e356af4ce86d967bfdd9cdba7a25e9339ef48dfe24",
     "35519101": "50e98bb516493f3f3eeea72e3f37033caf6cab04a6b96a197823ec6401517896",
     "35519109": "84f3706f74b79db715caba0c304ec9c6665eda44dd7cb4dcf78d8d6d623648c2",
     "36124936": "2938162398fb2eae51261f29f1cc164b64dcd933b3b87d30695aa98e46ff9770",
     "36223860": "a26d50ac07b51de7eafac6c2012ac468b14ac8cb6024b0cf7fa8ab740acc7804",
-    "36642458": "eaa88f8e197fffa844b1d0f74ddb33019a7e220453889eb650acb4096ff2f37c",
+    "36642458": "acde8f99b6a34d34fe9ea3b3f4f990a755274dfdb2c2ce27afcb97610371a25d",
     "37539796": "f679cd9ccff1df7264f67d5eb803662e51ceb3ca8fec8ec09cb0fb4d07efae85",
     "37944800": "755de7471d6b47d42850d278dd20ab9a986dea7bae608ffb1d4a4d3edc9c5583",
     "40275288": "041836856f54a7db2afcd482aa6111ee7b0e3bcbb820b7eeed8e28dd2a39e850",
@@ -81,12 +81,12 @@
     "52381770": "acaede39b9770b84a15cbb0572aab7a301a143818d82f9964f85f5e6290b8ad0",
     "52694527": "f2900eff4c745c09b007be3c20bc206ac3f02e00391961afe13edded00631324",
     "53205854": "c7ac87c71c9f32fbe6fe4b15baef1f1272c951f35965da280be9f53d0d240dda",
-    "56269205": "6cc00ccadc8980fa20022d66688bb0bd002405fa97c8622562a3411ac803facf",
+    "56269205": "ef1db824146b0e6a8d671c37e16f11e4153baee09905c4d2cfe7b9aee3bbf0d7",
     "56534999": "79a48527f726cb48cb06bf75551f65032af41b2d7f0649f812a8e5ea8ede08c9",
     "56791389": "9eb48d64f0b2ef20a0fb8147b691e292ebcdf72a1888b267e7f782af3012220e",
     "57213544": "008b76e835139766af8e9dbe75f4dd39379b2d157331e174c74de3d8eccd8800",
     "60784562": "abeb3bb2bc348642545e606fafb02b63ed997f2230bc03e22e3d583620659489",
-    "60965426": "c106fda8b7a11e01f1b2749993850ee58f8701d61c89c6a6ffba6c2c42e1e281",
+    "60965426": "808334698b0b4b6bd4c07e4b89c6256dc7d8a02f9399b71780c0edd54215617a",
     "62030429": "7cfbbd614e70493b1d94f0847da6ccf46a1ffd7f94a8252e0d4c33fff51cab01",
     "63106877": "1008372cc1d431816f1774e4531610841ec8fedfbcf322b3a431411031e9b79b",
     "65211701": "64cf2dc64682d1ec062e595aaeecbc13b419177b28165ae7b8112cb3c461b9fc",
@@ -96,11 +96,11 @@
     "163998075": "deda67da865e019a75db887227c4478a0beae421b7a1231fd88d9b8a1c07e9a5",
     "195790861": "716b40fbc32baee6d9d4c7339926a6941d3c32502596a79b000c01c65b350759",
     "205335957": "69b831023ad187cb8da1fe06ca45d76825ee5fc39ac4dc7ec8554c69bcfaab81",
-    "212090220": "211fa17bafaba1ac45d552cdece8abe5473f0c6a51a6e857a0a49f067a9eebf5",
+    "212090220": "d1d8df4eb6aa9a9267022aba5092b21f74e344c385ffb74689caa35d587cdb66",
     "212393364": "6a27c48eebb2897b889661b275e4161b3a9b1adb271db1626b4f7655bffa965d",
     "216238758": "011393719053d30ea77985754c30a3e6ad13802d48c32ce7904cba32e36cef65",
     "217388302": "c72addf45e9dfdc5aa2c4f0099b4ccc3e9494e3889ee3e8f0c088117495d6040",
-    "220053080": "12e1e7c70d438c9c67802dcc518e7c610ece177cd45c0031eda7e3556ef98f5f",
+    "220053080": "b1218fe325292204f2f22f2a2ba4aeb7fd19249d0e0a027e8d6f43c353e6811d",
     "222953258": "2f6db33b56e03d53093df7742750460afa651939e7c44de2b30189dcaae8b4ba",
     "228134347": "6b436d92a1e5fa4232c23ab53c105d662705700010966458fcdfa8c0fe0f3e4b",
     "228974111": "4e507ee56db7c55c6df22956bf410e6a513fed5c1a6b9b4a43f28873f61f3ca9",
@@ -109,67 +109,22 @@
     "239633794": "7eaa87ba44c3ecf801c36d09a06335012433aac1aedc2c5b034290e49b34896b",
     "242252419": "4d794873728cac4aa533203788de94b9718a1041de29cc98cb45b0f1b9c7515c",
     "243483834": "5e0c84ef834eaf71f05ef89cc5e7a0f91d31e28b74760e51588bbac3d18f0d56",
-    "243729281": "22ebc1da5a3a8c70280c7f2b0f9d21bb94c2a2a1c112aebfd301061ce97d7926"
+    "243729281": "a850aee1c9258ab2d9b709e4b181d5b2dcf6ee2fc47990bfd141ce80b96dd68c"
   },
   "pendingBookIds": [
-    "15096164",
-    "212090220",
-    "212393364",
-    "220053080",
-    "228134347",
-    "231258916",
-    "23515727",
-    "243729281",
-    "32717347",
-    "36642458",
-    "56269205"
+    "132764668",
+    "212393364"
   ],
-  "lastHeartbeatAt": "2026-10-04T12:30:22.501Z",
-  "lastAttemptAt": "2026-10-04T12:30:22.501Z",
+  "lastHeartbeatAt": "2026-10-04T20:29:27.667Z",
+  "lastAttemptAt": "2026-10-04T20:29:27.667Z",
   "lastErrors": [
     {
-      "bookId": "56269205",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Empire of the Vampire | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=156641)."
+      "bookId": "132764668",
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Pet Sematary | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=161172)."
     },
     {
       "bookId": "212393364",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Carl's Doomsday Scenario | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=162298)."
-    },
-    {
-      "bookId": "243729281",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Harry Potter and the Sorcerer's Stone | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=182973)."
-    },
-    {
-      "bookId": "23515727",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: No Country for Old Men | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=162044)."
-    },
-    {
-      "bookId": "36642458",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Skyward | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=163276)."
-    },
-    {
-      "bookId": "231258916",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Evolution | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=161041)."
-    },
-    {
-      "bookId": "228134347",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Apex | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=158717)."
-    },
-    {
-      "bookId": "220053080",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Dark Dawn | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=161916)."
-    },
-    {
-      "bookId": "15096164",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Pines | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=163968)."
-    },
-    {
-      "bookId": "212090220",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Advent | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=160275)."
-    },
-    {
-      "bookId": "32717347",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Fire Mage | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=159807)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Carl's Doomsday Scenario | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=162304)."
     }
   ]
 }

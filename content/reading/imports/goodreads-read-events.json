@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-16T11:45:40.521Z",
+  "generatedAt": "2026-10-04T20:29:27.667Z",
   "source": "goodreads-review-edit",
   "events": [
     {
@@ -1090,20 +1090,6 @@
       "sessionIndex": 1
     },
     {
-      "bookId": "56269205",
-      "title": "Empire of the Vampire (Empire of the Vampire, #1)",
-      "author": "Jay Kristoff",
-      "source": "goodreads-review-edit",
-      "sourceUrl": "https://www.goodreads.com/review/edit/56269205",
-      "dateStarted": {
-        "year": 2026,
-        "month": 9,
-        "day": 1
-      },
-      "dateFinished": null,
-      "sessionIndex": 1
-    },
-    {
       "bookId": "75294804",
       "title": "Murder On The Brazos (A Fen Maguire Mystery #1)",
       "author": "Bruce Hammack",
@@ -1170,6 +1156,24 @@
         "day": 13
       },
       "sessionIndex": 3
+    },
+    {
+      "bookId": "56269205",
+      "title": "Empire of the Vampire (Empire of the Vampire, #1)",
+      "author": "Jay Kristoff",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/56269205",
+      "dateStarted": {
+        "year": 2026,
+        "month": 9,
+        "day": 1
+      },
+      "dateFinished": {
+        "year": 2026,
+        "month": 10,
+        "day": 4
+      },
+      "sessionIndex": 1
     }
   ]
 }
