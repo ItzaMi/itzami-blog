@@ -93,6 +93,7 @@
     "75294804": "d9ae54a0f33e77f3cb5b9d099f357fcbd780d8dce3302db0f3475de26eacddf0",
     "93628201": "cf14bb5c779217c1056d45c6a75f36c342bc9112dde6a43e910455e3e7e7fa4f",
     "130631265": "4fd0ff7cd8f6f6713515a1cfb3d026fcdcd817a55bb70d65af77738e9cb64eb4",
+    "132764668": "8a1d9770bcebffcb3293a98c9d6dadcf9eedf47a4ce52dbf91cb601523ac8924",
     "163998075": "deda67da865e019a75db887227c4478a0beae421b7a1231fd88d9b8a1c07e9a5",
     "195790861": "716b40fbc32baee6d9d4c7339926a6941d3c32502596a79b000c01c65b350759",
     "205335957": "69b831023ad187cb8da1fe06ca45d76825ee5fc39ac4dc7ec8554c69bcfaab81",
@@ -112,19 +113,14 @@
     "243729281": "a850aee1c9258ab2d9b709e4b181d5b2dcf6ee2fc47990bfd141ce80b96dd68c"
   },
   "pendingBookIds": [
-    "132764668",
     "212393364"
   ],
-  "lastHeartbeatAt": "2026-10-04T20:29:27.667Z",
-  "lastAttemptAt": "2026-10-04T20:29:27.667Z",
+  "lastHeartbeatAt": "2026-10-04T20:33:15.481Z",
+  "lastAttemptAt": "2026-10-04T20:33:15.481Z",
   "lastErrors": [
     {
-      "bookId": "132764668",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Pet Sematary | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=161172)."
-    },
-    {
       "bookId": "212393364",
-      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Carl's Doomsday Scenario | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=162304)."
+      "error": "No reading sessions found on the review edit page (title=\"Edit Review: Carl's Doomsday Scenario | Goodreads\"; date controls=[\"addToUpdateFeed\"]; bytes=153287)."
     }
   ]
 }

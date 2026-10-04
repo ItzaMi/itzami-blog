@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-04T20:29:27.667Z",
+  "generatedAt": "2026-10-04T20:33:15.481Z",
   "source": "goodreads-review-edit",
   "events": [
     {
@@ -1156,6 +1156,20 @@
         "day": 13
       },
       "sessionIndex": 3
+    },
+    {
+      "bookId": "132764668",
+      "title": "Pet Sematary (Stephen King Library Red Leatherette)",
+      "author": "Stephen King",
+      "source": "goodreads-review-edit",
+      "sourceUrl": "https://www.goodreads.com/review/edit/132764668",
+      "dateStarted": {
+        "year": 2026,
+        "month": 10,
+        "day": 4
+      },
+      "dateFinished": null,
+      "sessionIndex": 1
     },
     {
       "bookId": "56269205",
