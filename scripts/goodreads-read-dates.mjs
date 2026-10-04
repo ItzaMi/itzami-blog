@@ -482,6 +482,15 @@ async function createBrowserClient(cookie) {
           if (error.name !== 'TimeoutError') throw error
         })
       }
+      if (/\/review\/edit\//.test(url) && response?.ok()) {
+        // The new form mounts empty selectors before session data hydrates.
+        await page.waitForFunction(() => Array.from(document.querySelectorAll(
+          '[data-session-item] select[aria-label="Year"], .ReadingSessionManager__currently-reading select[aria-label="Year"], .readingSessionRow select',
+        )).some((select) => /^\d{4}$/.test(select.selectedOptions[0]?.textContent.trim() || '')),
+        { }, { timeout: 10_000 }).catch((error) => {
+          if (error.name !== 'TimeoutError') throw error
+        })
+      }
       // React updates select values as DOM properties. Serialize the actual
       // selection so parsing page.content() does not read stale defaults.
       await page.locator('select').evaluateAll((selects) => {
