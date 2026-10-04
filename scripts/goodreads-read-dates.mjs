@@ -324,6 +324,10 @@ function splitReadingSessionRows(html) {
     html.matchAll(/<li\b[^>]*\bdata-session-item=["'][^"']*["'][^>]*>[\s\S]*?<\/li>/gi),
     (match) => match[0],
   )
+  modernRows.push(...Array.from(
+    html.matchAll(/<section\b[^>]*class=["'][^"']*\bReadingSessionManager__currently-reading\b[^"']*["'][^>]*>[\s\S]*?<\/section>/gi),
+    (match) => match[0],
+  ))
   if (modernRows.length > 0) {
     return modernRows
   }
@@ -473,7 +477,7 @@ async function createBrowserClient(cookie) {
       if (/\/review\/edit\//.test(url) && response?.ok()) {
         // Wait for either review layout, or the sign-in form handled below.
         await page.locator(
-          '[data-session-item] select[aria-label="Year"], .readingSessionRow select, input[name="user[email]"]',
+          '[data-session-item] select[aria-label="Year"], .ReadingSessionManager__currently-reading select[aria-label="Year"], .readingSessionRow select, input[name="user[email]"]',
         ).first().waitFor({ state: 'attached', timeout: 15_000 }).catch((error) => {
           if (error.name !== 'TimeoutError') throw error
         })

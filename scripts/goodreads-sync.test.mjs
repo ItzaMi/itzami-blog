@@ -62,6 +62,26 @@ test('parses redesigned Goodreads sessions in chronological order with partial d
   ])
 })
 
+test('includes the active session outside the completed-session list', () => {
+  const html = fs.readFileSync(fixturePath('goodreads-review-edit', 'modern.html'), 'utf8')
+  const active = `<section class="ReadingSessionManager__currently-reading">
+    <fieldset aria-labelledby="date-started-label-active">
+      <select aria-label="Year"><option selected="">2026</option></select>
+      <select aria-label="Month"><option selected="">October</option></select>
+      <select aria-label="Day"><option selected="">4</option></select>
+    </fieldset>
+    <fieldset aria-labelledby="date-finished-label-active">
+      <select aria-label="Year"><option selected="">Year</option></select>
+    </fieldset>
+  </section>`
+  for (const completed of ['', html]) {
+    const events = parseReadEvents(active + completed, { goodreadsId: '212393364' })
+    assert.equal(events.length, completed ? 4 : 1)
+    assert.deepEqual(events.at(-1).dateStarted, { year: 2026, month: 10, day: 4 })
+    assert.equal(events.at(-1).dateFinished, null)
+  }
+})
+
 test('reports safe review-page diagnostics without page contents', () => {
   const diagnostic = reviewPageDiagnostic(`
     <html>
